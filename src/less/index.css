@@ -1,0 +1,463 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+figure,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+font,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+* {
+  color: #000;
+  font-family: "PingFang SC", monospace;
+  font-size: 14px;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: 20px auto;
+}
+footer {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+figure img,
+figure image,
+figure svg {
+  width: 60%;
+  height: 60%;
+}
+figure.mini {
+  width: 2em;
+  height: 2em;
+}
+:focus {
+  outline: #25caca auto 1px;
+}
+input::-webkit-input-placeholder {
+  color: #4e6175;
+  font-size: 1em;
+  padding-left: 0.5em;
+}
+.input-group {
+  display: flex;
+}
+.input-group input {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  height: 30px;
+  width: 200px;
+}
+.input-group button {
+  border: none;
+  height: 34px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  min-width: 60px;
+  padding: 0 15px;
+  color: #fff;
+  background: #25caca;
+  cursor: pointer;
+}
+.time-line {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.time-line .stamp {
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
+}
+.time-line .stamp .desc {
+  width: 100%;
+}
+.time-line .time {
+  color: #25caca;
+  padding: 0 20px;
+  position: relative;
+}
+.time-line .time:before {
+  content: "";
+  position: absolute;
+  border-left: 3px solid;
+  height: 40px;
+  width: 6px;
+  margin-left: -15px;
+  top: -10px;
+}
+.time-line .time:after {
+  content: "";
+  position: absolute;
+  background: #25caca;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  left: 3px;
+  top: 6px;
+  width: 3px;
+  height: 3px;
+}
+.row {
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.direction-column {
+  flex-direction: column;
+}
+.direction-row {
+  flex-direction: row;
+}
+.btn {
+  background: transparent;
+  border: 1px solid;
+  border-radius: 23px;
+  padding: 5px 10px;
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+.btn-default {
+  background-color: transparent;
+  border-color: #fff;
+}
+.btn-default-dark {
+  background-color: transparent;
+  border-color: #ccc;
+  color: #4e6175;
+}
+.btn-danger {
+  background-color: #ff6900;
+  border-color: #ff6900;
+}
+.btn-primary {
+  background-color: #25caca;
+  border-color: #25caca;
+}
+.landing {
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background: url(../assets/background.png) #25caca center;
+  background-size: contain;
+  width: 100%;
+  max-width: inherit;
+  margin-top: 0;
+  position: relative;
+}
+.landing img {
+  position: absolute;
+  bottom: -2px;
+  max-width: 1440px;
+}
+@media screen and (max-width: 1440px) {
+  .landing img {
+    /*当屏幕尺寸小于600px时，应用下面的CSS样式*/
+    max-width: 100%;
+  }
+}
+.landing .title {
+  font-size: 3em;
+  line-height: 1.2;
+  color: #fff;
+}
+.landing .desc {
+  color: #fff;
+}
+.landing .btn {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.landing .block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 2em;
+}
+.landing .block figure {
+  width: 2em;
+}
+.landing .block .title {
+  font-size: 1.5em;
+  padding-left: 1em;
+}
+.description .title {
+  font-size: 2em;
+  color: #000;
+  width: 60%;
+}
+.description .desc {
+  color: #4e6175;
+  width: 60%;
+  font-size: 0.8em;
+}
+.description .time-line {
+  width: 60%;
+  margin: 10px 0;
+}
+.figure figure {
+  width: 60%;
+}
+.category {
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.category .block {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 200px;
+  margin: 0 1.5%;
+}
+.category .block.align-start {
+  align-items: flex-start;
+}
+.category .block .title {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+.category .block .desc {
+  color: #4e6175;
+}
+.video {
+  height: 300px;
+  background: url(../assets/app_demo.png);
+  background-size: cover;
+}
+.video .title {
+  font-size: 2em;
+  color: #25caca;
+}
+.video .desc {
+  color: #25caca;
+}
+.video figure {
+  width: 50px;
+  height: 50px;
+}
+.example {
+  position: relative;
+}
+.example .title {
+  font-size: 2em;
+  color: #000;
+}
+.example .line:before {
+  content: "";
+  width: 80%;
+  left: 10%;
+  margin-top: 10px;
+  border-top: 1px solid #dde5ed;
+  position: absolute;
+  z-index: -1;
+}
+.example .desc {
+  width: 60%;
+  font-size: 0.8em;
+  color: #4e6175;
+  margin: 0 20px;
+  padding: 0 10px;
+  background: #fff;
+}
+.example .desc span {
+  margin-right: 0.25em;
+  color: #25caca;
+}
+.example figure {
+  width: 100px;
+  height: 100px;
+  margin: 0 10px;
+  background: #efefef;
+}
+.try-now .block {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #4e6175;
+  border-top: none;
+}
+.try-now .block:first-child {
+  border-top: 1px solid #4e6175;
+}
+.try-now .title {
+  font-size: 2em;
+  color: #000;
+}
+.try-now .desc {
+  font-size: 0.8em;
+  color: #4e6175;
+  margin: 10px;
+}
+.try-now .desc:not(:last-child):after {
+  content: ".";
+  position: absolute;
+  padding-right: 12px;
+  font-size: 20px;
+  line-height: 5px;
+  margin-left: 15px;
+}
+.try-now .logo-group {
+  justify-content: space-around;
+  flex-wrap: wrap;
+  display: flex;
+}
+.try-now .logo-group figure {
+  width: inherit;
+  height: inherit;
+}
+.try-now .logo-group figure image {
+  width: inherit;
+  height: inherit;
+}
+.try-now img {
+  margin: 10px;
+}
+.advantage .title,
+.location .title {
+  font-size: 2em;
+  color: #000;
+  width: 60%;
+}
+.advantage .list,
+.location .list {
+  width: 60%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+.advantage .block,
+.location .block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 49%;
+  min-height: 150px;
+  padding-right: 1%;
+}
+.advantage .block figure,
+.location .block figure {
+  height: 50px;
+  width: 50px;
+  margin-right: 20px;
+  margin-top: 15px;
+  flex-shrink: 0;
+}
+.advantage .block .title,
+.location .block .title {
+  font-size: 1.5em;
+  margin: 10px 0;
+  width: inherit;
+}
+.advantage .block .desc,
+.location .block .desc {
+  color: #4e6175;
+}
+.location .block {
+  min-height: 100px;
+}
+.location .block figure {
+  width: 1em;
+  height: 1em;
+  margin-top: 25px;
+}
+.margin-vertical-large {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+.margin-vertical-medium {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.margin-horizontal-large {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+.margin-horizontal-medium {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-between {
+  justify-content: space-between;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.align-center {
+  align-items: center;
+}
+.align-start {
+  align-items: flex-start;
+}

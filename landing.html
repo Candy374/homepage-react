@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convertlab 营销实验室</title>
+    <link rel="stylesheet" href="src/less/index.css">
+</head>
+<body>a
+<div id="app">
+    <!--<header>-->
+        <!--<div class="logo">-->
+            <!--<img v-bind:src="header.logo.url" alt="An awesome picture">-->
+        <!--</div>-->
+        <!--<nav id="nav">-->
+            <!--<a v-bind:class="header.nav.classes" v-for="link in header.nav.links">{{ link.label }}</a>-->
+            <!--<button v-bind:class="header.login.classes">{{ header.login.label}}</button>-->
+        <!--</nav>-->
+    <!--</header>-->
+    <my-header></my-header>
+    <content>
+        <section class="landing">
+            <div class="title">{{contents.landing.title}}</div>
+            <div class="desc">{{contents.landing.desc}}</div>
+            <div class="row">
+                <div v-bind:class="contents.apply.classes">{{contents.apply.label}}</div>
+            </div>
+        </section>
+
+        <section class="description">
+            <div class="title row">尽在DM Hub解决方案</div>
+            <div class="desc">Convertlab Digtal Marketing Hub产品，帮助企业全面了解客户，建立基于数据洞察的营销策略，并持续与客户进行个性化的互动，提升客户体验，最终达成商业目标
+            </div>
+
+            <div class="row">
+                <div class="btn btn-primary margin-horizontal-medium">体验</div>
+                <div class="btn btn-default-dark">了解更多</div>
+            </div>
+        </section>
+
+        <section class="category justify-between margin-horizontal-large direction-row">
+            <div class="block">
+                <figure>
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                </figure>
+                <div class="title">人&数据</div>
+                <div class="desc">全渠道打通，接入客户的浏览数据、行为数据、消费数据、资料数据、消费相关的商品数据。对接入数据进行建模分析，绘制出每一个客户的360度画像。</div>
+            </div>
+            <div class="block">
+                <figure>
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                </figure>
+                <div class="title">内容&交互</div>
+                <div class="desc">通过低使用门栏的内容制作工具，快速生产营销内容和物料，覆盖微信、短信、邮件、微页面等多种形式。用户与内容交互后，数据自动被收集。</div>
+            </div>
+            <div class="block">
+                <figure>
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                </figure>
+                <div class="title">策略&自动化</div>
+                <div class="desc">所见即所得的自动流程设计器，可以让你的运营策略简单快速的变成机器可以读懂的命令，从而程序化执行并输出执行报表。大大提高运营效率。</div>
+            </div>
+        </section>
+
+        <section class="video margin-vertical-large ">
+            <div class="title">观看视频</div>
+            <div class="desc">中国市场消费者正在发生变化，看DM Hub如何顺应时代为企业带来营销2.0转型升级。</div>
+            <div class="icon icon-video"></div>
+        </section>
+
+        <section class="example">
+            <div class="title row">一个平台，多个行业解决方案</div>
+            <div class="line">
+                <label class="desc"><span>5</span>个行业</label>
+                <label class="desc"><span>285</span>个应用场景</label>
+                <label class="desc"><span>82,035,771</span>次互动受众</label>
+            </div>
+
+            <div class="row">
+                <figure>
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <figcaption>金融</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <figcaption>快销&零售</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <figcaption>服务</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <figcaption>汽车</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <figcaption>互联网</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="try-now">
+            <div class="block">
+                <div class="title">开始免费试用</div>
+                <div class="row">
+                    <div class="desc">简单快速配置</div>
+                    <div class="desc">15天免费</div>
+                    <div class="desc">任意时间可退</div>
+                </div>
+
+                <div class="input-group">
+                    <input placeholder="填写邮箱"/>
+                    <button>免费试用</button>
+                </div>
+            </div>
+            <div class="block">
+                <div class="logo-group">
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                </div>
+                <div class="desc">超过100+客户信任我们，选择DM Hub，提升企业数字营销。</div>
+            </div>
+        </section>
+    </content>
+    <footer>
+        <div class="row justify-between">
+            <div class="row">
+                <div class="logo">
+                    <img src="https://developer.cdn.mozilla.net/media/img/mdn-logo-sm.png" alt="An awesome picture">
+                </div>
+
+                <div class="row align-start">
+                    <div class="block">
+                        <a class="link">首页</a>
+                        <a class="link">关于我们</a>
+                        <a class="link">产品更新</a>
+                    </div>
+
+                    <div class="block">
+                        <a class="link">人&数据</a>
+                        <a class="link">内容&交互</a>
+                        <a class="link">策略&自动化</a>
+                        <a class="link">数据洞察</a>
+                    </div>
+
+                    <div class="block">
+                        <a class="link">合作伙伴</a>
+                        <a class="link">营销学堂</a>
+                        <a class="link">博客</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact">
+                <div class="phone">400 850 9918</div>
+                <div class="wechat">微信公众号</div>
+                <div class="weibo">官方微博</div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <address>Copyrights © 2016 上海欣兆阳信息科技有限公司</address>
+            <span>备案信息:沪ICP备15038423号-1</span>
+        </div>
+    </footer>
+</div>
+</body>
+
+<script type="text/x-template" id="header">
+    <header>
+        <div class="logo">
+            <img :src="logo.url" alt="An awesome picture">
+        </div>
+        <nav id="nav">
+            <a :class="nav.classes" v-for="link in nav.links">{{ link.label }}</a>
+            <button :class="login.classes">{{ login.label}}</button>
+        </nav>
+    </header>
+</script>
+<script src="./landing.js"></script>
+</html>
