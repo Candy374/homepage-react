@@ -1,0 +1,29 @@
+<svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <filter id="Filter_0">
+            <feFlood flood-color="rgb(67, 67, 67)" flood-opacity="1" result="floodOut"/>
+            <feComposite operator="atop" in="floodOut" in2="SourceGraphic"
+                         result="compOut"/>
+            <feBlend mode="normal" in="compOut" in2="SourceGraphic"/>
+        </filter>
+        <filter id="Filter_1">
+            <feFlood flood-color="rgb(67, 67, 67)" flood-opacity="1" result="floodOut"/>
+            <feComposite operator="atop" in="floodOut" in2="SourceGraphic"
+                         result="compOut"/>
+            <feBlend mode="normal" in="compOut" in2="SourceGraphic"/>
+        </filter>
+
+    </defs>
+    <g filter="url(#Filter_0)">
+        <path fill-rule="evenodd" opacity="0.102" fill="rgb(252, 97, 128)"
+              d="M72.000,-0.000 C111.764,-0.000 144.000,32.235 144.000,72.000 C144.000,111.764 111.764,144.000 72.000,144.000 C32.235,144.000 -0.000,111.764 -0.000,72.000 C-0.000,32.235 32.235,-0.000 72.000,-0.000 Z"/>
+    </g>
+    <g filter="url(#Filter_1)">
+        <path fill-rule="evenodd" fill="rgb(252, 97, 128)"
+              d="M72.442,25.619 C98.789,25.619 120.147,46.978 120.147,73.325 C120.147,99.672 98.789,121.030 72.442,121.030 C46.095,121.030 24.736,99.672 24.736,73.325 C24.736,46.978 46.095,25.619 72.442,25.619 Z"/>
+    </g>
+    <image x="64px" y="56px"
+           xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAjCAMAAAC94eqZAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAjVBMVEUKysv///8KyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKyssKysv///8bI1sGAAAALXRSTlMAAJjCOcjteAq3LOZnBaIk21T6jxXKQ/B+DL4v6W0GqijgXBvPS/WIEMQ0ssHslG3xAAAAAWJLR0QB/wIt3gAAAAd0SU1FB+EFDRcTCrMVKFMAAACMSURBVCjPldPHDsIwEEVR49AJvSaUUEPL/f/fY4dYcJGY7ZFle+ZNiEk9fFbtXaFBs9X+TgnQ6SrRS/tGMBgqMRorMZnOjGC+UGK5yowgXyux2e6MoNgrcTgqQTwpcb4oUV5vRnB/KPH8/5Tf5S/Uf3k3tIfeeZ2XT1mz4YnyHGp6PfOyKT/2K1a2lS/vfFDW2DDu2AAAAABJRU5ErkJggg=="/>
+</svg>

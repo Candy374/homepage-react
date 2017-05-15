@@ -1,7 +1,7 @@
 /**
  * Created by huangling on 15/05/2017.
  */
-import React, {Component} from 'react';
+import React from 'react';
 
 const Button = (props) => {
     const {type = 'default', text, onClick, margin} = props;

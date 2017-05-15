@@ -17,10 +17,6 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.vue$/,
-                loader: 'vue-loader'
-            },
-            {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 exclude: /node_modules/
@@ -40,14 +36,9 @@ module.exports = {
                 options: {
                     name: '[name].[ext]?[hash]'
                 }
-            }
+            },
+            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
         ]
-    },
-    resolve: {
-        extensions: ['.js', '.vue'],
-        alias: {
-            'Vue': 'vue/dist/vue.js'
-        }
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -55,12 +46,12 @@ module.exports = {
             template: path.resolve(__dirname, '../src/index.html'),
             inject: true
         })
-    ]
+    ],
+    devtool: 'eval-source-map'
 };
 
 if (process.env.NODE_ENV === 'production') {
     module.exports.devtool = '#source-map';
-    // http://vue-loader.vuejs.org/en/workflow/production.html
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({
             'process.env': {
