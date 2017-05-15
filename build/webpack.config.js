@@ -5,13 +5,13 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         index: [
-            path.resolve(__dirname, '../src/js/index.js')
+            path.resolve(__dirname, '../src/js/index.js'),
         ]
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
         publicPath: './',
-        filename: 'build.js',
+        filename: 'bundle.js',
         chunkFilename: '[id].[chunkhash].js'
     },
     module: {
@@ -37,7 +37,7 @@ module.exports = {
                     name: '[name].[ext]?[hash]'
                 }
             },
-            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' }
+            {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
         ]
     },
     plugins: [

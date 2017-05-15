@@ -40,7 +40,7 @@ export default class Home extends Component {
                         <div className="title">观看视频</div>
                         <div className="desc">中国市场消费者正在发生变化，看DM Hub如何顺应时代为企业带来营销2.0转型升级。</div>
                         <figure>
-                            <img src="../../assets/videoStart.svg"/>
+                            <img src="./assets/videoStart.svg"/>
                         </figure>
                     </section>
 
