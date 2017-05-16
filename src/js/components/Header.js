@@ -20,7 +20,7 @@ export default class Header extends Component {
             <header>
                 <div>
                     <div className="logo">
-                        <img src="../../assets/logo.png"/>
+                        <img src="./assets/logo.png"/>
                     </div>
                     <nav id="nav">
                         {

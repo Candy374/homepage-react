@@ -49,7 +49,7 @@ export default class Footer extends Component {
                 <div className="row justify-between">
                     <div className="row">
                         <div className="logo">
-                            <img src="../../assets/logo_footer.png"/>
+                            <img src="./assets/logo_footer.png"/>
                         </div>
                         <div className="row align-start">
                             {
@@ -64,9 +64,9 @@ export default class Footer extends Component {
                         </div>
                     </div>
                     <div className="contact">
-                        <div><img src="../../assets/phone.png"/>400 850 9918</div>
-                        <div><img src="../../assets/wechat.png"/>微信公众号</div>
-                        <div><img src="../../assets/weibo.png"/>官方微博</div>
+                        <div><img src="./assets/phone.png"/>400 850 9918</div>
+                        <div><img src="./assets/wechat.png"/>微信公众号</div>
+                        <div><img src="./assets/weibo.png"/>官方微博</div>
                     </div>
                 </div>
 

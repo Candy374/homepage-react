@@ -1,21 +1,41 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry: {
-        index: [
-            path.resolve(__dirname, '../src/js/index.js'),
-        ]
-    },
+    // context: path.resolve(__dirname, '../src/js'),
+    // entry: ['./index.js'],
+    entry: [
+        'react-hot-loader/patch',
+        // activate HMR for React
+
+        'webpack-dev-server/client?http://localhost:8080',
+        // bundle the client for webpack-dev-server
+        // and connect to the provided endpoint
+
+        'webpack/hot/only-dev-server',
+        // bundle the client for hot reloading
+        // only- means to only hot reload for successful updates
+
+
+        path.resolve(__dirname, '../src/js/index.js')
+    ],
+
+    // entry: {
+    //     home: "./home.js",
+    //     about: "./about.js",
+    //     contact: "./contact.js"
+    // },
     output: {
         path: path.resolve(__dirname, '../dist'),
         publicPath: './',
-        filename: 'bundle.js',
+        filename: '[name].[chunkhash].js',
         chunkFilename: '[id].[chunkhash].js'
     },
+
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
@@ -23,34 +43,45 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader?modules'
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: "css-loader"
+                })
             },
             {
                 test: /\.less$/,
                 loader: "style-loader!css-loader!less-loader",
-
             },
-            {
-                test: /\.(png|jpg|gif|svg)$/,
-                loader: 'file-loader',
-                options: {
-                    name: '[name].[ext]?[hash]'
-                }
-            },
-            {test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
+            // {
+            //     test: /\.(png|svg|jpg|gif)$/,
+            //     use: [
+            //         'file-loader'
+            //     ]
+            // },
+            {test: /\.(png|jpg)$/, loader: 'url-loader'}
         ]
     },
     plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'vendor',
+            minChunks: function (module) {
+                // this assumes your vendor imports exist in the node_modules directory
+                return module.context && module.context.indexOf('node_modules') !== -1;
+            }
+        }),
         new HtmlWebpackPlugin({
             filename: './index.html',
             template: path.resolve(__dirname, '../src/index.html'),
             inject: true
-        })
-    ],
-    devtool: 'eval-source-map'
+        }),
+        new ExtractTextPlugin("styles.css"),
+    ]
 };
 
+console.log(process.env.NODE_ENV)
 if (process.env.NODE_ENV === 'production') {
+    console.log('eeee')
+    module.exports.entry = path.resolve(__dirname, '../src/js/index.js');
     module.exports.devtool = '#source-map';
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({

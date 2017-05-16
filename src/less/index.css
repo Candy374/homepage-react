@@ -197,6 +197,31 @@ input::-webkit-input-placeholder {
   background-color: #25caca;
   border-color: #25caca;
 }
+header {
+  height: 40px;
+  position: fixed;
+  left: 25px;
+  right: 25px;
+  top: 10px;
+  z-index: 1;
+}
+header > div {
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.logo img {
+  width: 120px;
+}
+nav {
+  display: flex;
+}
+nav .nav-item {
+  color: #fff;
+  padding: 5px 10px;
+}
 .landing {
   height: 800px;
   display: flex;
@@ -429,6 +454,60 @@ input::-webkit-input-placeholder {
   width: 1em;
   height: 1em;
   margin-top: 25px;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  background: #efefef;
+  padding: 0 40px;
+  border-top: 1px solid #dde5ed;
+}
+footer .logo {
+  margin: 15px 0;
+  align-self: flex-start;
+}
+footer .logo img {
+  width: 100px;
+}
+footer .contact {
+  margin-top: 20px;
+  align-self: flex-start;
+}
+footer .contact div {
+  color: #4e6175;
+}
+footer .contact img {
+  width: 1em;
+  height: 1em;
+  margin-right: 1em;
+}
+footer .desc {
+  color: #4e6175;
+  font-style: italic;
+}
+footer .copyright {
+  border-top: 1px solid #dde5ed;
+  display: flex;
+  padding: 20px 0;
+}
+footer .copyright address {
+  margin-right: 40px;
+  color: #4e6175;
+  font-style: normal;
+}
+footer .copyright span {
+  color: #4e6175;
+}
+footer .block {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+footer .block .link {
+  color: #4e6175;
+}
+footer .block .link:hover {
+  color: #333;
 }
 .margin-vertical-large {
   margin-top: 40px;
