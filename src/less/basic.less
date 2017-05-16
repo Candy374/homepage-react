@@ -7,9 +7,15 @@ strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label
   outline: 0;
 }
 
+@font-face {
+  font-family: 'pingfang';
+  src: url('./pingfang.ttf') format('truetype');
+}
+
 * {
   color: @text-color-dark1;
-  font-family: "PingFang SC", monospace;
+  //font-family: "PingFang SC", monospace;
+  font-family: "pingfang", monospace;
   font-size: 14px;
 }
 
@@ -31,8 +37,8 @@ figure {
   width: 100%;
 
   img, image, svg {
-    width: 60%;
-    height: 60%
+    width: 40%;
+    height: 40%;
   }
 
   &.mini {

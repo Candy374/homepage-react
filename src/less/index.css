@@ -55,9 +55,13 @@ caption {
   border: 0;
   outline: 0;
 }
+@font-face {
+  font-family: 'pingfang';
+  src: url('pingfang.ttf') format('truetype');
+}
 * {
   color: #000;
-  font-family: "PingFang SC", monospace;
+  font-family: "pingfang", monospace;
   font-size: 14px;
 }
 section {
@@ -79,15 +83,15 @@ figure {
 figure img,
 figure image,
 figure svg {
-  width: 60%;
-  height: 60%;
+  width: 40%;
+  height: 40%;
 }
 figure.mini {
   width: 2em;
   height: 2em;
 }
 :focus {
-  outline: #25caca auto 1px;
+  outline: #0acacb auto 1px;
 }
 input::-webkit-input-placeholder {
   color: #4e6175;
@@ -113,7 +117,7 @@ input::-webkit-input-placeholder {
   min-width: 60px;
   padding: 0 15px;
   color: #fff;
-  background: #25caca;
+  background: #0acacb;
   cursor: pointer;
 }
 .time-line {
@@ -130,7 +134,7 @@ input::-webkit-input-placeholder {
   width: 100%;
 }
 .time-line .time {
-  color: #25caca;
+  color: #0acacb;
   padding: 0 20px;
   position: relative;
 }
@@ -146,7 +150,7 @@ input::-webkit-input-placeholder {
 .time-line .time:after {
   content: "";
   position: absolute;
-  background: #25caca;
+  background: #0acacb;
   border: 2px solid #fff;
   border-radius: 3px;
   left: 3px;
@@ -155,7 +159,7 @@ input::-webkit-input-placeholder {
   height: 3px;
 }
 .row {
-  margin: 10px 0;
+  margin: 15px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -170,11 +174,26 @@ input::-webkit-input-placeholder {
   background: transparent;
   border: 1px solid;
   border-radius: 23px;
-  padding: 5px 10px;
+  padding: 10px 30px;
   min-width: 100px;
   display: flex;
   justify-content: center;
   color: #fff;
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+.btn-normal {
+  background: transparent;
+  border: 1px solid;
+  border-radius: 23px;
+  padding: 5px 5px 5px 10px;
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 4px;
+  text-align: center;
 }
 .btn-default {
   background-color: transparent;
@@ -190,15 +209,15 @@ input::-webkit-input-placeholder {
   border-color: #ff6900;
 }
 .btn-primary {
-  background-color: #25caca;
-  border-color: #25caca;
+  background-color: #0acacb;
+  border-color: #0acacb;
 }
 header {
   height: 40px;
   position: fixed;
   left: 25px;
   right: 25px;
-  top: 10px;
+  top: 35px;
   z-index: 1;
 }
 header > div {
@@ -206,18 +225,20 @@ header > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
+  max-width: 1350px;
   margin: 0 auto;
 }
 .logo img {
-  width: 120px;
+  width: 150px;
 }
 nav {
   display: flex;
 }
 nav .nav-item {
   color: #fff;
-  padding: 5px 10px;
+  padding: 5px 0;
+  margin-right: 60px;
+  font-size: 16px;
 }
 .landing {
   height: 800px;
@@ -226,8 +247,7 @@ nav .nav-item {
   justify-content: center;
   align-items: center;
   color: #fff;
-  background: url(../assets/background.png) #25caca center;
-  background-size: contain;
+  background: url(../assets/banner_seamless_bg.png) #0acacb center;
   width: 100%;
   max-width: inherit;
   margin-top: 0;
@@ -245,16 +265,20 @@ nav .nav-item {
   }
 }
 .landing .title {
-  font-size: 3em;
+  font-size: 4em;
   line-height: 1.2;
   color: #fff;
 }
 .landing .desc {
   color: #fff;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 .landing .btn {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 10px 39px;
+  font-size: 18px;
+  letter-spacing: 3px;
 }
 .landing .block {
   display: flex;
@@ -273,11 +297,12 @@ nav .nav-item {
   font-size: 2em;
   color: #000;
   width: 60%;
+  font-weight: bold;
 }
 .description .desc {
   color: #4e6175;
   width: 60%;
-  font-size: 0.8em;
+  text-align: center;
 }
 .description .time-line {
   width: 60%;
@@ -289,9 +314,10 @@ nav .nav-item {
 .category {
   flex-wrap: wrap;
   flex-direction: row;
+  padding: 15px 8%;
 }
 .category .block {
-  width: 30%;
+  width: 28%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -309,23 +335,38 @@ nav .nav-item {
 .category .block .desc {
   color: #4e6175;
 }
+.category .block .more {
+  cursor: pointer;
+  color: #0acacb;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.category .block .more:after {
+  content: ">";
+  padding-left: 2px;
+}
 .video {
   height: 300px;
-  background: url(../assets/app_demo.png);
+  background: url(../assets/video__seamless_bg.png) #f7f9fb;
   background-size: contain;
   width: 100%;
   max-width: inherit;
 }
 .video .title {
   font-size: 2em;
-  color: #25caca;
+  color: #0acacb;
 }
 .video .desc {
-  color: #25caca;
+  color: #0acacb;
+  margin-top: 10px;
+  margin-bottom: 18px;
 }
 .video figure {
-  width: 50px;
-  height: 50px;
+  width: initial;
+  height: initial;
+}
+.video figure img {
+  width: 80px;
 }
 .example {
   position: relative;
@@ -336,8 +377,8 @@ nav .nav-item {
 }
 .example .line:before {
   content: "";
-  width: 80%;
-  left: 10%;
+  width: 60%;
+  left: 20%;
   margin-top: 10px;
   border-top: 1px solid #dde5ed;
   position: absolute;
@@ -352,14 +393,41 @@ nav .nav-item {
   background: #fff;
 }
 .example .desc span {
-  margin-right: 0.25em;
-  color: #25caca;
+  font-size: 20px;
+  color: #0acacb;
+}
+.example .desc:first-child span:after {
+  content: "个行业";
+  position: absolute;
+  transform: translate(-25px, 24px);
+  font-size: 14px;
+  color: #4e6175;
+}
+.example .desc:nth-child(2) span:after {
+  content: "个应用场景";
+  position: absolute;
+  transform: translate(-50px, 24px);
+  font-size: 14px;
+  color: #4e6175;
+}
+.example .desc:nth-child(3) span:after {
+  content: "次互动受众";
+  position: absolute;
+  transform: translate(-86px, 24px);
+  font-size: 14px;
+  color: #4e6175;
 }
 .example figure {
-  width: 100px;
-  height: 100px;
   margin: 0 10px;
-  background: #efefef;
+  flex-direction: row;
+  align-items: flex-end;
+}
+.example figure figcaption {
+  margin-left: 5px;
+}
+.example figure img {
+  width: inherit;
+  height: inherit;
 }
 .try-now .block {
   width: 80%;
@@ -455,10 +523,8 @@ nav .nav-item {
   margin-top: 25px;
 }
 footer {
-  width: 100%;
   bottom: 0;
   padding: 0 40px;
-  position: fixed;
   background: #efefef;
   border-top: 1px solid #dde5ed;
 }
@@ -467,17 +533,19 @@ footer > div {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  padding: 0 35px;
 }
 footer .logo {
   margin: 15px 0;
   align-self: flex-start;
 }
 footer .logo img {
-  width: 100px;
+  width: 130px;
 }
 footer .contact {
   margin-top: 20px;
   align-self: flex-start;
+  margin-right: 40px;
 }
 footer .contact div {
   color: #4e6175;
@@ -486,6 +554,9 @@ footer .contact img {
   width: 1em;
   height: 1em;
   margin-right: 1em;
+}
+footer .contact span {
+  font-weight: bold;
 }
 footer .desc {
   color: #4e6175;
@@ -507,7 +578,7 @@ footer .copyright span {
 footer .block {
   display: flex;
   flex-direction: column;
-  margin: 0 20px;
+  margin-left: 90px;
 }
 footer .block .link {
   color: #4e6175;
