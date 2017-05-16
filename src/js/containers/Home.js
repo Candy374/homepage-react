@@ -10,16 +10,18 @@ import Button from '../components/Button';
 
 export default class Home extends Component {
     render() {
+        return <div>test</div>;
+
         return (
             <div>
                 <Header/>
                 <content>
                     <section className="landing home-img">
                         <img src="./assets/banner_bg.png"/>
-                        <div className="title">让营销变得11简单</div>
+                        <div className="title">让营销变得简单</div>
                         <div className="desc">企业一站式营销云</div>
                         <div className="row">
-                            <div className="btn btn-danger">申请试用22</div>
+                            <div className="btn btn-danger">申请试用</div>
                         </div>
                     </section>
                     <Description

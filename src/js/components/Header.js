@@ -17,7 +17,7 @@ export default class Header extends Component {
 
     render() {
         return (
-            <header>
+            <header ref={node => this.head = node}>
                 <div>
                     <div className="logo">
                         <img src="./assets/logo.png"/>

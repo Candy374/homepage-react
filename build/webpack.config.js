@@ -80,7 +80,6 @@ module.exports = {
 
 console.log(process.env.NODE_ENV)
 if (process.env.NODE_ENV === 'production') {
-    console.log('eeee')
     module.exports.entry = path.resolve(__dirname, '../src/js/index.js');
     module.exports.devtool = '#source-map';
     module.exports.plugins = (module.exports.plugins || []).concat([
