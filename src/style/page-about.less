@@ -1,0 +1,89 @@
+.advantage, .location {
+  .title {
+    font-size: 2em;
+    color: @text-color-dark1;
+    width: 84%;
+  }
+
+  .list {
+    width: 84%;
+    justify-content: flex-start;
+  }
+
+  .block {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 50%;
+    margin-right: 40px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+    .title {
+      font-size: 16px;
+      margin-bottom: 5px;
+      width: 100%;
+    }
+
+    .desc {
+      color: @text-color-dark5;
+    }
+
+    .cl-icons {
+      color: @theme-color-light;
+      font-size: 35px;
+      margin-right: 5px;
+    }
+
+    .icon-wangzhanchengxu- {
+      font-size: 40px;
+    }
+  }
+}
+
+.location {
+  .block {
+    min-height: 100px;
+    flex-direction: column;
+    margin-right: 0;
+
+    .title {
+      margin-bottom: 0;
+    }
+  }
+
+  .list {
+    flex-wrap: wrap;
+  }
+
+  .contact {
+    display: flex;
+    justify-content: space-between;
+    width: 84%;
+    border-top: 1px solid @background-color-light-2;
+    border-bottom: 1px solid @background-color-light-2;
+
+    .block {
+      flex-direction: row;
+      align-items: center;
+
+      .cl-icons {
+        color: @text-color-dark3;
+      }
+
+      .desc {
+        margin-left: 20px;
+
+        .title {
+          font-size: 14px;
+        }
+
+        .text {
+          color: @theme-color;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
