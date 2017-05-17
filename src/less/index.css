@@ -64,6 +64,14 @@ caption {
   font-family: "pingfang", monospace;
   font-size: 14px;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+content {
+  flex: 1;
+}
 section {
   display: flex;
   justify-content: center;
@@ -117,7 +125,6 @@ input::-webkit-input-placeholder {
   min-width: 60px;
   padding: 0 15px;
   color: #fff;
-  background: #0acacb;
   cursor: pointer;
 }
 .time-line {
@@ -429,6 +436,12 @@ nav .nav-item {
   width: inherit;
   height: inherit;
 }
+.try-now {
+  width: 100%;
+  max-width: inherit;
+  background: #0acacb;
+  margin-bottom: 0;
+}
 .try-now .block {
   width: 80%;
   display: flex;
@@ -436,28 +449,23 @@ nav .nav-item {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  border: 1px solid #4e6175;
   border-top: none;
-}
-.try-now .block:first-child {
-  border-top: 1px solid #4e6175;
 }
 .try-now .title {
   font-size: 2em;
-  color: #000;
+  color: #fff;
 }
 .try-now .desc {
   font-size: 0.8em;
-  color: #4e6175;
+  color: #fff;
   margin: 10px;
 }
 .try-now .desc:not(:last-child):after {
   content: ".";
   position: absolute;
-  padding-right: 12px;
   font-size: 20px;
   line-height: 5px;
-  margin-left: 15px;
+  margin-left: 8px;
 }
 .try-now .logo-group {
   justify-content: space-around;
@@ -525,7 +533,6 @@ nav .nav-item {
 footer {
   bottom: 0;
   padding: 0 40px;
-  background: #efefef;
   border-top: 1px solid #dde5ed;
 }
 footer > div {
