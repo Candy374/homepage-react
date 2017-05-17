@@ -136,23 +136,24 @@ input:-ms-input-placeholder {
   align-items: center;
 }
 .time-line .stamp .desc {
-  width: 100%;
+  width: 50%;
+  padding-top: 40px;
 }
-.time-line .time {
+.time-line .stamp .time {
   color: #0acacb;
   padding: 0 20px;
   position: relative;
 }
-.time-line .time:before {
+.time-line .stamp .time:before {
   content: "";
   position: absolute;
   border-left: 3px solid;
-  height: 40px;
+  height: 70px;
   width: 6px;
   margin-left: -15px;
   top: -10px;
 }
-.time-line .time:after {
+.time-line .stamp .time:after {
   content: "";
   position: absolute;
   background: #0acacb;
@@ -162,6 +163,17 @@ input:-ms-input-placeholder {
   top: 6px;
   width: 3px;
   height: 3px;
+}
+.time-line .stamp.left .time {
+  transform: translateX(-79px);
+}
+.time-line .stamp.left .time:before {
+  margin-left: 0px;
+  right: 0;
+}
+.time-line .stamp.left .time:after {
+  right: 4px;
+  left: inherit;
 }
 .arrow:after {
   content: ">";
