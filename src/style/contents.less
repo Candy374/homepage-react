@@ -81,6 +81,12 @@
     text-align: center;
   }
 
+  &.text-align-start {
+    .desc {
+      text-align: start;
+    }
+  }
+
   .time-line {
     width: 60%;
     margin: 10px 0;
@@ -372,9 +378,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 49%;
+    width: 50%;
     min-height: 150px;
-    padding-right: 1%;
+    padding: 1%;
 
     figure {
       height: 50px;
@@ -387,7 +393,7 @@
     .title {
       font-size: 1.5em;
       margin: 10px 0;
-      width: inherit;
+      width: 100%;
     }
 
     .desc {
@@ -399,11 +405,14 @@
 .location {
   .block {
     min-height: 100px;
+    flex-direction: column;
 
-    figure {
-      width: 1em;
-      height: 1em;
-      margin-top: 25px;
+    .title {
+      margin-bottom: 0;
+    }
+
+    img {
+      width: 20px;
     }
   }
 }

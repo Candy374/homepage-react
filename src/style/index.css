@@ -329,6 +329,9 @@ nav .btn {
   width: 60%;
   text-align: center;
 }
+.description.text-align-start .desc {
+  text-align: start;
+}
 .description .time-line {
   width: 60%;
   margin: 10px 0;
@@ -567,9 +570,9 @@ nav .btn {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 49%;
+  width: 50%;
   min-height: 150px;
-  padding-right: 1%;
+  padding: 1%;
 }
 .advantage .block figure,
 .location .block figure {
@@ -583,7 +586,7 @@ nav .btn {
 .location .block .title {
   font-size: 1.5em;
   margin: 10px 0;
-  width: inherit;
+  width: 100%;
 }
 .advantage .block .desc,
 .location .block .desc {
@@ -591,11 +594,13 @@ nav .btn {
 }
 .location .block {
   min-height: 100px;
+  flex-direction: column;
 }
-.location .block figure {
-  width: 1em;
-  height: 1em;
-  margin-top: 25px;
+.location .block .title {
+  margin-bottom: 0;
+}
+.location .block img {
+  width: 20px;
 }
 .section-group {
   margin-bottom: 50px;
