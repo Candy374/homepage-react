@@ -288,6 +288,41 @@
   }
 }
 
+.gallery {
+  flex-direction: row;
+  padding: 0 40px;
+
+  &.carousel-container {
+    display: flex;
+
+    .carousel {
+      width: 100%;
+    }
+  }
+
+  .block {
+    flex: 1;
+    padding: 0 20px;
+    position: relative;
+
+    .quote {
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  .btn-left, .btn-right {
+    background: #ccc;
+    border-radius: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .btn-left {
+
+  }
+}
+
 .advantage, .location {
   .title {
     font-size: 2em;

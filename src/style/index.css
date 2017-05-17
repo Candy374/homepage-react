@@ -1,3 +1,4 @@
+@import "carousel.css";
 html,
 body,
 div,
@@ -57,7 +58,7 @@ caption {
 }
 @font-face {
   font-family: 'pingfang';
-  src: url('pingfang.ttf') format('truetype');
+  src: url('fonts/pingfang.ttf') format('truetype');
 }
 * {
   color: #000;
@@ -482,6 +483,32 @@ nav .nav-item {
 }
 .try-now img {
   margin: 10px;
+}
+.gallery {
+  flex-direction: row;
+  padding: 0 40px;
+}
+.gallery.carousel-container {
+  display: flex;
+}
+.gallery.carousel-container .carousel {
+  width: 100%;
+}
+.gallery .block {
+  flex: 1;
+  padding: 0 20px;
+  position: relative;
+}
+.gallery .block .quote {
+  position: absolute;
+  left: 0;
+}
+.gallery .btn-left,
+.gallery .btn-right {
+  background: #ccc;
+  border-radius: 20px;
+  width: 20px;
+  height: 20px;
 }
 .advantage .title,
 .location .title {
