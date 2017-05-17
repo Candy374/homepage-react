@@ -88,7 +88,7 @@
     justify-content: flex-start;
     align-items: center;
     min-height: 200px;
-    margin: 0 1.5%;
+    margin: 10px 1.5%;
 
     &.align-start {
       align-items: flex-start;
@@ -388,4 +388,28 @@
       margin-top: 25px;
     }
   }
+}
+
+.section-group {
+  margin-bottom: 50px;
+  .description {
+    padding-top: 50px;
+  }
+
+  .category {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+
+  &:not(:last-child):after {
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid @text-color-dark4;
+    width: 100px;
+    left: 50%;
+    margin-left: -50px;
+    height: 50px;
+  }
+
+
 }
