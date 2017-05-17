@@ -6,6 +6,7 @@
   align-items: center;
   color: @text-color-default;
   background: url(../assets/banner_seamless_bg.png) @theme-color center;
+  background-size: 200px;
   width: 100%;
   max-width: inherit;
   margin-top: 0;
@@ -15,10 +16,6 @@
     position: absolute;
     bottom: -2px;
     max-width: 1440px;
-
-    @media screen and (max-width: 1440px) { /*当屏幕尺寸小于600px时，应用下面的CSS样式*/
-      max-width: 100%;
-    }
   }
 
   .title {
@@ -127,7 +124,7 @@
 .video {
   height: 300px;
   background: url(../assets/video__seamless_bg.png) #f7f9fb;
-  background-size: contain;
+  background-size: 200px;
   width: 100%;
   max-width: inherit;
 
@@ -160,6 +157,7 @@
   }
 
   .line {
+    margin-bottom: 20px;
     &:before {
       content: "";
       width: 60%;
@@ -310,16 +308,35 @@
     }
   }
 
-  .block {
-    flex: 1;
-    margin: 0 20%;
-    position: relative;
-    height: 100%;
+  .container {
     display: flex;
-    justify-content: center;
+    height: 100%;
+    align-items: center;
+  }
+
+  .block {
+    height: 200px;
+    margin: 0 20%;
+    padding: 40px;
+    position: relative;
+    flex: 1;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid;
+    box-shadow: 0px 0px 35px 2px rgba(0, 0, 0, 0.16);
+
+    .title {
+      font-size: 2em;
+      color: @text-color-dark1;
+      width: 60%;
+      font-weight: bold;
+    }
+
+    .desc {
+      color: @text-color-dark5;
+      width: 60%;
+      text-align: center;
+    }
   }
 
   .quote {
