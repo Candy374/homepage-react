@@ -1,4 +1,5 @@
 @import "carousel.css";
+@import "cl-icons.css";
 html,
 body,
 div,
@@ -223,6 +224,7 @@ input:-ms-input-placeholder {
 .btn-big {
   color: #0acacb;
   border-color: #0acacb;
+  font-size: 14px;
 }
 header {
   height: 40px;
@@ -258,7 +260,7 @@ nav .btn {
   letter-spacing: 0;
 }
 .landing {
-  height: 800px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -275,11 +277,21 @@ nav .btn {
   position: absolute;
   bottom: -2px;
   max-width: 1440px;
+  width: 100%;
 }
 .landing .title {
-  font-size: 4em;
-  line-height: 1.2;
+  font-size: 2.5em;
   color: #fff;
+  margin: 40px;
+  padding-top: 65px;
+}
+.landing.home {
+  height: 800px;
+}
+.landing.home .title {
+  font-size: 4em;
+  margin: 0;
+  padding: 0;
 }
 .landing .desc {
   color: #fff;
@@ -298,9 +310,13 @@ nav .btn {
   align-items: center;
   padding-right: 2em;
 }
-.landing .block .title {
-  font-size: 1.5em;
-  padding-left: 1em;
+.landing .block img {
+  width: 50px;
+}
+.landing .block .desc {
+  font-size: 1em;
+  padding-left: 8px;
+  margin: 0;
 }
 .description .title {
   font-size: 2em;
@@ -331,7 +347,7 @@ nav .btn {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  min-height: 200px;
+  min-height: 165px;
   margin: 10px 1.5%;
 }
 .category .block.align-start {
@@ -585,20 +601,52 @@ nav .btn {
   margin-bottom: 50px;
 }
 .section-group .description {
-  padding-top: 50px;
+  padding-top: 38px;
 }
 .section-group .category {
   margin-bottom: 0px;
   padding-bottom: 0px;
 }
-.section-group:not(:last-child):after {
+.section-group:not(:nth-child(5)):after {
   content: "";
   position: absolute;
-  border-bottom: 2px solid #aaa;
+  border-bottom: 2px solid #c9d6d6;
   width: 100px;
   left: 50%;
   margin-left: -50px;
   height: 50px;
+}
+.section-group:nth-child(5) {
+  margin-bottom: 65px;
+}
+.section-group .cl-icons {
+  font-size: 40px;
+  color: #273647;
+  line-height: 40px;
+  height: 40px;
+  display: block;
+}
+.section-group .icon-qunzu,
+.section-group .icon-shubiao,
+.section-group .icon-king,
+.section-group .icon-fenxi,
+.section-group .icon-bingtu {
+  font-size: 42px;
+}
+.section-group .icon-duanxin,
+.section-group .icon-app,
+.section-group .icon-mobanwendang,
+.section-group .icon-zujianicon0,
+.section-group .icon-yanjing,
+.section-group .icon-rili {
+  font-size: 46px;
+}
+.section-group .icon-xiaozhushouliucheng {
+  font-size: 50px;
+}
+.section-group .icon-rocket,
+.section-group .icon-loudou01 {
+  font-size: 38px;
 }
 footer {
   bottom: 0;
@@ -673,7 +721,7 @@ footer .block .link {
   cursor: pointer;
 }
 footer .block .link:hover {
-  color: #333;
+  color: #273647;
 }
 .margin-vertical-large {
   margin-top: 40px;

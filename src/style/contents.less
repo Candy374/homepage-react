@@ -1,5 +1,6 @@
 .landing {
-  height: 800px;
+  height: 350px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,12 +17,23 @@
     position: absolute;
     bottom: -2px;
     max-width: 1440px;
+    width: 100%;
   }
 
   .title {
-    font-size: 4em;
-    line-height: 1.2;
+    font-size: 2.5em;
     color: @text-color-default;
+    margin: 40px;
+    padding-top: 65px;
+  }
+
+  &.home {
+    height: 800px;
+    .title {
+      font-size: 4em;
+      margin: 0;
+      padding: 0;
+    }
   }
 
   .desc {
@@ -43,9 +55,14 @@
     align-items: center;
     padding-right: 2em;
 
-    .title {
-      font-size: 1.5em;
-      padding-left: 1em;
+    img {
+      width: 50px;
+    }
+
+    .desc {
+      font-size: 1em;
+      padding-left: 8px;
+      margin: 0;
     }
   }
 }
@@ -87,7 +104,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    min-height: 200px;
+
+    min-height: 165px;
     margin: 10px 1.5%;
 
     &.align-start {
@@ -393,7 +411,7 @@
 .section-group {
   margin-bottom: 50px;
   .description {
-    padding-top: 50px;
+    padding-top: 38px;
   }
 
   .category {
@@ -401,15 +419,43 @@
     padding-bottom: 0px;
   }
 
-  &:not(:last-child):after {
+  &:not(:nth-child(5)):after {
     content: "";
     position: absolute;
-    border-bottom: 2px solid @text-color-dark4;
+    border-bottom: 2px solid @splitter-color;
     width: 100px;
     left: 50%;
     margin-left: -50px;
     height: 50px;
   }
 
+  &:nth-child(5) {
+    margin-bottom: 65px;
+  }
 
+  .cl-icons {
+    font-size: 40px;
+    color: @text-color-dark2;
+    line-height: 40px;
+    height: 40px;
+    display: block;
+  }
+
+  .icon-qunzu, .icon-shubiao, .icon-king,
+  .icon-fenxi, .icon-bingtu {
+    font-size: 42px;
+  }
+
+  .icon-duanxin, .icon-app, .icon-mobanwendang, .icon-zujianicon0,
+  .icon-yanjing, .icon-rili {
+    font-size: 46px;
+  }
+
+  .icon-xiaozhushouliucheng {
+    font-size: 50px;
+  }
+
+  .icon-rocket, .icon-loudou01 {
+    font-size: 38px;
+  }
 }
