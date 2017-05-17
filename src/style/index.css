@@ -125,6 +125,31 @@ input:-ms-input-placeholder {
   color: #fff;
   cursor: pointer;
 }
+.more {
+  cursor: pointer;
+  color: #0acacb;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.arrow:after {
+  content: ">";
+  padding-left: 2px;
+}
+.arrow2:before {
+  content: ">>";
+  padding-right: 2px;
+}
+.avatar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+}
+.avatar .name,
+.avatar .job-title {
+  font-size: 12px;
+}
 .time-line {
   display: flex;
   width: 100%;
@@ -178,9 +203,50 @@ input:-ms-input-placeholder {
   border-radius: 12px;
   padding: 0 12px;
 }
-.arrow:after {
-  content: ">";
-  padding-left: 2px;
+.time-line-2 {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.time-line-2 .stamp {
+  display: flex;
+  margin: 10px 0;
+  align-items: flex-start;
+  width: 100%;
+}
+.time-line-2 .stamp .time {
+  background: #0acacb;
+  border-radius: 12px;
+  padding: 0 12px;
+  color: #fff;
+  margin-right: 20px;
+  margin-top: 4px;
+}
+.time-line-2 .stamp .text-block {
+  text-align: left;
+  flex: 1;
+  position: relative;
+  padding-left: 20px;
+}
+.time-line-2 .stamp .text-block:before {
+  content: "";
+  position: absolute;
+  border-left: 3px solid;
+  height: 120%;
+  width: 6px;
+  color: #eee;
+  left: 0px;
+}
+.time-line-2 .stamp .text-block:after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  border: 2px solid #0acacb;
+  border-radius: 6px;
+  top: 5px;
+  width: 6px;
+  height: 6px;
+  left: -3px;
 }
 .row {
   margin: 15px 0;
@@ -347,7 +413,8 @@ nav .btn {
 .description.text-align-start .desc {
   text-align: start;
 }
-.description .time-line {
+.description .time-line,
+.description .time-line-2 {
   width: 84%;
   margin: 10px 0;
 }
@@ -377,12 +444,6 @@ nav .btn {
 }
 .category .block .desc {
   color: #4e6175;
-}
-.category .block .more {
-  cursor: pointer;
-  color: #0acacb;
-  font-size: 12px;
-  margin-top: 10px;
 }
 .video {
   height: 300px;
@@ -696,6 +757,17 @@ nav .btn {
 .section-group .icon-rocket,
 .section-group .icon-loudou01 {
   font-size: 38px;
+}
+.update-info .time-line-2 {
+  width: 84%;
+}
+.update-info .title {
+  font-size: 18px;
+  font-weight: bold;
+}
+.update-info .sub-title {
+  font-size: 16px;
+  font-weight: bold;
 }
 footer {
   bottom: 0;
