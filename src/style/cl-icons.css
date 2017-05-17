@@ -19,6 +19,8 @@
 
 .icon-bingtu:before { content: "\e609"; }
 
+.icon-layers:before { content: "\e65a"; }
+
 .icon-dianhua:before { content: "\e60b"; }
 
 .icon-zujianicon01:before { content: "\e600"; }
@@ -40,6 +42,10 @@
 .icon-kehuguanli:before { content: "\e62c"; }
 
 .icon-huanmeihongdexin:before { content: "\e60c"; }
+
+.icon-tuceng:before { content: "\e61c"; }
+
+.icon-zan:before { content: "\e6a0"; }
 
 .icon-gexingzhuangban2:before { content: "\e657"; }
 
@@ -67,7 +73,11 @@
 
 .icon-daoru:before { content: "\e652"; }
 
+.icon-chuan:before { content: "\e666"; }
+
 .icon-plus-import:before { content: "\e736"; }
+
+.icon-chuan1:before { content: "\e608"; }
 
 .icon-edm:before { content: "\e603"; }
 
@@ -94,6 +104,8 @@
 .icon-fenxi:before { content: "\e62f"; }
 
 .icon-kehuguanli1:before { content: "\e7d8"; }
+
+.icon-shangsheng:before { content: "\e64d"; }
 
 .icon-zhanghufenxi:before { content: "\e67e"; }
 

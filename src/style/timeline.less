@@ -114,7 +114,16 @@
         height: 6px;
         left: -3px;
       }
+    }
 
+    &.disabled {
+      .time {
+        background-color: @btn-disabled-color;
+      }
+
+      .text-block:after {
+        border-color: @btn-disabled-color;
+      }
     }
   }
 }

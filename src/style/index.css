@@ -248,6 +248,12 @@ input:-ms-input-placeholder {
   height: 6px;
   left: -3px;
 }
+.time-line-2 .stamp.disabled .time {
+  background-color: #ccc;
+}
+.time-line-2 .stamp.disabled .text-block:after {
+  border-color: #ccc;
+}
 .row {
   margin: 15px 0;
   display: flex;
@@ -768,6 +774,10 @@ nav .btn {
 .update-info .sub-title {
   font-size: 16px;
   font-weight: bold;
+}
+.update-info .cl-icons,
+.update-info .num {
+  color: #aab4bd;
 }
 footer {
   bottom: 0;
