@@ -237,6 +237,7 @@
   max-width: inherit;
   background: @theme-color;
   margin-bottom: 0;
+  height: 290px;
 
   .block {
     width: 80%;
@@ -291,6 +292,7 @@
 .gallery {
   flex-direction: row;
   padding: 0 40px;
+  position: relative;
 
   &.carousel-container {
     display: flex;
@@ -298,28 +300,32 @@
     .carousel {
       width: 100%;
     }
+
+    .carousel__control {
+      border-color: @theme-color;
+    }
+
+    .carousel__slide {
+      background: none !important;
+    }
   }
 
   .block {
     flex: 1;
-    padding: 0 20px;
+    margin: 0 20%;
     position: relative;
-
-    .quote {
-      position: absolute;
-      left: 0;
-    }
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid;
   }
 
-  .btn-left, .btn-right {
-    background: #ccc;
-    border-radius: 20px;
-    width: 20px;
-    height: 20px;
-  }
-
-  .btn-left {
-
+  .quote {
+    position: absolute;
+    left: 20%;
+    top: -40px;
   }
 }
 

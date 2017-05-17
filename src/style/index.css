@@ -102,21 +102,24 @@ figure.mini {
 :focus {
   outline: #0acacb auto 1px;
 }
-input::-webkit-input-placeholder {
-  color: #4e6175;
-  font-size: 1em;
-  padding-left: 0.5em;
+input::-webkit-input-placeholder,
+input:-moz-placeholder,
+input:-ms-input-placeholder {
+  color: #cdcdcd;
 }
 .input-group {
   display: flex;
+  margin-bottom: -30px;
 }
 .input-group input {
   background: #f5f5f5;
   border: 1px solid #ddd;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  height: 30px;
-  width: 200px;
+  height: 34px;
+  width: 300px;
+  padding-left: 10px;
+  font-weight: bold;
 }
 .input-group button {
   border: none;
@@ -247,6 +250,11 @@ nav .nav-item {
   padding: 5px 0;
   margin-right: 60px;
   font-size: 16px;
+}
+nav .btn {
+  padding: 5px 25px;
+  font-size: 16px;
+  letter-spacing: 0;
 }
 .landing {
   height: 800px;
@@ -442,6 +450,7 @@ nav .nav-item {
   max-width: inherit;
   background: #0acacb;
   margin-bottom: 0;
+  height: 290px;
 }
 .try-now .block {
   width: 80%;
@@ -487,6 +496,7 @@ nav .nav-item {
 .gallery {
   flex-direction: row;
   padding: 0 40px;
+  position: relative;
 }
 .gallery.carousel-container {
   display: flex;
@@ -494,21 +504,27 @@ nav .nav-item {
 .gallery.carousel-container .carousel {
   width: 100%;
 }
+.gallery.carousel-container .carousel__control {
+  border-color: #0acacb;
+}
+.gallery.carousel-container .carousel__slide {
+  background: none !important;
+}
 .gallery .block {
   flex: 1;
-  padding: 0 20px;
+  margin: 0 20%;
   position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid;
 }
-.gallery .block .quote {
+.gallery .quote {
   position: absolute;
-  left: 0;
-}
-.gallery .btn-left,
-.gallery .btn-right {
-  background: #ccc;
-  border-radius: 20px;
-  width: 20px;
-  height: 20px;
+  left: 20%;
+  top: -40px;
 }
 .advantage .title,
 .location .title {
@@ -569,27 +585,34 @@ footer > div {
   flex-direction: column;
   padding: 0 35px;
 }
-footer .logo {
-  margin: 15px 0;
-  align-self: flex-start;
+footer .left {
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 footer .logo img {
   width: 130px;
 }
 footer .contact {
-  margin-top: 20px;
   align-self: flex-start;
   margin-right: 40px;
 }
 footer .contact div {
   color: #4e6175;
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
 }
 footer .contact img {
-  width: 1em;
-  height: 1em;
+  width: 1.2em;
   margin-right: 1em;
 }
 footer .contact span {
+  font-size: 12px;
+}
+footer .contact .phone {
+  margin-bottom: 10px;
   font-weight: bold;
 }
 footer .desc {
@@ -605,17 +628,22 @@ footer .copyright address {
   margin-right: 40px;
   color: #4e6175;
   font-style: normal;
+  font-size: 12px;
 }
 footer .copyright span {
   color: #4e6175;
+  font-size: 12px;
 }
 footer .block {
   display: flex;
   flex-direction: column;
-  margin-left: 90px;
+  margin-right: 90px;
 }
 footer .block .link {
   color: #4e6175;
+  font-size: 12px;
+  line-height: 2em;
+  cursor: pointer;
 }
 footer .block .link:hover {
   color: #333;

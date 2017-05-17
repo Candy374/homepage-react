@@ -61,21 +61,25 @@ figure {
   outline: @theme-color auto 1px;
 }
 
-input::-webkit-input-placeholder {
-  color: @text-color-dark5;
-  font-size: 1em;
-  padding-left: 0.5em;
+input::-webkit-input-placeholder,
+input:-moz-placeholder,
+input:-ms-input-placeholder {
+  color: @placeholder-color;
 }
 
 .input-group {
   display: flex;
+  margin-bottom: -30px;
+
   input {
     background: #f5f5f5;
     border: 1px solid #ddd;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    height: 30px;
-    width: 200px;
+    height: 34px;
+    width: 300px;
+    padding-left: 10px;
+    font-weight: bold;
   }
 
   button {

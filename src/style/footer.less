@@ -14,30 +14,40 @@ footer {
     padding: 0 35px;
   }
 
-  .logo {
-    margin: 15px 0;
-    align-self: flex-start;
+  .left {
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
 
+  .logo {
     img {
       width: 130px;
     }
   }
 
   .contact {
-    margin-top: 20px;
     align-self: flex-start;
     margin-right: 40px;
     div {
       color: @text-color-dark5;
+      display: flex;
+      align-items: center;
+      padding-top: 5px;
     }
 
     img {
-      width: 1em;
-      height: 1em;
+      width: 1.2em;
       margin-right: 1em;
     }
 
     span {
+      font-size: 12px;
+    }
+
+    .phone {
+      margin-bottom: 10px;
       font-weight: bold;
     }
   }
@@ -56,20 +66,25 @@ footer {
       margin-right: 40px;
       color: @text-color-dark5;
       font-style: normal;
+      font-size: 12px;
     }
 
     span {
       color: @text-color-dark5;
+      font-size: 12px;
     }
   }
 
   .block {
     display: flex;
     flex-direction: column;
-    margin-left: 90px;
+    margin-right: 90px;
 
     .link {
       color: @text-color-dark5;
+      font-size: 12px;
+      line-height: 2em;
+      cursor: pointer;
 
       &:hover {
         color: @text-color-dark2;
