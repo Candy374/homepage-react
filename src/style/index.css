@@ -769,6 +769,22 @@ footer .block .link:hover {
 .job-info .block .job-item a {
   font-size: 18px;
 }
+.how-to-join .block {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 84%;
+  margin-bottom: 40px;
+}
+.how-to-join .block .cl-icons {
+  font-size: 35px;
+  margin-right: 5px;
+}
+.how-to-join .block .title {
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
 .update-info .time-line-2 {
   width: 84%;
 }
