@@ -3,8 +3,9 @@
  */
 
 import React, { Component } from 'react';
+import SubmitEmail from './SubmitEmail';
 
-export default class Footer extends Component {
+export default class TryNow extends Component {
     render() {
         return (
             <section className="try-now">
@@ -16,15 +17,7 @@ export default class Footer extends Component {
                         <div className="desc">任意时间可退</div>
                     </div>
 
-                    <div className="input-group">
-                        <input placeholder="填写邮箱"/>
-                        <button className="btn-danger">免费试用</button>
-                    </div>
-                </div>
-                <div className="block">
-                    <div className="logo-group">
-
-                    </div>
+                    <SubmitEmail btnText='免费试用'/>
                 </div>
             </section>
         );
