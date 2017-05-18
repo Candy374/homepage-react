@@ -56,11 +56,11 @@ export default class Footer extends Component {
                             </div>
                             {
                                 this.blocks.map((block, index) => (
-                                    <div className="block">
+                                    <div className="block" key={index}>
                                         {
-                                            block.map(link => {
+                                            block.map((link, key) => {
                                                 return (
-                                                    <a className="link">
+                                                    <a className="link" key={key}>
                                                         {link.label}
                                                     </a>
                                                 )

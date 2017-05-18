@@ -319,20 +319,26 @@ input:-ms-input-placeholder {
   font-size: 14px;
 }
 header {
-  height: 40px;
+  height: 60px;
   position: fixed;
-  left: 25px;
-  right: 25px;
-  top: 35px;
+  width: 100vw;
   z-index: 1;
+  display: flex;
+  top: 0;
+}
+header.primary {
+  background: #0acacb;
+}
+header.scrolled {
+  background: #fff;
 }
 header > div {
-  background: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1350px;
   margin: 0 auto;
+  width: 84%;
 }
 .logo img {
   width: 150px;
@@ -1050,32 +1056,31 @@ footer .block .link:hover {
   font-size: 12px;
   color: #747474;
 }
-.resource-detail1 {
+.resource-detail {
   width: 84%;
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: row;
   margin-top: 65px;
 }
-.resource-detail1 .img {
+.resource-detail .img {
   margin-right: 50px;
 }
-.resource-detail1 .detail {
-  width: 50%;
+.resource-detail .detail {
   flex: 1;
 }
-.resource-detail1 .detail .title {
+.resource-detail .detail .title {
   font-size: 40px;
   font-weight: bold;
 }
-.resource-detail1 .detail .tags {
+.resource-detail .detail .tags {
   display: flex;
 }
-.resource-detail1 .detail .tags .tag {
+.resource-detail .detail .tags .tag {
   text-decoration: underline;
   margin-right: 20px;
 }
-.resource-detail1 .detail .content {
+.resource-detail .detail .content {
   margin: 40px 0;
 }
 .download-resource {

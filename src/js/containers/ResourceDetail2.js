@@ -11,22 +11,17 @@ import TryNow from '../components/TryNow';
 const tags = ['Ebooks', '深锐观察'];
 const file = '中国营销30年发展史-深度观察II.pdf';
 const size = '28.3M';
-export default class ResourceDetail1 extends Component {
+export default class ResourceDetail2 extends Component {
     render() {
-
         return (
             <div>
                 <Header type="primary"/>
                 <content>
-
                     <section className="resource-detail">
-                        <div className="img">
-                            <img src="assets/resource_cover.png"/>
-                        </div>
 
                         <div className="detail">
-                            <div className="title">中国营销30年发展史-深度观察II</div>
-                            <div className="tags">{
+                            <div className="title row align-center">中国营销30年发展史-深度观察II</div>
+                            <div className="tags justify-center">{
                                 tags.map((tag, index)=> <div className="tag" key={index}>{tag}</div>)
                             }</div>
                             <div className="content">

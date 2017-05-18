@@ -16,13 +16,21 @@ export default class Header extends Component {
         }];
     }
 
+    componentDidMount() {
+        document.body.addEventListener('scroll', function (e) {
+            console.log(e);
+            this.head.classList.add('scrolled')
+        })
+    }
+
     onClick = () => {
         alert('ddd')
     };
 
     render() {
+        const { type } = this.props;
         return (
-            <header ref={node => this.head = node}>
+            <header ref={node => this.head = node} className={type}>
                 <div>
                     <div className='logo'>
                         <img src="/assets/logo.png"/>
