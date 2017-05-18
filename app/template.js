@@ -7,7 +7,6 @@ export default ({body, title}) => (`
     <head>
         <meta charset="UTF-8">
         <title>${title}</title>
-        <link rel="stylesheet" href="./index.css">
     </head>
     <body>
       <div id="root">${body}</div>

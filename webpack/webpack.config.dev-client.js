@@ -2,9 +2,10 @@
  * Created by huangling on 16/5/2017.
  */
 
-const { publicPath, assetsPath, commonLoaders } = require('./common.config.js');
+const {publicPath, assetsPath, commonLoaders} = require('./common.config.js');
 const webpack = require('webpack');
 const path = require('path');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     devtool: 'eval',
@@ -25,6 +26,11 @@ module.exports = {
                     'css-loader?module&localIdentName=[name]__[local]___[hash:base64:5]',
                 ],
             },
+            {
+                test: /\.(png|jpg)$/,
+                loader: 'url-loader'
+            },
+
         ]),
-    },
+    }
 };
