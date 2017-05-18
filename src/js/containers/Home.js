@@ -98,6 +98,19 @@ export default class Home extends Component {
                         </div>
                     </section>
 
+                    <section className="logos">
+                        <img src="/assets/logos/logo01.png"/>
+                        <img src="/assets/logos/logo02.png"/>
+                        <img src="/assets/logos/logo03.png"/>
+                        <img src="/assets/logos/logo04.png"/>
+                        <img src="/assets/logos/logo05.png"/>
+                        <img src="/assets/logos/logo06.png"/>
+                        <img src="/assets/logos/logo07.png"/>
+                        <img src="/assets/logos/logo08.png"/>
+                        <img src="/assets/logos/logo09.png"/>
+                        <img src="/assets/logos/logo10.png"/>
+                    </section>
+
                     <TryNow />
                 </content>
                 <Footer/>

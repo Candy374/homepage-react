@@ -126,6 +126,11 @@
     .desc {
       color: @text-color-dark5;
     }
+
+    img {
+      max-width: 100%;
+      width: 200px;
+    }
   }
 
   &.text-align-center {
@@ -235,12 +240,25 @@
     img {
       width: inherit;
       height: inherit;
+      max-width: 30px;
     }
 
     //&:first-child img, &:nth-child(2) img{
     //  width: 30px;
     //  height: 30px;
     //}
+  }
+}
+
+.logos {
+  width: 84%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  img {
+    max-width: 150px;
+    margin: 10px;
   }
 }
 
