@@ -17,7 +17,7 @@ export default class About extends Component {
                 <Header/>
                 <content>
                     <section className="landing">
-                        <img className="background" src="src/assets/sub_banner_bg.png" />
+                        <img className="background" src="assets/sub_banner_bg.png" />
                             <div className="title">科学和艺术， 在这里汇集</div>
                             <div className="desc"/>
                     </section>
