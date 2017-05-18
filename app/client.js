@@ -3,6 +3,6 @@
  */
 import React from 'react';
 import { render } from 'react-dom';
-import App from '../src/js/containers/Home';
+import App from '../src/js/components/Header';
 
 render(<App />, document.getElementById('root'));

@@ -3,6 +3,7 @@
  */
 import React, {Component} from 'react';
 import Button from '../components/Button';
+import styles from '../../style/head.css';
 
 export default class Header extends Component {
     componentWillMount() {
@@ -19,12 +20,12 @@ export default class Header extends Component {
         return (
             <header ref={node => this.head = node}>
                 <div>
-                    <div className="logo">
+                    <div className={styles.logo}>
                         <img src="./assets/logo.png"/>
                     </div>
                     <nav id="nav">
                         {
-                            this.links.map((link, index) => <a className='nav-item' key={index}>{link.label}</a>)
+                            this.links.map((link, index) => <a className={styles['nav-item']} key={index}>{link.label}</a>)
                         }
                         <Button text="账号登录" onClick={() => {}}/>
                     </nav>
