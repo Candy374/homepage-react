@@ -5,7 +5,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     // context: path.resolve(__dirname, '../src/js'),
-    // entry: ['./index.js'],
+    // entry: ['./client.js'],
     entry: [
         'react-hot-loader/patch',
         // activate HMR for React
@@ -19,7 +19,7 @@ module.exports = {
         // only- means to only hot reload for successful updates
 
 
-        path.resolve(__dirname, '../app/index.js')
+        path.resolve(__dirname, '../app/client.js')
     ],
 
     // entry: {
@@ -87,7 +87,7 @@ module.exports = {
 
 console.log(process.env.NODE_ENV)
 if (process.env.NODE_ENV === 'production') {
-    module.exports.entry = path.resolve(__dirname, '../src/js/index.js');
+    module.exports.entry = path.resolve(__dirname, '../src/js/client.js');
     module.exports.devtool = '#source-map';
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({

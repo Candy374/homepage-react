@@ -5,7 +5,7 @@
 const path = require('path');
 
 module.exports = {
-    publicPath: 'dist/assets/',
+    publicPath: '/assets/',
     assetsPath: path.join(__dirname, '..', 'dist', 'assets'),
     commonLoaders: [
         {

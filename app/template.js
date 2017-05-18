@@ -12,5 +12,6 @@ export default ({body, title}) => (`
     <body>
       <div id="root">${body}</div>
     </body>
+    <script src="/assets/bundle.js"></script>
   </html>
 `);
