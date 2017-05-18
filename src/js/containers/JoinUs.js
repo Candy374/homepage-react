@@ -8,6 +8,18 @@ import Description from '../components/Description';
 import Landing from '../components/Landing';
 import TryNow from '../components/TryNow';
 
+const Block = (props) => {
+    const { icon, title, desc} = props;
+    return (
+        <div className="block">
+        <i className={"cl-icons icon-" + icon}></i>
+        <div className="">
+            <div className="title">{title}</div>
+            <div className="desc">{desc}</div>
+        </div>
+    </div>
+    );
+};
 export default class JoinUs extends Component {
     render() {
         return (
@@ -18,10 +30,14 @@ export default class JoinUs extends Component {
 
                     <Description title="为什么加入我们"desc="我们提供了富有竞争力的员工福利和上升空间。 "/>
 
-                    <Description align='start' short title="蓝海市场" desc="超过4000万企业端市场，解决企业营销痛点，助力企业互联网+,万亿级蓝海市场。"/>
-                    <Description align='start' short title="专业产品研发" desc="一线科技公司成员团队，致力于为企业提供立体化的服务和技术。10年行业经验积累。"/>
-                    <Description align='start' short title="立体市场布局" desc="渠道经理驻地支持，强有力的实战指导、协同谈单及团队培训，良好的售后支持及产品、技术快速响应。"/>
-                    <Description align='start' short title="持续收益" desc="SaaS模式，丰富的套餐组合，持续性的经济收益。让利于合作伙伴，实现客户永续分成，保证充足利润空间。"/>
+
+                    <section className="how-to-join">
+                        <Block icon='chuan' title="蓝海市场" desc="超过4000万企业端市场，解决企业营销痛点，助力企业互联网+,万亿级蓝海市场。"/>
+                        <Block icon='daimayingyong' title="专业产品研发" desc="一线科技公司成员团队，致力于为企业提供立体化的服务和技术。10年行业经验积累。"/>
+                        <Block icon='layers' title="立体市场布局" desc="渠道经理驻地支持，强有力的实战指导、协同谈单及团队培训，良好的售后支持及产品、技术快速响应。"/>
+                        <Block icon='shangsheng' title="持续收益" desc="SaaS模式，丰富的套餐组合，持续性的经济收益。让利于合作伙伴，实现客户永续分成，保证充足利润空间。"/>
+                    </section>
+
 
                     <div className="row">
                         <div className="btn btn-big">成为我们的合作伙伴</div>

@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Description from '../components/Description';
+import Landing from '../components/Landing';
 import TryNow from '../components/TryNow';
 
 export default class Update extends Component {
@@ -13,11 +14,7 @@ export default class Update extends Component {
             <div>
                 <Header/>
                 <content>
-                    <section className="landing">
-                        <img className="background" src="/assets/sub_banner_bg.png" />
-                            <div className="title">产品更新</div>
-                            <div className="desc">我们一直在进步...</div>
-                    </section>
+                    <Landing title="产品更新" desc="我们一直在进步..."/>
 
                     <section className="update-info margin-vertical-large">
                         <div className="time-line-2">

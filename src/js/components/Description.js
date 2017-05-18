@@ -15,10 +15,9 @@ export default class Description extends Component {
         }
 
         const classes = "description " + className + ' text-align-' + align + ' margin-vertical-' + vertical;
-        const titleClass = short ? 'title' : 'title row';
         return (
             <section className={classes}>
-                <div className={titleClass}>{title}</div>
+                <div className='title row'>{title}</div>
                 {descComp}
                 {children}
             </section>

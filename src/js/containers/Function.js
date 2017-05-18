@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Description from '../components/Description';
+import Landing from '../components/Landing';
 import TryNow from '../components/TryNow';
 
 export default class About extends Component {
@@ -13,14 +14,8 @@ export default class About extends Component {
             <div>
                 <Header/>
                 <content>
-                    <section className="landing">
-                        <div className="title">对于做营销，我们很有用，
-                                甚至还有点好用
-                        </div>
-
+                    <Landing title="对于做营销，我们很有用， 甚至还有点好用">
                         <div className="row">
-
-
                             <div className="block">
                                 <figure>
                                     <img src="../assets/btn_icon_01.png"/>
@@ -49,7 +44,7 @@ export default class About extends Component {
                                 <div className="desc">数据洞察</div>
                             </div>
                         </div>
-                    </section>
+                    </Landing>
 
                     <div className="section-group">
                         <section className="description">

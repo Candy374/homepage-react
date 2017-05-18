@@ -779,8 +779,16 @@ footer .block .link:hover {
   margin-bottom: 40px;
 }
 .how-to-join .block .cl-icons {
-  font-size: 35px;
-  margin-right: 5px;
+  font-size: 40px;
+  margin-right: 10px;
+}
+.how-to-join .block .icon-shangsheng {
+  font-size: 38px;
+  margin-right: 12px;
+}
+.how-to-join .block .icon-layers {
+  font-size: 42px;
+  margin-right: 8px;
 }
 .how-to-join .block .title {
   font-size: 18px;
