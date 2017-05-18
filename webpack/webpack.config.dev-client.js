@@ -5,7 +5,6 @@
 const {publicPath, assetsPath, commonLoaders} = require('./common.config.js');
 const webpack = require('webpack');
 const path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     devtool: 'eval',

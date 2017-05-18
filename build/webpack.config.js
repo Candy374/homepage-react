@@ -19,7 +19,7 @@ module.exports = {
         // only- means to only hot reload for successful updates
 
 
-        path.resolve(__dirname, '../src/js/index.js')
+        path.resolve(__dirname, '../app/client.js')
     ],
 
     // entry: {
@@ -41,12 +41,19 @@ module.exports = {
                 loader: 'babel-loader',
                 exclude: /node_modules/
             },
+            // {
+            //     test: /\.css$/,
+            //     use: ExtractTextPlugin.extract({
+            //         fallback: "style-loader",
+            //         use: "css-loader"
+            //     })
+            // },
             {
                 test: /\.css$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: "css-loader"
-                })
+                loaders: [
+                    'style-loader',
+                    'css-loader?module&localIdentName=[name]__[local]___[hash:base64:5]',
+                ],
             },
             {
                 test: /\.less$/,

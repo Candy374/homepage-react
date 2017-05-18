@@ -2,11 +2,11 @@
  * Created by huangling on 14/05/2017.
  */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 export default class Footer extends Component {
     componentWillMount() {
-        this.links = [
+        this.blocks = [
             [{
                 label: '首页',
                 url: ''
@@ -46,35 +46,44 @@ export default class Footer extends Component {
     render() {
         return (
             <footer>
-                <div className="row justify-between">
-                    <div className="row">
-                        <div className="logo">
-                            <img src="./assets/logo_footer.png"/>
-                        </div>
-                        <div className="row align-start">
+                <div>
+                    <div className="row justify-between">
+                        <div className="left">
+                            <div className="block">
+                                <div className="logo">
+                                    <img src="/assets/logo_footer.png"/>
+                                </div>
+                            </div>
                             {
-                                this.links.map((link, index) => (
+                                this.blocks.map((block, index) => (
                                     <div className="block">
-                                        <a className="link">
-                                            {link.label}
-                                        </a>
+                                        {
+                                            block.map(link => {
+                                                return (
+                                                    <a className="link">
+                                                        {link.label}
+                                                    </a>
+                                                )
+                                            })
+                                        }
+
                                     </div>
                                 ))
                             }
                         </div>
+                        <div className="contact">
+                            <div className="phone"><img src="/assets/phone.png"/>400 850 9918</div>
+                            <div><img src="/assets/wechat.png"/><span>微信公众号</span></div>
+                            <div><img src="/assets/weibo.png"/><span>官方微博</span></div>
+                        </div>
                     </div>
-                    <div className="contact">
-                        <div><img src="./assets/phone.png"/>400 850 9918</div>
-                        <div><img src="./assets/wechat.png"/>微信公众号</div>
-                        <div><img src="./assets/weibo.png"/>官方微博</div>
-                    </div>
-                </div>
 
-                <div className="copyright">
-                    <address>Copyrights © 2016 上海欣兆阳信息科技有限公司</address>
-                    <span>备案信息:沪ICP备15038423号-1</span>
+                    <div className="copyright">
+                        <address>Copyrights © 2016 上海欣兆阳信息科技有限公司</address>
+                        <span>备案信息:沪ICP备15038423号-1</span>
+                    </div>
                 </div>
             </footer>
-        )
+        );
     }
 }

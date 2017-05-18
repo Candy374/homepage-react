@@ -7,7 +7,7 @@
   "scripts": {
     "build": "cd build && NODE_ENV=production webpack",
     "build:dev": "webpack --config ./webpack/webpack.config.dev-ssr.js",
-    "start:dev": "babel-node -- server/index2.js",
+    "start:dev": "build/dev-server.js",
     "start": "npm run build:dev && babel-node -- server/index.js",
     "dev": "webpack-dev-server --progress --colors --config build/webpack.dev.config.js"
   },
