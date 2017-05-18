@@ -4,21 +4,32 @@
 import React, {Component} from 'react';
 import Button from '../components/Button';
 // import styles from '../../style/head.css';
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom'
 
 export default class Header extends Component {
     componentWillMount() {
         this.links = [{
-            label: '功能'
+            label: '功能',
+            to: 'function'
         }, {
-            label: '我们'
+            label: '我们',
+            to: 'join'
         }, {
-            label: '学堂'
+            label: '学堂',
+            to: 'resource'
         }];
     }
 
     componentDidMount() {
         this.img2.style.display = 'none';
         window.addEventListener('scroll', () => {
+            this.head = document.getElementsByTagName('header')[0];
+            this.img1 = document.getElementsByTagName('img')[0];
+            this.img2= document.getElementsByTagName('img')[1];
             if (document.body.scrollTop > 0) {
                 this.head.classList.add('scrolled');
                 this.img1.style.display = 'none';
@@ -46,7 +57,7 @@ export default class Header extends Component {
                     </div>
                     <nav id="nav">
                         {
-                            this.links.map((link, index) => <a className='nav-item' key={index}>{link.label}</a>)
+                            this.links.map((link, index) =><Link className='nav-item' key={index} to={link.to}>{link.label}</Link>)
                         }
                         <a className="btn btn-default" target="_blank" href="https://app.convertlab.com/login.html">账号登录</a>
                     </nav>

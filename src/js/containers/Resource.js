@@ -37,11 +37,11 @@ export default class Resource extends Component {
 
                     <section className="resource">
                         <div className="resource-category">
-                            {nav.map(block =>(
-                                <div className="block">
+                            {nav.map((block, index) =>(
+                                <div className="block" key={index}>
                                     <div className="title"> {block.title}</div>
                                     <div className="links">
-                                        {block.items.map(item => <div className="item">{item}</div>)}
+                                        {block.items.map((item, key) => <div key={key} className="item">{item}</div>)}
                                     </div>
                                 </div>
                             ))}

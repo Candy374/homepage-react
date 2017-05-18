@@ -6,7 +6,11 @@ import { render } from 'react-dom';
 import Home from '../src/js/containers/Home';
 import About from '../src/js/containers/About';
 import Function from '../src/js/containers/Function';
-import { Router, Route } from 'react-router';
+import {
+    BrowserRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom'
 import createBrowserHistory from 'history/es/createBrowserHistory';
 
 const App = () => (
