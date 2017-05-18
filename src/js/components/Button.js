@@ -9,6 +9,7 @@ const Button = (props) => {
     if (margin) {
         classes
     }
+
     return (
         <button className={'btn btn-' + type} onClick={onClick}>{text}</button>
     )

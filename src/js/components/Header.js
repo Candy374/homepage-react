@@ -48,7 +48,7 @@ export default class Header extends Component {
                         {
                             this.links.map((link, index) => <a className='nav-item' key={index}>{link.label}</a>)
                         }
-                        <Button text="账号登录" onClick={this.onClick}/>
+                        <a className="btn btn-default" target="_blank" href="https://app.convertlab.com/login.html">账号登录</a>
                     </nav>
                 </div>
             </header>
