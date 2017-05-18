@@ -10,7 +10,7 @@ module.exports = {
     devtool: 'eval',
     name: 'client',
     context: path.join(__dirname, '..', 'app'),
-    entry: './client.js',
+    entry: './index.js',
     output: {
         path: assetsPath,
         publicPath,

@@ -19,8 +19,11 @@ app.use(require('webpack-dev-middleware')(compiler, {
 
 app.get('/index', render.default);
 
-app.get('/*', function(req, res) {
-    console.log(req.originalUrl)
+app.get('/style/*', function(req, res) {
+    res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
+});
+
+app.get('/assets/*', function(req, res) {
     res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
 });
 
