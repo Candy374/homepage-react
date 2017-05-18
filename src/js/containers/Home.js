@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Description from '../components/Description';
+import Landing from '../components/Landing';
 import TryNow from '../components/TryNow';
 import Category from '../components/Category';
 import Button from '../components/Button';
@@ -15,14 +16,13 @@ export default class Home extends Component {
             <div>
                 <Header/>
                 <content>
-                    <section className="landing home">
-                        <img className="background" src="/assets/banner_bg.png"/>
-                        <div className="title">让营销变得简单</div>
-                        <div className="desc">企业一站式营销云</div>
+                    <Landing className="home" backgroudImg="banner_bg"
+                             title="让营销变得简单" desc="企业一站式营销云"
+                    >
                         <div className="row">
                             <div className="btn btn-danger">申请试用</div>
                         </div>
-                    </section>
+                    </Landing>
 
                     <Description
                         desc="Convertlab Digtal Marketing Hub产品，帮助企业全面了解客户，建立基于数据洞察的营销策略，并持续与客户进行个性化的互动，提升客户体验，最终达成商业目标"
