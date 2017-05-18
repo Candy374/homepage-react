@@ -415,8 +415,10 @@ nav .btn {
   width: 84%;
   text-align: center;
 }
-.description.text-align-start .desc {
+.description.text-align-start .desc,
+.description.text-align-start .title {
   text-align: start;
+  justify-content: flex-start;
 }
 .description .time-line,
 .description .time-line-2 {

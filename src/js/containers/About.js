@@ -8,7 +8,20 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Description from '../components/Description';
+import Landing from '../components/Landing';
 import TryNow from '../components/TryNow';
+
+const desc1 = [
+    'Convertlab营销实验室，最简单的定义就是"营销技术+运营艺术"，通过云端SaaS服务，为您提供一站式营销解决方案。',
+    '我们的产品，可以打通各种渠道捕获数据，并从中理解您的客户。在此基础之上，用自动化和个性化的方式与您的客户互动，从而提升客户体验，为企业带来增长。',
+];
+
+const desc = [
+    '直连客户，建立属于企业自己的流量池。',
+    '在直连过程中，建设属于企业自身的用户数据资产。',
+    '通过精细化运营，对数据资产进行变现。',
+    '衡量一切，建立管理企业营销的科学体系。'
+];
 
 export default class About extends Component {
     render() {
@@ -16,26 +29,15 @@ export default class About extends Component {
             <div>
                 <Header/>
                 <content>
-                    <section className="landing">
-                        <img className="background" src="assets/sub_banner_bg.png" />
-                            <div className="title">科学和艺术， 在这里汇集</div>
-                            <div className="desc"/>
-                    </section>
+                    <Landing title="科学和艺术， 在这里汇集" />
 
-                    <section className="description text-align-start margin-vertical-large">
-                        <div className="title justify-start row">关于我们</div>
-                        <div className="desc">
-                            Convertlab营销实验室，最简单的定义就是"营销技术+运营艺术"，通过云端SaaS服务，为您提供一站式营销解决方案。
-                        </div>
-                        <div className="desc">
-                            我们的产品，可以打通各种渠道捕获数据，并从中理解您的客户。在此基础之上，用自动化和个性化的方式与您的客户互动，从而提升客户体验，为企业带来增长。
-                        </div>
+                    <Description align='start' vertical="large" title="关于我们" desc={desc1}>
                         <div className="desc row justify-start">
                             我们是专注于营销技术和企业服务的专业团队，曾长期面向全球从事SaaS产品的研发和产品运营。团队来自SAP、Microsoft、IBM、Oracle，以及BAT等公司。
                         </div>
-                    </section>
+                    </Description>
 
-                    <section className="description margin-vertical-large">
+                    <Description vertical="large" >
                         <div className="time-line">
                             <div className="stamp left">
                                 <div className="desc">
@@ -104,26 +106,13 @@ export default class About extends Component {
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </Description>
 
-                    <section className="description margin-vertical-large text-align-start">
-                        <div className="title justify-start row">我们相信</div>
-                        <div className="desc">
-                            直连客户，建立属于企业自己的流量池。
-                        </div>
-                        <div className="desc">
-                            在直连过程中，建设属于企业自身的用户数据资产。
-                        </div>
-                        <div className="desc">
-                            通过精细化运营，对数据资产进行变现。
-                        </div>
-                        <div className="desc">
-                            衡量一切，建立管理企业营销的科学体系。
-                        </div>
+                    <Description align='start' vertical="large" title="我们相信" desc={desc} >
                         <div className="desc row justify-start">
                             Convertlab致力于搭建数字营销枢纽，一站式营销中台。让企业可以从容应对数字营销，让营销变得简单。
                         </div>
-                    </section>
+                    </Description>
 
                     <section className="advantage margin-vertical-large">
                         <div className="title justify-start row">为什么选择我们</div>
