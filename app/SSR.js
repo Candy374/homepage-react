@@ -4,7 +4,7 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import template from './template';
-import App from '../src/js/components/Header';
+import App from '../src/js/containers/Home';
 
 export default function render(req, res) {
     const appString = renderToString(<App />);

@@ -17,6 +17,7 @@ export default class Header extends Component {
     }
 
     render() {
+        console.log(styles);
         return (
             <header ref={node => this.head = node}>
                 <div>

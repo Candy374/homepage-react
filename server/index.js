@@ -20,7 +20,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 app.get('/index', render.default);
 
 app.get('/*', function(req, res) {
-    console.log(req.pathname)
+    console.log(req.originalUrl)
     res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
 });
 
