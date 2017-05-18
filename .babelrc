@@ -6,7 +6,7 @@
     "react",
     // Transpile React components to JavaScript
 
-    "latest"
+    "stage-0"
   ],
   "plugins": [
     "react-hot-loader/babel"

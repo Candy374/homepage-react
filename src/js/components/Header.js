@@ -16,6 +16,10 @@ export default class Header extends Component {
         }];
     }
 
+    onClick = () => {
+        alert('ddd')
+    };
+
     render() {
         return (
             <header ref={node => this.head = node}>
@@ -27,7 +31,7 @@ export default class Header extends Component {
                         {
                             this.links.map((link, index) => <a className='nav-item' key={index}>{link.label}</a>)
                         }
-                        <Button text="账号登录" onClick={() => {}}/>
+                        <Button text="账号登录" onClick={this.onClick}/>
                     </nav>
                 </div>
             </header>

@@ -17,13 +17,20 @@ app.use(require('webpack-dev-middleware')(compiler, {
     publicPath: webpackConfig.output.publicPath,
 }));
 
-app.get('/index', render.default);
+app.get('/index', function () {
+    render.default()
+});
 
-app.get('/style/*', function(req, res) {
+app.get('/style/fonts/*', function (req, res) {
+    var url = req.originalUrl.split('?')[0];
+    res.sendFile(path.resolve(path.join(__dirname, '/../src/' + url)));
+});
+
+app.get('/style/*', function (req, res) {
     res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
 });
 
-app.get('/assets/*', function(req, res) {
+app.get('/assets/*', function (req, res) {
     res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
 });
 
