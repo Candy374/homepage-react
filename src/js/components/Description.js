@@ -6,7 +6,7 @@ import React, {Component} from 'react';
 
 export default class Description extends Component {
     render () {
-        const { title, desc, children, className, align = '', vertical='' } = this.props;
+        const { title, desc, children, className, short, align = '', vertical='' } = this.props;
         let descComp;
         if (desc instanceof Array) {
             descComp = desc.map(d => <div className="desc">{d}</div>)
@@ -15,9 +15,10 @@ export default class Description extends Component {
         }
 
         const classes = "description " + className + ' text-align-' + align + ' margin-vertical-' + vertical;
+        const titleClass = short ? 'title' : 'title row';
         return (
             <section className={classes}>
-                <div className="title row">{title}</div>
+                <div className={titleClass}>{title}</div>
                 {descComp}
                 {children}
             </section>

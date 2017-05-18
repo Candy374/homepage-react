@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Description from '../components/Description';
+import Landing from '../components/Landing';
 import TryNow from '../components/TryNow';
 
 export default class JoinUs extends Component {
@@ -13,45 +14,20 @@ export default class JoinUs extends Component {
             <div>
                 <Header/>
                 <content>
-                    <section className="landing">
-                        <img className="background" src="../assets/sub_banner_bg.png"/>
-                            <div className="title">和我们一起工作</div>
-                            <div className="desc">我们一直在进步...</div>
-                    </section>
+                    <Landing title="和我们一起工作" desc="我们一直在进步..."/>
 
-                    <section className="description">
-                        <div className="title row">为什么加入我们</div>
-                        <div className="desc">我们提供了富有竞争力的员工福利和上升空间。 </div>
-                    </section>
+                    <Description title="为什么加入我们"desc="我们提供了富有竞争力的员工福利和上升空间。 "/>
 
-                    <section className="description text-align-start ">
-                        <div className="title">蓝海市场</div>
-                        <div className="desc">超过4000万企业端市场，解决企业营销痛点，助力企业互联网+,万亿级蓝海市场。</div>
-                    </section>
-
-                    <section className="description text-align-start">
-                        <div className="title">专业产品研发</div>
-                        <div className="desc">一线科技公司成员团队，致力于为企业提供立体化的服务和技术。10年行业经验积累。</div>
-                    </section>
-
-                    <section className="description text-align-start">
-                        <div className="title">立体市场布局</div>
-                        <div className="desc">渠道经理驻地支持，强有力的实战指导、协同谈单及团队培训，良好的售后支持及产品、技术快速响应。</div>
-                    </section>
-
-                    <section className="description text-align-start">
-                        <div className="title">持续收益</div>
-                        <div className="desc">SaaS模式，丰富的套餐组合，持续性的经济收益。让利于合作伙伴，实现客户永续分成，保证充足利润空间。</div>
-                    </section>
+                    <Description align='start' short title="蓝海市场" desc="超过4000万企业端市场，解决企业营销痛点，助力企业互联网+,万亿级蓝海市场。"/>
+                    <Description align='start' short title="专业产品研发" desc="一线科技公司成员团队，致力于为企业提供立体化的服务和技术。10年行业经验积累。"/>
+                    <Description align='start' short title="立体市场布局" desc="渠道经理驻地支持，强有力的实战指导、协同谈单及团队培训，良好的售后支持及产品、技术快速响应。"/>
+                    <Description align='start' short title="持续收益" desc="SaaS模式，丰富的套餐组合，持续性的经济收益。让利于合作伙伴，实现客户永续分成，保证充足利润空间。"/>
 
                     <div className="row">
                         <div className="btn btn-big">成为我们的合作伙伴</div>
                     </div>
 
-                    <section className="description">
-                        <div className="title row">我们提供全方位的支持</div>
-                        <div className="desc">我们提供了富有竞争力的员工福利和上升空间。 </div>
-                    </section>
+                    <Description title="我们提供全方位的支持" desc="我们提供了富有竞争力的员工福利和上升空间"/>
 
                     <section className="category  justify-between direction-row">
                         <div className="block align-start">
@@ -80,9 +56,7 @@ export default class JoinUs extends Component {
                         </div>
                     </section>
 
-                    <section className="description">
-                        <div className="title row">合作伙伴说</div>
-                    </section>
+                    <Description title="合作伙伴说" />
 
                     <section className="category justify-between direction-row text-align-center">
                         <div className="block">
@@ -105,9 +79,7 @@ export default class JoinUs extends Component {
                         </div>
                     </section>
 
-                    <section className="description">
-                        <div className="title row">怎样加入合作伙伴计划</div>
-                    </section>
+                    <Description title="怎样加入合作伙伴计划" />
 
                     <section className="how-to-join">
                         <div className="block">
