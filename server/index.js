@@ -17,7 +17,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
     publicPath: webpackConfig.output.publicPath,
 }));
 
-app.get('/', render.default);
+app.get('/index', render.default);
 
 app.get('/style/fonts/*', function (req, res) {
     var url = req.originalUrl.split('?')[0];
