@@ -3,6 +3,19 @@
  */
 import React from 'react';
 import { render } from 'react-dom';
-import App from '../src/js/containers/Home';
+import Home from '../src/js/containers/Home';
+import About from '../src/js/containers/About';
+import Function from '../src/js/containers/Function';
+import { Router, Route } from 'react-router';
+import createBrowserHistory from 'history/es/createBrowserHistory';
+
+const App = () => (
+    <Router history={createBrowserHistory()}>
+        <Route path="/" component={Home} >
+            <Route path="about" component={About} />
+            <Route path="function" component={Function} />
+        </Route>
+    </Router>
+);
 
 render(<App />, document.getElementById('root'));

@@ -55,7 +55,7 @@ export default class About extends Component {
 
                         <section className="figure">
                             <figure>
-                                <img src="../assets/people_concept.png" srcset="../assets/people_concept.png 2x"/>
+                                <img src="../assets/people_concept.png" srcSet="../assets/people_concept.png 2x"/>
                             </figure>
                         </section>
 
@@ -105,7 +105,7 @@ export default class About extends Component {
 
                         <section className="figure">
                             <figure>
-                                <img src="../assets/engage_concept.png" srcset="../assets/engage_concept.png 2x"/>
+                                <img src="../assets/engage_concept.png" srcSet="../assets/engage_concept.png 2x"/>
                             </figure>
                         </section>
 
@@ -156,7 +156,7 @@ export default class About extends Component {
 
                         <section className="figure">
                             <figure>
-                                <img src="../assets/automation_concept.png" srcset="../assets/automation_concept.png 2x"/>
+                                <img src="../assets/automation_concept.png" srcSet="../assets/automation_concept.png 2x"/>
                             </figure>
                         </section>
 
@@ -249,7 +249,7 @@ export default class About extends Component {
                         </section>
 
                         <figure>
-                            <img src="../assets/insight_concept.png" srcset="../assets/insight_concept.png 2x"/>
+                            <img src="../assets/insight_concept.png" srcSet="../assets/insight_concept.png 2x"/>
                         </figure>
 
                         <section className="category justify-between direction-row">

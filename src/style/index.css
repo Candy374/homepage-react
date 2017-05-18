@@ -484,10 +484,6 @@ nav .btn {
 .category .block .desc {
   color: #4e6175;
 }
-.category .block img {
-  max-width: 100%;
-  width: 200px;
-}
 .category.text-align-center .block .desc {
   text-align: center;
 }
@@ -573,11 +569,6 @@ nav .btn {
 }
 .example figure figcaption {
   margin-left: 5px;
-}
-.example figure img {
-  width: inherit;
-  height: inherit;
-  max-width: 30px;
 }
 .logos {
   width: 84%;

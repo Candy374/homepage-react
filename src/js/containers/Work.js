@@ -109,32 +109,32 @@ export default class Work extends Component {
 
                     <section className="category justify-between direction-row text-align-center">
                         <div className="block">
-                            <img src='/assets/people.png' srcset="/assets/people.png 2x"/>
+                            <img src='/assets/people.png' srcSet="/assets/people.png 2x"/>
                             <div className="title">年度旅游</div>
                             <div className="desc">每年一次境内外团建旅游一次境内 外团建旅游都会死的呼死</div>
                         </div>
                         <div className="block">
-                            <img src='/assets/people.png' srcset="/assets/people.png 2x"/>
+                            <img src='/assets/people.png' srcSet="/assets/people.png 2x"/>
                             <div className="title">年度旅游</div>
                             <div className="desc">每年一次境内外团建旅游一次境内 外团建旅游都会死的呼死</div>
                         </div>
                         <div className="block">
-                            <img src='/assets/people.png' srcset="/assets/people.png 2x"/>
+                            <img src='/assets/people.png' srcSet="/assets/people.png 2x"/>
                             <div className="title">年度旅游</div>
                             <div className="desc">每年一次境内外团建旅游一次境内 外团建旅游都会死的呼死</div>
                         </div>
                         <div className="block">
-                            <img src='/assets/people.png' srcset="/assets/people.png 2x"/>
+                            <img src='/assets/people.png' srcSet="/assets/people.png 2x"/>
                             <div className="title">年度旅游</div>
                             <div className="desc">每年一次境内外团建旅游一次境内 外团建旅游都会死的呼死</div>
                         </div>
                         <div className="block">
-                            <img src='/assets/people.png' srcset="/assets/people.png 2x"/>
+                            <img src='/assets/people.png' srcSet="/assets/people.png 2x"/>
                             <div className="title">年度旅游</div>
                             <div className="desc">每年一次境内外团建旅游一次境内 外团建旅游都会死的呼死</div>
                         </div>
                         <div className="block">
-                            <img src='/assets/people.png' srcset="/assets/people.png 2x"/>
+                            <img src='/assets/people.png' srcSet="/assets/people.png 2x"/>
                             <div className="title">年度旅游</div>
                             <div className="desc">每年一次境内外团建旅游一次境内 外团建旅游都会死的呼死</div>
                         </div>

@@ -12,6 +12,7 @@
     "dev": "webpack-dev-server --progress --colors --config build/webpack.dev.config.js"
   },
   "dependencies": {
+    "history": "^4.6.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1"
