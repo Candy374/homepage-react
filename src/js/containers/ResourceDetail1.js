@@ -18,7 +18,6 @@ export default class ResourceDetail1 extends Component {
             <div>
                 <Header type="primary"/>
                 <content>
-
                     <section className="resource-detail">
                         <div className="img">
                             <img src="assets/resource_cover.png"/>

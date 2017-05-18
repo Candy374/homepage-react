@@ -259,6 +259,14 @@ input:-ms-input-placeholder {
 .time-line-2 .stamp.disabled .text-block:after {
   border-color: #ccc;
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .row {
   margin: 15px 0;
   display: flex;
@@ -325,12 +333,22 @@ header {
   z-index: 1;
   display: flex;
   top: 0;
+  transition: all 0.5s ease-in-out;
 }
 header.primary {
   background: #0acacb;
 }
 header.scrolled {
   background: #fff;
+  box-shadow: 1px 1px 8px 0px #e5edf6;
+  animation: fadeIn;
+}
+header.scrolled nav .nav-item {
+  color: #0acacb;
+}
+header.scrolled nav .btn {
+  border-color: #0acacb;
+  color: #0acacb;
 }
 header > div {
   display: flex;
@@ -1061,7 +1079,7 @@ footer .block .link:hover {
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: row;
-  margin-top: 65px;
+  margin-top: 110px;
 }
 .resource-detail .img {
   margin-right: 50px;

@@ -17,9 +17,17 @@ export default class Header extends Component {
     }
 
     componentDidMount() {
-        document.body.addEventListener('scroll', function (e) {
-            console.log(e);
-            this.head.classList.add('scrolled')
+        this.img2.style.display = 'none';
+        window.addEventListener('scroll', () => {
+            if (document.body.scrollTop > 0) {
+                this.head.classList.add('scrolled');
+                this.img1.style.display = 'none';
+                this.img2.style.display = 'block';
+            } else {
+                this.head.classList.remove('scrolled');
+                this.img2.style.display = 'none';
+                this.img1.style.display = 'block';
+            }
         })
     }
 
@@ -33,7 +41,8 @@ export default class Header extends Component {
             <header ref={node => this.head = node} className={type}>
                 <div>
                     <div className='logo'>
-                        <img src="/assets/logo.png"/>
+                        <img ref={node => this.img1 = node} src="/assets/logo.png"/>
+                        <img ref={node => this.img2 = node} src="/assets/logo_theme.png"/>
                     </div>
                     <nav id="nav">
                         {
