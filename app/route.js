@@ -22,20 +22,23 @@ import {
     StaticRouter,
 } from 'react-router-dom'
 
+const routes = [{
+    path: '/index', component: Home },{
+    path: '/feature', component: Function },{
+    path: '/about', component: About },{
+    path: '/resource', component: Resource },{
+    path: '/edit', component: ResourceEdit },{
+    path: '/work', component: Work },{
+    path: '/update', component: Update },{
+    path: '/form', component: SubmitForm },{
+    path: '/join', component: JoinUs
+}];
 
 const ClientApp = () => (
     <BrowserRouter>
         <Route exact path="/" component={Home}/>
-        <Route path="/index" component={Home}/>
-        <Route path="/feature" component={Function}/>
-        <Route path="/about" component={About}/>
-        <Route path="/resource" component={Resource}/>
-        <Route path="/edit" component={ResourceEdit}/>
-        <Route path="/work" component={Work}/>
-        <Route path="/update" component={Update}/>
-        <Route path="/form" component={SubmitForm}/>
-        <Route path="/join" component={JoinUs}/>
-    </BrowserRouter>
+        {routes.map((route, index) => <Route key={index} {...route}/>)}
+        </BrowserRouter>
 );
 
 const RedirectWithStatus = ({from, to, status}) => (
@@ -52,15 +55,7 @@ const RedirectWithStatus = ({from, to, status}) => (
 const ServerApp = () => (
     <Switch>
         <Route exact path="/" component={Home}/>
-        <Route path="/index" component={Home}/>
-        <Route path="/feature" component={Function}/>
-        <Route path="/about" component={About}/>
-        <Route path="/resource" component={Resource}/>
-        <Route path="/edit" component={ResourceEdit}/>
-        <Route path="/work" component={Work}/>
-        <Route path="/update" component={Update}/>
-        <Route path="/form" component={SubmitForm}/>
-        <Route path="/join" component={JoinUs}/>
+        {routes.map((route, index) => <Route key={index} {...route}/>)}
         <RedirectWithStatus
             status={301}
             from="/"
@@ -74,17 +69,7 @@ const ServerApp = () => (
     </Switch>
 );
 
-const App = ({context, req}) => (
-    <StaticRouter
-        location={req.url}
-        context={context}
-    >
-        <ServerApp/>
-    </StaticRouter>
-);
-
 export {
     ClientApp,
-    ServerApp,
-    App
+    ServerApp
 };

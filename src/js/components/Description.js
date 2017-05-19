@@ -9,7 +9,7 @@ export default class Description extends Component {
         const { title, desc, children, className, short, align = '', vertical='' } = this.props;
         let descComp;
         if (desc instanceof Array) {
-            descComp = desc.map(d => <div className="desc">{d}</div>)
+            descComp = desc.map((d, i) => <div key={i} className="desc">{d}</div>)
         } else {
             descComp = <div className="desc">{desc}</div>;
         }

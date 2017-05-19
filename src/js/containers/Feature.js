@@ -178,7 +178,7 @@ const SectionGroup = ({ title, desc, blocks, id, tryNow }) => (
 
         <section className="category justify-between direction-row">
             {blocks.map(({ title, desc, icon }, index) => (
-                    <div className="block align-start">
+                    <div className="block align-start" key={index}>
                         <i className={'cl-icons icon-' + icon}></i>
                         <div className="title">{title}</div>
                         <div className="desc">{desc}</div>
@@ -221,7 +221,7 @@ export default class Feature extends Component {
                             ))}
                         </div>
                     </Landing>
-                    {featureDesc.map((feature, index) => <SectionGroup {...feature}/>)}
+                    {featureDesc.map((feature, index) => <SectionGroup key={index} {...feature}/>)}
                     <TryNow />
                 </content>
                 <Footer/>
