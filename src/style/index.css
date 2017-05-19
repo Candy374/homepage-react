@@ -404,7 +404,7 @@ nav .btn {
 }
 .landing .background {
   position: absolute;
-  bottom: -2px;
+  bottom: 0;
   max-width: 1440px;
   width: 100%;
 }
@@ -445,6 +445,9 @@ nav .btn {
   font-size: 1em;
   padding-left: 8px;
   margin: 0;
+}
+.landing .row {
+  position: relative;
 }
 .description .title {
   font-size: 2em;
