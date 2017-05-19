@@ -11,4 +11,7 @@ ReactDOM.render(<Home/>, document.getElementById('root'));
 //TODO video
 //TODO QR code  utma
 // wei xin pop QR code
-//
+// submit success
+// causole
+// update
+// resource detail
