@@ -7,6 +7,7 @@ import SubmitEmail from './SubmitEmail';
 
 export default class TryNow extends Component {
     render() {
+        const { children } = this.props;
         return (
             <section className="try-now">
                 <div className="block">
@@ -17,7 +18,7 @@ export default class TryNow extends Component {
                         <div className="desc">任意时间可退</div>
                     </div>
 
-                    <SubmitEmail btnText='免费试用'/>
+                    {children || <SubmitEmail btnText='免费试用'/>}
                 </div>
             </section>
         );

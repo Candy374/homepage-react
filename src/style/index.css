@@ -293,6 +293,7 @@ input:-ms-input-placeholder {
   color: #fff;
   font-size: 18px;
   letter-spacing: 3px;
+  cursor: pointer;
 }
 .btn-normal {
   background: transparent;
@@ -328,6 +329,9 @@ input:-ms-input-placeholder {
   color: #0acacb;
   border-color: #0acacb;
   font-size: 14px;
+}
+.btn-big:hover {
+  background-color: #e5ffff;
 }
 header {
   height: 60px;
@@ -634,6 +638,9 @@ nav .btn {
 .try-now img {
   margin: 10px;
 }
+.try-now .btn {
+  letter-spacing: 0;
+}
 .gallery {
   flex-direction: row;
   padding: 0 40px;
@@ -916,6 +923,12 @@ footer .block .link:hover {
 }
 .section-group {
   margin-bottom: 50px;
+  position: relative;
+}
+.section-group .hash {
+  visibility: hidden;
+  position: absolute;
+  top: -40px;
 }
 .section-group .description {
   padding-top: 38px;

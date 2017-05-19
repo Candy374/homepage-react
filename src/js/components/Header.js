@@ -4,9 +4,7 @@
 import React, {Component} from 'react';
 import Button from '../components/Button';
 // import styles from '../../style/head.css';
-import {
-    NavLink
-} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 export default class Header extends Component {
     componentWillMount() {
@@ -18,7 +16,7 @@ export default class Header extends Component {
             to: '/feature'
         }, {
             label: '我们',
-            to: '/join'
+            to: '/about'
         }, {
             label: '学堂',
             to: '/resource'

@@ -166,7 +166,7 @@ export default class About extends Component {
                                 <i className="cl-icons icon-youjian"></i>
                                 <div className="desc">
                                     <div className="title">给我们邮件</div>
-                                    <div className="text">info@Convertlab.com</div>
+                                    <div><a className="text" href="mailto:info@convertlab.com">info@convertlab.com</a></div>
                                 </div>
                             </div>
 

@@ -6,7 +6,7 @@
  */
 import React from 'react';
 import Home from '../src/js/containers/Home';
-import Function from '../src/js/containers/Function';
+import Function from '../src/js/containers/Feature';
 import About from '../src/js/containers/About';
 import JoinUs from '../src/js/containers/JoinUs';
 import Resource from '../src/js/containers/Resource';

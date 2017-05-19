@@ -3,9 +3,7 @@
  */
 
 import React, { Component } from 'react';
-import {
-    Link
-} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default class Footer extends Component {
     componentWillMount() {
@@ -15,23 +13,35 @@ export default class Footer extends Component {
                 to: '/index'
             }, {
                 label: '关于我们',
-                to: '/us'
+                to: '/about'
             }, {
                 label: '产品更新',
                 to: '/update'
             }],
             [{
                 label: '人&数据',
-                to: '/feature'
+                to: {
+                    pathname: '/feature',
+                    hash: '#people'
+                }
             }, {
                 label: '内容&交互',
-                to: '/feature'
+                to: {
+                    pathname: '/feature',
+                    hash: '#engage'
+                }
             }, {
                 label: '策略&自动化',
-                to: '/feature'
+                to: {
+                    pathname: '/feature',
+                    hash: '#automation'
+                }
             }, {
                 label: '数据洞察',
-                to: '/feature'
+                to: {
+                    pathname: '/feature',
+                    hash: '#insight'
+                }
             }],
             [{
                 label: '合作伙伴',
@@ -42,6 +52,9 @@ export default class Footer extends Component {
             }, {
                 label: '博客',
                 to: '/blog'
+            }, {
+                label: '加入我们',
+                to: '/join'
             }]
         ];
     }

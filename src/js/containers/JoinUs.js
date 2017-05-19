@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import Description from '../components/Description';
 import Landing from '../components/Landing';
 import TryNow from '../components/TryNow';
+import Button from '../components/Button';
 
 const Block = (props) => {
     const { icon, title, desc, num } = props;
@@ -68,7 +69,7 @@ export default class JoinUs extends Component {
                     </section>
 
                     <div className="row">
-                        <div className="btn btn-big">成为我们的合作伙伴</div>
+                        <a className="btn btn-big" href="mailto:info@convertlab.com">成为我们的合作伙伴</a>
                     </div>
 
                     <Description title="我们提供全方位的支持" desc="我们提供了富有竞争力的员工福利和上升空间"/>
@@ -187,6 +188,10 @@ export default class JoinUs extends Component {
 
                         </div>
                     </section>
+
+                    <TryNow>
+                        <a className="btn btn-danger  btn-normal" href="mailto:info@convertlab.com">提交申请</a>
+                    </TryNow>
                 </content>
                 <Footer/>
             </div>
