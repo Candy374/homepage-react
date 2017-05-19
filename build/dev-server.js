@@ -52,6 +52,10 @@ app.get('/style/*', function(req, res) {
     res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
 });
 
+app.get('*', function (req, res) {
+    res.sendFile(path.resolve(path.join(__dirname, '/../src/404.html')));
+});
+
 // 监听 8888端口，开启服务器
 app.listen(8080, function (err) {
     if (err) {

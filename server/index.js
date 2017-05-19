@@ -18,14 +18,14 @@ app.use(require('webpack-dev-middleware')(compiler, {
     publicPath: webpackConfig.output.publicPath,
 }));
 
-var validRoutes = ['/', '/function', '/join', '/resource'];
-// app.get('/*', function(req, res) {
-//     if (validRoutes.includes(req.url)) {
-//         render.default(req, res);
-//     } else {
-//         req.next();
-//     }
-// });
+var validRoutes = ['/', '/index', '/function', '/join', '/resource'];
+app.get('/*', function(req, res) {
+    if (validRoutes.includes(req.url)) {
+        render.default(req, res);
+    } else {
+        req.next();
+    }
+});
 
 app.get('/style/fonts/*', function(req, res) {
     var url = req.originalUrl.split('?')[0];
@@ -40,8 +40,8 @@ app.get('/assets/*', function(req, res) {
     res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
 });
 
-app.get('/*', function(req, res){
-    render.default(req,res)
+app.get('*', function (req, res) {
+    res.sendFile(path.resolve(path.join(__dirname, '/../src/404.html')));
 });
 
 
