@@ -110,18 +110,21 @@ input:-ms-input-placeholder {
 .bold {
   font-weight: bold;
 }
-.input-group {
-  display: flex;
-}
-.input-group input {
+input {
   background: #f5f5f5;
   border: 1px solid #ddd;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-radius: 5px;
   height: 30px;
   width: 300px;
   padding-left: 10px;
   font-weight: bold;
+}
+.input-group {
+  display: flex;
+}
+.input-group input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .input-group button {
   border: none;
@@ -157,6 +160,15 @@ input:-ms-input-placeholder {
 .avatar .name,
 .avatar .job-title {
   font-size: 12px;
+}
+.label {
+  padding: 10px;
+  display: inline-block;
+  font-size: 16px;
+}
+.label-input .label {
+  width: 100px;
+  text-align: right;
 }
 .time-line {
   display: flex;
@@ -1101,6 +1113,25 @@ footer .block .link:hover {
   flex: 1;
   padding: 0 40px;
   flex-wrap: wrap;
+}
+.resource .books .placeholder-text,
+.resource .books .placeholder-img {
+  display: none;
+}
+.resource .books.placeholder {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.resource .books.placeholder .placeholder-text,
+.resource .books.placeholder .placeholder-img {
+  display: block;
+}
+.resource .books.placeholder img {
+  width: 180px;
+  margin-bottom: 10px;
 }
 .resource .books .block-book {
   width: 33%;

@@ -1,16 +1,19 @@
+input {
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  height: 30px;
+  width: 300px;
+  padding-left: 10px;
+  font-weight: bold;
+}
 
 .input-group {
   display: flex;
 
   input {
-    background: #f5f5f5;
-    border: 1px solid #ddd;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    height: 30px;
-    width: 300px;
-    padding-left: 10px;
-    font-weight: bold;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   button {
@@ -21,7 +24,6 @@
     min-width: 60px;
     padding: 0 15px;
     color: @text-color-default;
-    //background: @btn-primary-color;
     cursor: pointer;
   }
 }
@@ -56,5 +58,18 @@
 
   .name, .job-title {
     font-size: 12px;
+  }
+}
+
+.label {
+  padding: 10px;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.label-input {
+  .label {
+    width: 100px;
+    text-align: right;
   }
 }

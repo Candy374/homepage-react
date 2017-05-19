@@ -3,10 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        * {
+            font-family: "pingfang", "PingFang SC", "Microsoft YaHei", Helvetica, Arial;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background: url(assets/404_bg.png) #282828;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .desc {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .desc img {
+            width: 297px;
+        }
+
+        .desc1 {
+            font-size: 30px;
+            color: #0acacb;
+            margin: 20px 0;
+        }
+
+        .desc2 {
+            font-size: 15px;
+            color: #fff;
+        }
+
+        a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            bottom: 20px;
+            font-size: 14px;
+        }
+
+        a img {
+            width: 40px;
+        }
+
+        .text {
+            color: #e0e0e0;
+        }
+    </style>
 </head>
 <body>
-<div>
-    <h1>Sorry, can’t find that.</h1>
+<div class="container">
+    <div class="desc">
+        <img src="assets/404.png" srcSet="assets/404.png 2x"/>
+        <div class="desc1">可能来到了没有人的火星</div>
+        <div class="desc2 text">你要找的页面好像不存在了 : (</div>
+    </div>
+    <a class="back-to-home" href="/index">
+        <img src="assets/rocket.png" srcSet="assets/rocket.png 2x"/>
+        <span class="text">返回首页</span>
+    </a>
 </div>
 </body>
 </html>

@@ -46,6 +46,25 @@
     flex: 1;
     padding: 0 40px;
     flex-wrap: wrap;
+    .placeholder-text, .placeholder-img {
+      display: none;
+    }
+
+    &.placeholder {
+      .placeholder-text, .placeholder-img {
+        display: block;
+      }
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 180px;
+        margin-bottom: 10px;
+      }
+    }
 
     .block-book {
       width: 33%;

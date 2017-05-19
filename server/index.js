@@ -25,7 +25,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
     publicPath: webpackConfig.output.publicPath,
 }));
 
-var validRoutes = ['/', '/index', '/about', '/feature', '/join', '/resource', '/edit'];
+var validRoutes = ['/', '/index', '/about', '/feature', '/join', '/resource', '/edit', '/form'];
 app.get('/*', function (req, res) {
     if (validRoutes.includes(req.url)) {
         render.default(req, res);
