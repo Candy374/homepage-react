@@ -9,6 +9,7 @@ import Home from '../src/js/containers/Home';
 import Function from '../src/js/containers/Function';
 import JoinUs from '../src/js/containers/JoinUs';
 import Resource from '../src/js/containers/Resource';
+import ResourceEdit from '../src/js/containers/ResourceEdit';
 import {
     BrowserRouter,
     Route,
@@ -25,6 +26,7 @@ const ClientApp = () => (
         <Route path="/function" component={Function}/>
         <Route path="/join" component={JoinUs}/>
         <Route path="/resource" component={Resource}/>
+        <Route path="/edit" component={ResourceEdit}/>
     </BrowserRouter>
 );
 
@@ -46,6 +48,7 @@ const ServerApp = () => (
         <Route path="/function" component={Function}/>
         <Route path="/join" component={JoinUs}/>
         <Route path="/resource" component={Resource}/>
+        <Route path="/edit" component={ResourceEdit}/>
         <RedirectWithStatus
             status={301}
             from="/"

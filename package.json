@@ -9,13 +9,17 @@
     "build:dev": "webpack --config ./webpack/webpack.config.dev-ssr.js",
     "start:dev": "build/dev-server.js",
     "start": "npm run build:dev && babel-node -- server/index.js",
-    "dev": "webpack-dev-server --progress --colors --config build/webpack.dev.config.js"
+    "dev": "webpack-dev-server --progress --colors --config build/webpack.dev.config.js",
+    "startDB": "./installer/mongodb/bin/mongod --dbpath=./db"
   },
   "dependencies": {
+    "body-parser": "^1.17.2",
     "history": "^4.6.1",
+    "mongodb": "^2.2.26",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-router": "^4.1.1"
+    "react-router": "^4.1.1",
+    "superagent": "^3.5.2"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
