@@ -14,13 +14,13 @@ export default class Header extends Component {
     componentWillMount() {
         this.links = [{
             label: '功能',
-            to: 'function'
+            to: '/function'
         }, {
             label: '我们',
-            to: 'join'
+            to: '/join'
         }, {
             label: '学堂',
-            to: 'resource'
+            to: '/resource'
         }];
     }
 
@@ -40,6 +40,12 @@ export default class Header extends Component {
                 this.img1.style.display = 'block';
             }
         })
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.location !== prevProps.location) {
+            window.scrollTo(0, 0)
+        }
     }
 
     onClick = () => {

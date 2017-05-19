@@ -17,6 +17,14 @@ import {
     StaticRouter,
 } from 'react-router-dom'
 
+const NotFound = () => (
+    <Status code={404}>
+        <div>
+            <h1>Sorry, can’t find that.</h1>
+        </div>
+    </Status>
+);
+
 const ClientApp = () => (
     <BrowserRouter>
         <div>
@@ -24,6 +32,7 @@ const ClientApp = () => (
             <Route path="/function" component={Function}/>
             <Route path="/join" component={JoinUs}/>
             <Route path="/resource" component={Resource}/>
+            <Route component={NotFound}/>
         </div>
     </BrowserRouter>
 );
@@ -37,14 +46,6 @@ const RedirectWithStatus = ({from, to, status}) => (
         }
         return <Redirect from={from} to={to}/>
     }}/>
-);
-
-const NotFound = () => (
-    <Status code={404}>
-        <div>
-            <h1>Sorry, can’t find that.</h1>
-        </div>
-    </Status>
 );
 
 const ServerApp = () => (

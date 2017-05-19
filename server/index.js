@@ -10,12 +10,7 @@ var path = require('path');
 var fs = require('fs');
 
 var render = require('../dist/assets/SSR');
-var renderToString = require('react-dom/server').renderToString;
 var app = express();
-
-var reactRouter = require('react-router');
-var match = reactRouter.match;
-var RouterContext = reactRouter.RouterContext;
 
 var compiler = webpack(webpackConfig);
 app.use(require('webpack-dev-middleware')(compiler, {
@@ -23,7 +18,14 @@ app.use(require('webpack-dev-middleware')(compiler, {
     publicPath: webpackConfig.output.publicPath,
 }));
 
-app.get('/', render.default);
+var validRoutes = ['/', '/function', '/join', '/resource'];
+// app.get('/*', function(req, res) {
+//     if (validRoutes.includes(req.url)) {
+//         render.default(req, res);
+//     } else {
+//         req.next();
+//     }
+// });
 
 app.get('/style/fonts/*', function(req, res) {
     var url = req.originalUrl.split('?')[0];
@@ -37,6 +39,9 @@ app.get('/style/*', function(req, res) {
 app.get('/assets/*', function(req, res) {
     res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
 });
+
+app.get('/*', render.default);
+
 
 var port = 3000;
 app.listen(port);

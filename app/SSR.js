@@ -5,9 +5,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import template from './template';
 import { ServerApp } from './route';
-import {
-    StaticRouter,
-} from 'react-router-dom'
+import { StaticRouter } from 'react-router'
 
 export default function render(req, res) {
     const context = {};
@@ -21,7 +19,7 @@ export default function render(req, res) {
     );
 
     if (context.url) {
-        req.redirect(context.status, context.url);
+        res.redirect(context.status, context.url);
     } else {
         res.send(template({
             body: appString,
