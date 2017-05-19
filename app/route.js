@@ -5,47 +5,79 @@
  * Created by huangling on 16/5/2017.
  */
 import React from 'react';
-import { render } from 'react-dom';
 import Home from '../src/js/containers/Home';
 import Function from '../src/js/containers/Function';
 import JoinUs from '../src/js/containers/JoinUs';
 import Resource from '../src/js/containers/Resource';
 import {
-    BrowserRouter as Router,
+    BrowserRouter,
     Route,
-    Link
+    Redirect,
+    Switch,
+    StaticRouter,
 } from 'react-router-dom'
 
-const BasicExample = () => (
-    <Router>
-        <div>
-            <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/about">About</Link></li>
-                <li><Link to="/header">Header</Link></li>
-                <li><Link to="/button">Button</Link></li>
-            </ul>
-
-            <hr/>
-
-            <Route exact path="/" component={Home}/>
-            <Route path="/about" component={About}/>
-            <Route path="/header" component={Header}/>
-            <Route path="/button" component={Button}/>
-        </div>
-    </Router>
-)
-
-
-const App = () => (
-    <Router>
+const ClientApp = () => (
+    <BrowserRouter>
         <div>
             <Route exact path="/" component={Home}/>
             <Route path="/function" component={Function}/>
             <Route path="/join" component={JoinUs}/>
             <Route path="/resource" component={Resource}/>
         </div>
-    </Router>
+    </BrowserRouter>
 );
 
-render(<App />, document.getElementById('root'));
+const RedirectWithStatus = ({from, to, status}) => (
+    <Route render={({staticContext}) => {
+        // there is no `staticContext` on the client, so
+        // we need to guard against that here
+        if (staticContext) {
+            staticContext.status = status;
+        }
+        return <Redirect from={from} to={to}/>
+    }}/>
+);
+
+const NotFound = () => (
+    <Status code={404}>
+        <div>
+            <h1>Sorry, can’t find that.</h1>
+        </div>
+    </Status>
+);
+
+const ServerApp = () => (
+    <Switch>
+        <Route exact path="/" component={Home}/>
+        <Route path="/function" component={Function}/>
+        <Route path="/join" component={JoinUs}/>
+        <Route path="/resource" component={Resource}/>
+        <RedirectWithStatus
+            status={301}
+            from="/"
+            to="/resource"
+        />
+        <RedirectWithStatus
+            status={302}
+            from="/"
+            to="/resource"
+        />
+        <Route component={NotFound}/>
+    </Switch>
+);
+
+const App = ({context, req}) => (
+    <StaticRouter
+        location={req.url}
+        context={context}
+    >
+        <ServerApp/>
+    </StaticRouter>
+);
+
+export {
+    ClientApp,
+    ServerApp,
+    App
+};

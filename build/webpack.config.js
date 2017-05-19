@@ -19,7 +19,7 @@ module.exports = {
         // only- means to only hot reload for successful updates
 
 
-        path.resolve(__dirname, '../app/route.js')
+        path.resolve(__dirname, '../app/client.js')
     ],
 
     // entry: {

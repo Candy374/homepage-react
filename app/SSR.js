@@ -4,12 +4,28 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
 import template from './template';
-import App from '../src/js/containers/ResourceDetail1';
+import { ServerApp } from './route';
+import {
+    StaticRouter,
+} from 'react-router-dom'
 
 export default function render(req, res) {
-    const appString = renderToString(<App />);
-    res.send(template({
-        body: appString,
-        title: 'Convertlab 营销实验室',
-    }));
+    const context = {};
+    const appString = renderToString(
+        <StaticRouter
+            location={req.url}
+            context={context}
+        >
+            <ServerApp/>
+        </StaticRouter>
+    );
+
+    if (context.url) {
+        req.redirect(context.status, context.url);
+    } else {
+        res.send(template({
+            body: appString,
+            title: 'Convertlab 营销实验室',
+        }));
+    }
 }
