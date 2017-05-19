@@ -12,6 +12,15 @@ ReactDOM.render(<Home/>, document.getElementById('root'));
 //TODO QR code  utma
 // wei xin pop QR code
 // submit success
-// causole
-// update
+// carousel
+// update page
 // resource detail
+
+// state management
+// node start node
+// database
+
+// optimize less
+// optimize html
+
+// media query
