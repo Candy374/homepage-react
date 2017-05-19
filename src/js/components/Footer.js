@@ -22,16 +22,16 @@ export default class Footer extends Component {
             }],
             [{
                 label: '人&数据',
-                to: '/function'
+                to: '/feature'
             }, {
                 label: '内容&交互',
-                to: '/function'
+                to: '/feature'
             }, {
                 label: '策略&自动化',
-                to: '/function'
+                to: '/feature'
             }, {
                 label: '数据洞察',
-                to: '/function'
+                to: '/feature'
             }],
             [{
                 label: '合作伙伴',

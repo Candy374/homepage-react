@@ -7,6 +7,7 @@
 import React from 'react';
 import Home from '../src/js/containers/Home';
 import Function from '../src/js/containers/Function';
+import About from '../src/js/containers/About';
 import JoinUs from '../src/js/containers/JoinUs';
 import Resource from '../src/js/containers/Resource';
 import ResourceEdit from '../src/js/containers/ResourceEdit';
@@ -26,13 +27,14 @@ const ClientApp = () => (
     <BrowserRouter>
         <Route exact path="/" component={Home}/>
         <Route path="/index" component={Home}/>
-        <Route path="/function" component={Function}/>
-        <Route path="/join" component={JoinUs}/>
+        <Route path="/feature" component={Function}/>
+        <Route path="/about" component={About}/>
         <Route path="/resource" component={Resource}/>
         <Route path="/edit" component={ResourceEdit}/>
         <Route path="/work" component={Work}/>
         <Route path="/update" component={Update}/>
         <Route path="/form" component={SubmitForm}/>
+        <Route path="/join" component={JoinUs}/>
     </BrowserRouter>
 );
 
@@ -51,13 +53,14 @@ const ServerApp = () => (
     <Switch>
         <Route exact path="/" component={Home}/>
         <Route path="/index" component={Home}/>
-        <Route path="/function" component={Function}/>
-        <Route path="/join" component={JoinUs}/>
+        <Route path="/feature" component={Function}/>
+        <Route path="/about" component={About}/>
         <Route path="/resource" component={Resource}/>
         <Route path="/edit" component={ResourceEdit}/>
         <Route path="/work" component={Work}/>
         <Route path="/update" component={Update}/>
         <Route path="/form" component={SubmitForm}/>
+        <Route path="/join" component={JoinUs}/>
         <RedirectWithStatus
             status={301}
             from="/"

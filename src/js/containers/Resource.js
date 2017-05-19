@@ -52,6 +52,8 @@ export default class Resource extends Component {
     render() {
         const { docs, by, key } = this.state;
 
+        const filterdDoc = docs.filter(doc => key === '全部' || key === doc[by]);
+
         return (
             <div>
                 <Header/>
@@ -82,14 +84,11 @@ export default class Resource extends Component {
                         </div>
 
                         <div className="books">
-                            {docs.map(doc => {
-                                if (key === '全部' || key === doc[by]) {
-                                    return (
-                                        <Book src={`assets/${doc.img}`} title={doc.title}
-                                              tag={doc.tag} key={doc._id}/>
-                                    );
-                                }
-                            })}
+                            {filterdDoc.length > 0 ?
+                                filterdDoc.map(doc => (
+                                    <Book src={`assets/${doc.img}`} title={doc.title} tag={doc.tag} key={doc._id}/>))
+                                : <Book title="没有数据"/>
+                            }
                         </div>
                     </section>
 

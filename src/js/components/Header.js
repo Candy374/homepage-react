@@ -15,7 +15,7 @@ export default class Header extends Component {
             to: '/index'
         }, {
             label: '功能',
-            to: '/function'
+            to: '/feature'
         }, {
             label: '我们',
             to: '/join'

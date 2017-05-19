@@ -1055,6 +1055,7 @@ footer .block .link:hover {
   width: 100px;
 }
 .resource .resource-category .block {
+  margin-top: 20px;
   margin-bottom: 40px;
 }
 .resource .resource-category .block .title {
@@ -1088,8 +1089,15 @@ footer .block .link:hover {
 .resource .books .block-book {
   width: 33%;
   display: inline-block;
-  padding: 0 20px 40px;
+  padding: 20px;
   box-sizing: border-box;
+  cursor: pointer;
+}
+.resource .books .block-book:hover {
+  box-shadow: 1px 1px 10px 5px rgba(204, 204, 204, 0.28);
+}
+.resource .books .block-book:hover .title {
+  color: #0acacb;
 }
 .resource .books .block-book .img {
   width: 100%;
