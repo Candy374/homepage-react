@@ -369,12 +369,14 @@ nav {
 }
 nav .nav-item {
   color: #fff;
-  padding: 5px 0;
+  padding: 5px 0 0;
   margin-right: 60px;
   font-size: 16px;
 }
-nav .nav-item.active {
-  text-decoration: underline;
+nav .nav-item.active,
+nav .nav-item:hover {
+  border-bottom: 1px solid;
+  margin-bottom: 5px;
   font-weight: bold;
 }
 nav .btn {
@@ -1069,8 +1071,14 @@ footer .block .link:hover {
   margin-bottom: 10px;
   cursor: pointer;
 }
-.resource .resource-category .block .links .item:hover {
-  color: #000;
+.resource .resource-category .block .links .item span {
+  border-bottom: 1px solid transparent;
+}
+.resource .resource-category .block .links .item:hover span {
+  border-bottom-color: #747474;
+}
+.resource .resource-category .block .links .item.active span {
+  color: #0acacb;
 }
 .resource .books {
   flex: 1;

@@ -5,8 +5,6 @@ import React, {Component} from 'react';
 import Button from '../components/Button';
 // import styles from '../../style/head.css';
 import {
-    BrowserRouter as Router,
-    Route,
     NavLink
 } from 'react-router-dom'
 

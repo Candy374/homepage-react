@@ -17,6 +17,7 @@
         font-weight: bold;
         margin-bottom: 15px;
       }
+
       .links {
         margin-left: 15px;
         .item {
@@ -24,9 +25,16 @@
           color: @text-color-dark3;
           margin-bottom: 10px;
           cursor: pointer;
+          span {
+            border-bottom: 1px solid transparent;
+          }
 
-          &:hover {
-            color: @text-color-dark1;
+          &:hover span {
+            border-bottom-color: @text-color-dark3;
+          }
+
+          &.active span {
+            color: @theme-color;
           }
         }
       }

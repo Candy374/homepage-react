@@ -64,9 +64,17 @@ export default class Resource extends Component {
                                 <div className="block" key={index}>
                                     <div className="title"> {block.title}</div>
                                     <div className="links">
-                                        {block.items.map((item, key) => {
-                                            return <div key={key} className="item"
-                                                        onClick={() => this.filter(block.key, item)}>{item}</div>;
+                                        {block.items.map((item, index) => {
+                                            let className = 'item';
+                                            if (item == key) {
+                                                className += ' active '
+                                            }
+                                            return (
+                                                <div key={index} className={className}
+                                                     onClick={() => this.filter(block.key, item)}>
+                                                    <span >{item}</span>
+                                                </div>
+                                            );
                                         })}
                                     </div>
                                 </div>

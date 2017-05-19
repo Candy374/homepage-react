@@ -3,42 +3,45 @@
  */
 
 import React, { Component } from 'react';
+import {
+    Link
+} from 'react-router-dom'
 
 export default class Footer extends Component {
     componentWillMount() {
         this.blocks = [
             [{
                 label: '首页',
-                url: ''
+                to: '/index'
             }, {
                 label: '关于我们',
-                url: ''
+                to: '/us'
             }, {
                 label: '产品更新',
-                url: ''
+                to: '/update'
             }],
             [{
                 label: '人&数据',
-                url: ''
+                to: '/function'
             }, {
                 label: '内容&交互',
-                url: ''
+                to: '/function'
             }, {
                 label: '策略&自动化',
-                url: ''
+                to: '/function'
             }, {
                 label: '数据洞察',
-                url: ''
+                to: '/function'
             }],
             [{
                 label: '合作伙伴',
-                url: ''
+                to: '/work'
             }, {
                 label: '营销学堂',
-                url: ''
+                to: '/resource'
             }, {
                 label: '博客',
-                url: ''
+                to: '/blog'
             }]
         ];
     }
@@ -60,9 +63,9 @@ export default class Footer extends Component {
                                         {
                                             block.map((link, key) => {
                                                 return (
-                                                    <a className="link" key={key}>
+                                                    <Link className="link" key={key} to={link.to}>
                                                         {link.label}
-                                                    </a>
+                                                    </Link>
                                                 )
                                             })
                                         }

@@ -51,12 +51,13 @@ nav {
 
   .nav-item {
     color: @header-background-color;
-    padding: 5px 0;
+    padding: 5px 0 0;
     margin-right: 60px;
     font-size: 16px;
 
-    &.active {
-      text-decoration: underline;
+    &.active, &:hover {
+      border-bottom: 1px solid;
+      margin-bottom: 5px;
       font-weight: bold;
     }
   }
