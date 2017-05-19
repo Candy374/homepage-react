@@ -1,0 +1,7 @@
+.form .btn {
+  margin: 10px;
+  width: 300px;
+  padding: 5px;
+  display: inline-block;
+  box-sizing: content-box;
+}

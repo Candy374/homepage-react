@@ -25,42 +25,50 @@ app.use(require('webpack-dev-middleware')(compiler, {
     publicPath: webpackConfig.output.publicPath,
 }));
 
-var validRoutes = ['/', '/index', '/about', '/feature', '/join', '/resource', '/edit', '/form'];
-app.get('/*', function (req, res) {
-    if (validRoutes.includes(req.url)) {
+var validRoutes = ['/', '/index', '/about', '/feature', '/join',
+'/resource', '/edit', '/form'];
+app.get('/*', function(req, res) {
+    var url = req.originalUrl.split('?')[0];
+    if (validRoutes.includes(url)) {
+        req.url = url;
         render.default(req, res);
     } else {
         req.next();
     }
 });
 
-app.get('/style/fonts/*', function (req, res) {
+app.get('/style/fonts/*', function(req, res) {
     var url = req.originalUrl.split('?')[0];
     res.sendFile(path.resolve(path.join(__dirname, '/../src/' + url)));
 });
 
-app.get('/style/*', function (req, res) {
+app.get('/style/*', function(req, res) {
     res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
 });
 
-app.get('/assets/*', function (req, res) {
+app.get('/assets/*', function(req, res) {
     res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
 });
 
-app.post('/db/add', function (req, res) {
-    db.insertDocuments([req.body], function () {
-        console.log('erwrwr');
+app.post('/db/add', function(req, res) {
+    db.insertDocuments([req.body], function() {
         res.end();
     })
 });
 
-app.get('/db/get', function (req, res) {
-    db.findDocuments({}, function (docs) {
+app.get('/db/get', function(req, res) {
+    db.findDocuments(req.query, function(docs) {
         res.send(docs);
     })
 });
 
-app.get('*', function (req, res) {
+app.post('/form', function(req, res) {
+    db.insertDocuments([req.body], function() {
+        res.end();
+    })
+});
+
+app.get('*', function(req, res) {
     res.sendFile(path.resolve(path.join(__dirname, '/../src/404.html')));
 });
 

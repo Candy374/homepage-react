@@ -4,14 +4,12 @@
 import React from 'react';
 
 const Button = (props) => {
-    const {type = 'default', text, onClick, margin} = props;
-    let classes = 'btn btn-' + type;
-    if (margin) {
-        classes
-    }
+    const {type = 'default', text, onClick, className } = props;
+    let classes = 'btn btn-' + type + ' ' + className;
 
     return (
-        <button className={'btn btn-' + type} onClick={onClick}>{text}</button>
+        <button className={classes}
+                onClick={onClick}>{text}</button>
     )
 };
 

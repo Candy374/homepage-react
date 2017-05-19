@@ -2,6 +2,7 @@
  * Created by huangling on 19/5/2017.
  */
 import React from 'react';
+import Button from './Button';
 
 const Label = (props) => {
     const { children, required } = props;
@@ -15,25 +16,34 @@ const Input = (props) => {
     return <input className={className} onChange={onChange} value={value} type={type}/>
 };
 
-const LabelInput = (props) => {
-    const { title, required, error, onChange, status, value } = props;
+
+const LabelRow = (props) => {
+    const { title, required, children } = props;
     return (
         <div className="label-input">
-            <Label required={required}>{title + ':'}</Label>
-            <Input onChange={onChange} value={value} status={status} />
-            {error && <span className="error">{error}</span> }
+            <Label required={required}>{title}</Label>
+            {children}
         </div>
     )
 };
 
-const PhoneCode = (props) => {
+const LabelInput = (props) => {
     const { title, required, error, onChange, status, value } = props;
     return (
-        <div className="label-input">
-            <Label required={required}>{title}</Label>
+        <LabelRow title={title + ':'} required={required}>
             <Input onChange={onChange} value={value} status={status} />
             {error && <span className="error">{error}</span> }
-        </div>
+        </LabelRow>
+    )
+};
+
+const PhoneCode = (props) => {
+    const { title, required, onChange, status, value } = props;
+    return (
+        <LabelRow title={title + ':'} required={required}>
+            <Input onChange={onChange} value={value} status={status} />
+            <Button className='code' text="获取验证码"></Button>
+        </LabelRow>
     )
 };
 
@@ -41,5 +51,6 @@ export {
     Label,
     Input,
     LabelInput,
-    PhoneCode
+    PhoneCode,
+    LabelRow
 }

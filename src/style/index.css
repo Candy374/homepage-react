@@ -126,15 +126,18 @@ input {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.input-group button {
+.input-group .btn {
   border: none;
   height: 34px;
+  border-radius: 0;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   min-width: 60px;
   padding: 0 15px;
   color: #fff;
   cursor: pointer;
+  align-items: center;
+  font-size: 16px;
 }
 .more {
   cursor: pointer;
@@ -165,6 +168,19 @@ input {
   padding: 10px;
   display: inline-block;
   font-size: 16px;
+}
+.label.required:before {
+  content: "*";
+  padding-right: 5px;
+  color: #0acacb;
+}
+.label-input {
+  width: 450px;
+  display: flex;
+}
+.label-input input {
+  width: inherit;
+  flex: 1;
 }
 .label-input .label {
   width: 100px;
@@ -773,7 +789,9 @@ footer .copyright span {
 footer .block {
   display: flex;
   flex-direction: column;
-  margin-right: 90px;
+  padding-right: 10%;
+  min-width: 120px;
+  box-sizing: border-box;
 }
 footer .block .link {
   color: #4e6175;
@@ -1213,4 +1231,28 @@ footer .block .link:hover {
 .download-resource .desc {
   margin-bottom: 10px;
   color: #4e6175;
+}
+.form .submit-btn {
+  margin: 10px;
+  width: 300px;
+  padding: 5px;
+  display: inline-block;
+  box-sizing: content-box;
+}
+.form .code {
+  background-color: #0acacb;
+  border-color: #ddd;
+  border-radius: 5px;
+  padding: 5px 20px;
+  letter-spacing: 0;
+  margin-left: 10px;
+  font-size: 16px;
+  height: 34px;
+}
+.form .code.disabled {
+  color: #ddd;
+  background: #f5f5f5;
+}
+.submmit-success {
+  background: url('/assets/success.png');
 }

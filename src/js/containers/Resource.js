@@ -33,6 +33,7 @@ const Book = (props) => (
 
 export default class Resource extends Component {
     componentWillMount() {
+        const id = this.props.location.search;
         this.state = {
             docs: [],
             filter: {
@@ -40,11 +41,16 @@ export default class Resource extends Component {
                 key: ''
             }
         };
-        getDocs().then(docs => {
+
+        getDocs(id).then(docs => {
             this.setState({
                 docs
             })
         })
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.log(nextProps)
     }
 
     filter = (by, key) => this.setState({by, key});
@@ -84,7 +90,15 @@ export default class Resource extends Component {
                         </div>
 
                         <div className={"books " + (filterdDoc.length > 0 ? '' : 'placeholder')}>
-                            {filterdDoc.map(doc => (<Book src={`assets/${doc.img}`} title={doc.title} tag={doc.tag} key={doc._id}/>))}
+                            {filterdDoc.map(doc => (
+                                <a href={`/resource?id=${doc._id}`}
+                                   target="_blank" key={doc._id}>
+                                    <Book src={`assets/${doc.img}`}
+                                      title={doc.title}
+                                      tag={doc.tag}
+                                    />
+                                </a>
+                            ))}
                             <img className="placeholder-img" src="assets/placeholder.png" srcSet="assets/placeholder.png 2x"/>
                             <div className="placeholder-text">我们正在努力生产中...</div>
                         </div>

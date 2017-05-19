@@ -6,9 +6,16 @@ var express = require('express');
 var webpack = require('webpack');
 var config = require('./webpack.dev.config');
 var path = require('path');
+var fs = require('fs');
+var db = require('../server/db');
+
+var bodyParser = require('body-parser');
 
 // 创建一个express实例
 var app = express();
+
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 
 // 调用webpack并把配置传递过去
 var compiler = webpack(config);
@@ -50,6 +57,19 @@ app.get('/style/fonts/*', function(req, res) {
 
 app.get('/style/*', function(req, res) {
     res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
+});
+
+app.post('/db/add', function (req, res) {
+    db.insertDocuments([req.body], function () {
+        console.log('erwrwr');
+        res.end();
+    })
+});
+
+app.get('/db/get', function (req, res) {
+    db.findDocuments({}, function (docs) {
+        res.send(docs);
+    })
 });
 
 app.get('*', function (req, res) {

@@ -1,6 +1,6 @@
 input {
-  background: #f5f5f5;
-  border: 1px solid #ddd;
+  background: @input-background-color;
+  border: 1px solid @input-border-color;
   border-radius: 5px;
   height: 30px;
   width: 300px;
@@ -16,15 +16,18 @@ input {
     border-bottom-right-radius: 0;
   }
 
-  button {
+  .btn {
     border: none;
     height: 34px;
+    border-radius: 0;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     min-width: 60px;
     padding: 0 15px;
     color: @text-color-default;
     cursor: pointer;
+    align-items: center;
+    font-size: 16px;
   }
 }
 
@@ -65,9 +68,23 @@ input {
   padding: 10px;
   display: inline-block;
   font-size: 16px;
+
+  &.required {
+    &:before {
+      content: "*";
+      padding-right: 5px;
+      color: @theme-color;
+    }
+  }
 }
 
 .label-input {
+  width: 450px;
+  display: flex;
+  input {
+    width: inherit;
+    flex: 1;
+  }
   .label {
     width: 100px;
     text-align: right;
