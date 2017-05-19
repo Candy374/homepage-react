@@ -40,7 +40,9 @@ app.get('/assets/*', function(req, res) {
     res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
 });
 
-app.get('/*', render.default);
+app.get('/*', function(req, res){
+    render.default(req,res)
+});
 
 
 var port = 3000;

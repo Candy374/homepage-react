@@ -27,13 +27,12 @@ const NotFound = () => (
 
 const ClientApp = () => (
     <BrowserRouter>
-        <div>
-            <Route exact path="/" component={Home}/>
-            <Route path="/function" component={Function}/>
-            <Route path="/join" component={JoinUs}/>
-            <Route path="/resource" component={Resource}/>
-            <Route component={NotFound}/>
-        </div>
+        <Route exact path="/" component={Home}/>
+        <Route path="/index" component={Home}/>
+        <Route path="/function" component={Function}/>
+        <Route path="/join" component={JoinUs}/>
+        <Route path="/resource" component={Resource}/>
+        <Route component={NotFound}/>
     </BrowserRouter>
 );
 
@@ -51,6 +50,7 @@ const RedirectWithStatus = ({from, to, status}) => (
 const ServerApp = () => (
     <Switch>
         <Route exact path="/" component={Home}/>
+        <Route path="/index" component={Home}/>
         <Route path="/function" component={Function}/>
         <Route path="/join" component={JoinUs}/>
         <Route path="/resource" component={Resource}/>

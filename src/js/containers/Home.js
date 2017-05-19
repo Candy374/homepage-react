@@ -14,7 +14,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <Header/>
+                <Header pathname={this.props.location.pathname}/>
                 <content>
                     <Landing className="home" backgroudImg="banner_bg"
                              title="让营销变得简单" desc="企业一站式营销云"

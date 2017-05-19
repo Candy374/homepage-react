@@ -7,8 +7,8 @@ import template from './template';
 import { ServerApp } from './route';
 import { StaticRouter } from 'react-router'
 
+const context = {};
 export default function render(req, res) {
-    const context = {};
     const appString = renderToString(
         <StaticRouter
             location={req.url}

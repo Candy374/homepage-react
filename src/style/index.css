@@ -373,6 +373,10 @@ nav .nav-item {
   margin-right: 60px;
   font-size: 16px;
 }
+nav .nav-item.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
 nav .btn {
   padding: 5px 25px;
   font-size: 16px;

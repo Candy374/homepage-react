@@ -12,7 +12,7 @@ export default class About extends Component {
     render() {
         return (
             <div>
-                <Header/>
+                <Header pathname={this.props.location.pathname}/>
                 <content>
                     <Landing title="对于做营销，我们很有用， 甚至还有点好用">
                         <div className="row">

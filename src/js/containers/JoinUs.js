@@ -52,8 +52,8 @@ const Block_location = (props) => {
 export default class JoinUs extends Component {
     render() {
         return (
-            <div className="join-us">
-                <Header/>
+            <div className="join-us" >
+                <Header pathname={this.props.location.pathname}/>
                 <content>
                     <Landing title="和我们一起工作" desc="我们一直在进步..."/>
 

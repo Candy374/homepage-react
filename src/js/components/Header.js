@@ -7,12 +7,15 @@ import Button from '../components/Button';
 import {
     BrowserRouter as Router,
     Route,
-    Link
+    NavLink
 } from 'react-router-dom'
 
 export default class Header extends Component {
     componentWillMount() {
         this.links = [{
+            label: '首页',
+            to: '/index'
+        }, {
             label: '功能',
             to: '/function'
         }, {
@@ -48,12 +51,8 @@ export default class Header extends Component {
         }
     }
 
-    onClick = () => {
-        alert('ddd')
-    };
-
     render() {
-        const { type } = this.props;
+        const { pathname, type } = this.props;
         return (
             <header ref={node => this.head = node} className={type}>
                 <div>
@@ -63,7 +62,11 @@ export default class Header extends Component {
                     </div>
                     <nav id="nav">
                         {
-                            this.links.map((link, index) =><Link className='nav-item' key={index} to={link.to}>{link.label}</Link>)
+                            this.links.map((link, index) =>{
+                                return (
+                                    <NavLink className={'nav-item'} key={index} to={link.to}>{link.label}</NavLink>
+                                )
+                            })
                         }
                         <a className="btn btn-default" target="_blank" href="https://app.convertlab.com/login.html">账号登录</a>
                     </nav>
