@@ -7,3 +7,8 @@ import ReactDOM from 'react-dom';
 import Home from './containers/About';
 
 ReactDOM.render(<Home/>, document.getElementById('root'));
+
+//TODO video
+//TODO QR code  utma
+// wei xin pop QR code
+//

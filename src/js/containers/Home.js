@@ -10,6 +10,7 @@ import TryNow from '../components/TryNow';
 import Category from '../components/Category';
 import Button from '../components/Button';
 
+
 export default class Home extends Component {
     render() {
         return (
@@ -36,7 +37,9 @@ export default class Home extends Component {
                         <div className="block">
                             <img src='assets/people.png' srcSet="assets/people.png 2x"/>
                             <div className="title">人&数据</div>
-                            <div className="desc">全渠道打通，接入客户的浏览数据、行为数据、消费数据、资料数据、消费相关的商品数据。对接入数据进行建模分析，绘制出每一个客户的360度画像。</div>
+                            <div className="desc">
+                                全渠道打通，接入客户的浏览数据、行为数据、消费数据、资料数据、消费相关的商品数据。对接入数据进行建模分析，绘制出每一个客户的360度画像。
+                            </div>
                             <a className="more arrow">了解更多</a>
                         </div>
                         <div className="block">

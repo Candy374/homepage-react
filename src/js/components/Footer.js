@@ -89,8 +89,8 @@ export default class Footer extends Component {
                         </div>
                         <div className="contact">
                             <div className="phone"><img src="/assets/phone.png"/>400 850 9918</div>
-                            <div><img src="/assets/wechat.png"/><span>微信公众号</span></div>
-                            <div><img src="/assets/weibo.png"/><span>官方微博</span></div>
+                            <div className="wechat"><img src="/assets/weibo.png"/><span>微信公众号</span></div>
+                            <a className="weibo" href="http://weibo.com/u/5994921100" target="_blank"><img src="/assets/wechat.png"/><span>官方微博</span></a>
                         </div>
                     </div>
 
