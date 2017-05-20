@@ -20,7 +20,7 @@ const formData = [{
 }, {
     title: '手机号码',
     required: true,
-    hint: '',
+    hint: '手机号为13位数字',
     name: 'phone',
     type: 'LabelInput'
 }, {
@@ -59,6 +59,23 @@ export default class Resource extends Component {
         formData.map(field => this.state[field.name] = '');
     }
 
+    isReadyForSubmit = () => {
+        let invalid = false;
+        formData.find(field => {
+            const value = this.state[field.name];
+            if (field.required && !value) {
+                invalid = true;
+            }
+
+            if (field.valid && !field.valid(value)) {
+                invalid = true;
+            }
+            return invalid;
+        });
+
+        return !invalid;
+    };
+
     onSubmit = () => {
         const { company, jobTitle, email, phone, name } = this.state;
         submitCustomer({
@@ -88,6 +105,7 @@ export default class Resource extends Component {
                 </content>
             );
         } else {
+            const disabled = !this.isReadyForSubmit();
             content = (
                 <content>
                     <Landing/>
@@ -106,12 +124,13 @@ export default class Resource extends Component {
                             );
                         })}
                         <Row>
-                            <Link onClick={this.onSubmit}
+                            <Link onClick={disabled ? undefined : this.onSubmit}
                                   to={{
                                       pathname: '/form',
                                       search: 'submitted',
                                   }}>
-                                <Button type='primary' className="submit-btn" text="提交"/>
+                                <Button type='primary' disabled={disabled}
+                                        className="submit-btn" text="提交"/>
                             </Link>
                         </Row>
                     </section>

@@ -367,6 +367,10 @@ textarea {
   letter-spacing: 3px;
   cursor: pointer;
 }
+.btn.disabled {
+  border-color: #ccc;
+  background-color: #ccc;
+}
 .btn-normal {
   background: transparent;
   border: 1px solid;
