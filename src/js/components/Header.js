@@ -5,22 +5,11 @@ import React, {Component} from 'react';
 import Button from '../components/Button';
 // import styles from '../../style/head.css';
 import { NavLink } from 'react-router-dom'
+import { links } from '../constants/header';
 
 export default class Header extends Component {
     componentWillMount() {
-        this.links = [{
-            label: '首页',
-            to: '/home'
-        }, {
-            label: '功能',
-            to: '/feature'
-        }, {
-            label: '我们',
-            to: '/about'
-        }, {
-            label: '学堂',
-            to: '/library'
-        }];
+        this.links = this.props.links || links;
     }
 
     componentDidMount() {
@@ -48,7 +37,7 @@ export default class Header extends Component {
     }
 
     render() {
-        const { pathname, type } = this.props;
+        const { type } = this.props;
         return (
             <header ref={node => this.head = node} className={type}>
                 <div>

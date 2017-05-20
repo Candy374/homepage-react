@@ -20,7 +20,7 @@ export default class Landing extends Component {
     }
 
     render() {
-        const { title, desc, children, className, backgroudImg='sub_banner_bg'}  = this.props;
+        const { title, desc, children, className = '', backgroudImg='sub_banner_bg'}  = this.props;
         return (
             <section className={"landing " + className}>
                 <img className="background" src={`assets/${backgroudImg}.png`}/>
