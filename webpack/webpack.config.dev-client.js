@@ -7,7 +7,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-    devtool: 'eval',
+    devtool: 'inline-source-map',
     name: 'client',
     context: path.join(__dirname, '..', 'app'),
     entry: './client.js',
@@ -26,5 +26,5 @@ module.exports = {
                 ],
             }
         ]),
-    }
+    },
 };

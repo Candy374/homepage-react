@@ -16,11 +16,11 @@ var MONGO_DB;
 //     MONGO_DB = db;
 // });
 
-var getDB = function (callback) {
+var getDB = function(callback) {
     if (MONGO_DB) {
         callback(MONGO_DB);
     } else {
-        MongoClient.connect(url, function (err, db) {
+        MongoClient.connect(url, function(err, db) {
             assert.equal(null, err);
             console.log("Connected successfully to server");
             MONGO_DB = db;
@@ -30,16 +30,17 @@ var getDB = function (callback) {
 };
 
 
-var insertDocuments = function (data, callback) {
-    getDB(function (db) {
+var insertDocuments = function(data, callback) {
+    getDB(function(db) {
         // Get the documents collection
         var collection = db.collection('documents');
         // Insert some documents
-        collection.insertMany(data, function (err, result) {
+        collection.insertMany(data, function(err, result) {
             assert.equal(err, null);
             assert.equal(data.length, result.result.n);
             assert.equal(data.length, result.ops.length);
             console.log("Inserted " + data.length + " documents into the collection");
+            console.log(data)
             if (callback) {
                 callback(result);
             }
@@ -48,12 +49,12 @@ var insertDocuments = function (data, callback) {
 
 };
 
-var findDocuments = function (filter, callback) {
-    getDB(function (db) {
+var findDocuments = function(filter, callback) {
+    getDB(function(db) {
         // Get the documents collection
         var collection = db.collection('documents');
         // Find some documents
-        collection.find(filter).toArray(function (err, docs) {
+        collection.find(filter).toArray(function(err, docs) {
             assert.equal(err, null);
             callback(docs);
         });

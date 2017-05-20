@@ -16,9 +16,8 @@ const getParams = (params, queryKey) => {
     return paramMap[queryKey];
 };
 
-export const getDocs = (params) => {
-    const id = getParams(params, 'id');
-    const req = id ? request.get('/db/get', {_id: id}) : request.get('/db/get');
+export const getDocs = (id) => {
+    const req = id ? request.get('/db/getDoc', {id}) : request.get('/db/getDoc');
     return req.then(res => res.body)
         .catch(err => {
             console.log('Can not get docs');
@@ -27,7 +26,8 @@ export const getDocs = (params) => {
 };
 
 export const addDocs = (doc) => {
-    return request.post('/db/add').send(doc)
+    doc.id = new Date().getTime() + '';
+    return request.post('/db/addDoc').send(doc)
         .then(res => res.body)
         .catch(err => {
             console.log('Can not add docs');

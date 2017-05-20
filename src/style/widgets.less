@@ -1,4 +1,4 @@
-input {
+input[type=text], textarea {
   background: @input-background-color;
   border: 1px solid @input-border-color;
   border-radius: 5px;
@@ -6,6 +6,13 @@ input {
   width: 300px;
   padding-left: 10px;
   font-weight: bold;
+}
+
+textarea {
+  height: inherit;
+  margin: 20px 0;
+  padding-right: 10px;
+  width: 310px;
 }
 
 .input-group {

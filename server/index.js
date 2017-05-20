@@ -26,7 +26,8 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 var validRoutes = ['/', '/index', '/about', '/feature', '/join',
-'/resource', '/edit', '/form'];
+    '/resource', '/edit', '/form'
+];
 app.get('/*', function(req, res) {
     var url = req.originalUrl.split('?')[0];
     if (validRoutes.includes(url)) {
@@ -50,19 +51,19 @@ app.get('/assets/*', function(req, res) {
     res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
 });
 
-app.post('/db/add', function(req, res) {
+app.post('/db/addDoc', function(req, res) {
     db.insertDocuments([req.body], function() {
         res.end();
     })
 });
 
-app.get('/db/get', function(req, res) {
+app.get('/db/getDoc', function(req, res) {
     db.findDocuments(req.query, function(docs) {
-        res.send(docs);
+        res.send(docs || []);
     })
 });
 
-app.post('/form', function(req, res) {
+app.post('/db/form', function(req, res) {
     db.insertDocuments([req.body], function() {
         res.end();
     })

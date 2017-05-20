@@ -11,9 +11,9 @@ const Label = (props) => {
 };
 
 const Input = (props) => {
-    const { onChange, status = 'normal', value, type = 'text'} = props;
+    const { onChange, status = 'normal', value, type = 'text', name} = props;
     const className = 'input ' + status;
-    return <input className={className} onChange={onChange} value={value} type={type}/>
+    return <input className={className} onChange={onChange} value={value} name={name} type={type}/>
 };
 
 
@@ -21,17 +21,17 @@ const LabelRow = (props) => {
     const { title, required, children } = props;
     return (
         <div className="label-input">
-            <Label required={required}>{title}</Label>
+            <Label required={required}>{title ? `${title}:` : ''}</Label>
             {children}
         </div>
     )
 };
 
 const LabelInput = (props) => {
-    const { title, required, error, onChange, status, value } = props;
+    const { title, required, error, onChange, status, value, name } = props;
     return (
-        <LabelRow title={title + ':'} required={required}>
-            <Input onChange={onChange} value={value} status={status} />
+        <LabelRow title={title} required={required}>
+            <Input onChange={onChange} value={value} status={status} name={name}/>
             {error && <span className="error">{error}</span> }
         </LabelRow>
     )

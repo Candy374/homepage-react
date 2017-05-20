@@ -6,8 +6,10 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import {getDocs } from '../actions/db';
 import Landing from '../components/Landing';
+import Detail1 from './ResourceDetail1';
+import Detail2 from './ResourceDetail2';
 import TryNow from '../components/TryNow';
-
+import { Link } from 'react-router-dom';
 const THEMES = ['全部', '数字营销', '广告投放', '营销内容', '营销技巧', '攻略'];
 const TYPES = ['全部', '电子书', '文章', '在线视频', '营销词典'];
 const nav = [
@@ -33,7 +35,7 @@ const Book = (props) => (
 
 export default class Resource extends Component {
     componentWillMount() {
-        const id = this.props.location.search;
+
         this.state = {
             docs: [],
             filter: {
@@ -42,70 +44,94 @@ export default class Resource extends Component {
             }
         };
 
-        getDocs(id).then(docs => {
-            this.setState({
-                docs
-            })
-        })
+        this.getDoc(this.props);
     }
 
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps)
+        if (nextProps.location.search != this.props.location.search) {
+            this.getDoc(nextProps);
+        }
     }
+
+    getDoc = (props) => {
+        let id = props.location.search;
+        if (id) {
+            id = id.substr(1);
+        }
+        getDocs(id).then(docs => {
+            this.setState({
+                docs, id
+            })
+        })
+    };
 
     filter = (by, key) => this.setState({by, key});
 
     render() {
-        const { docs, by, key } = this.state;
+        const { docs, by, key, id } = this.state;
 
         const filterdDoc = docs.filter(doc => key === '全部' || key === doc[by]);
 
+        let Detail, detailProps;
+        if (id) {
+            detailProps = docs[0];
+            detailProps.tags = [detailProps.tag];
+            Detail = detailProps.detailType === 'detail' ? Detail1 : Detail2;
+        }
         return (
             <div>
                 <Header/>
-                <content>
-                    <Landing title="免费的营销资源"/>
 
-                    <section className="resource">
-                        <div className="resource-category">
-                            {nav.map((block, index) =>(
-                                <div className="block" key={index}>
-                                    <div className="title"> {block.title}</div>
-                                    <div className="links">
-                                        {block.items.map((item, index) => {
-                                            let className = 'item';
-                                            if (item == key) {
-                                                className += ' active '
-                                            }
-                                            return (
-                                                <div key={index} className={className}
-                                                     onClick={() => this.filter(block.key, item)}>
-                                                    <span >{item}</span>
-                                                </div>
-                                            );
-                                        })}
-                                    </div>
+                    <content>
+                        <Landing title="免费的营销资源"/>
+                        {id ? <Detail {...detailProps}/>
+                            :
+                            <section className="resource">
+                                <div className="resource-category">
+                                    {nav.map((block, index) => (
+                                        <div className="block" key={index}>
+                                            <div className="title"> {block.title}</div>
+                                            <div className="links">
+                                                {block.items.map((item, index) => {
+                                                    let className = 'item';
+                                                    if (item == key) {
+                                                        className += ' active '
+                                                    }
+                                                    return (
+                                                        <div key={index} className={className}
+                                                             onClick={() => this.filter(block.key, item)}>
+                                                            <span >{item}</span>
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
-                        </div>
 
-                        <div className={"books " + (filterdDoc.length > 0 ? '' : 'placeholder')}>
-                            {filterdDoc.map(doc => (
-                                <a href={`/resource?id=${doc._id}`}
-                                   target="_blank" key={doc._id}>
-                                    <Book src={`assets/${doc.img}`}
-                                      title={doc.title}
-                                      tag={doc.tag}
-                                    />
-                                </a>
-                            ))}
-                            <img className="placeholder-img" src="assets/placeholder.png" srcSet="assets/placeholder.png 2x"/>
-                            <div className="placeholder-text">我们正在努力生产中...</div>
-                        </div>
-                    </section>
+                                <div className={"books " + (filterdDoc.length > 0 ? '' : 'placeholder')}>
+                                    {filterdDoc.map(doc => (
+                                        <Link to={{
+                                            pathname: `/resource`,
+                                            search: doc.id ? (doc.id + '') : ''
+                                        }}
 
-                    <TryNow />
-                </content>
+                                              key={doc._id}>
+                                            <Book src={`assets/${doc.img}`}
+                                                  title={doc.title}
+                                                  tag={doc.tag}
+                                            />
+                                        </Link>
+                                    ))}
+                                    <img className="placeholder-img" src="assets/placeholder.png"
+                                         srcSet="assets/placeholder.png 2x"/>
+                                    <div className="placeholder-text">我们正在努力生产中...</div>
+                                </div>
+                            </section>
+                        }
+                        <TryNow />
+                    </content>
+
                 <Footer/>
             </div>
         );

@@ -60,7 +60,7 @@ const ServerApp = () => (
         {routes.map((route, index) => <Route key={index} {...route}/>)}
         <RedirectWithStatus
             status={301}
-            from="/"
+            from="/resource/:id"
             to="/resource"
         />
         <RedirectWithStatus

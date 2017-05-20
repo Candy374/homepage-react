@@ -67,13 +67,11 @@ export default class Resource extends Component {
         //     this.setState({submitted: true})
         // })
 
-        alert(1)
         this.setState({submitted: true})
     };
 
     render() {
         let content;
-        alert(this.state.submitted)
         if (this.state.submitted) {
             content = <content>
                 <section className="submmit-success">
