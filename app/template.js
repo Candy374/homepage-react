@@ -13,5 +13,8 @@ export default ({body, title}) => (`
       <div id="root">${body}</div>
     </body>
     <script src="/assets/bundle.js"></script>
+    
   </html>
 `);
+
+//<script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script>

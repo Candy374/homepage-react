@@ -226,6 +226,9 @@ textarea {
 .breadcrumb .split {
   margin: 0 10px;
 }
+.pointer {
+  cursor: pointer;
+}
 .time-line {
   display: flex;
   width: 100%;
@@ -593,6 +596,10 @@ nav .btn {
 }
 .video figure img {
   width: 80px;
+}
+.video video {
+  display: block;
+  margin: auto;
 }
 .example {
   position: relative;

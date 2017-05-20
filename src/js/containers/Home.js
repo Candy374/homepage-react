@@ -11,6 +11,12 @@ import {Link} from 'react-router-dom';
 
 
 export default class Home extends Component {
+    playVideo = () => {
+        this.video.style.display = 'block';
+        this.video.getElementsByTagName('video')[0].play();
+        this.videoPlaceHolder.style.display = 'none';
+    };
+
     render() {
         return (
             <div>
@@ -55,12 +61,19 @@ export default class Home extends Component {
                         </div>
                     </section>
 
-                    <section className="video margin-vertical-large ">
+                    <section className="video margin-vertical-large" ref={node => this.videoPlaceHolder = node} >
                         <div className="title">观看视频</div>
                         <div className="desc">中国市场消费者正在发生变化，看DM Hub如何顺应时代为企业带来营销2.0转型升级。</div>
                         <figure>
-                            <img src="/assets/play_btn.png"/>
+                            <img className="pointer" onClick={this.playVideo} src="/assets/play_btn.png"/>
                         </figure>
+                    </section>
+
+                    <section ref={node => this.video = node} style={{display: 'none'}} className="video margin-vertical-large">
+                        <video preload height="300">
+                            <source src="/assets/video/video-convertlab.mp4"
+                                    type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'></source>
+                        </video>
                     </section>
 
                     <Description
