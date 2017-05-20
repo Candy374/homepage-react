@@ -54,7 +54,7 @@ const Row = Widgets.LabelRow;
 export default class Resource extends Component {
     componentWillMount() {
         this.state = {
-            submitted: true
+            submitted: false
         };
         formData.map(field => this.state[field.name] = '');
     }
