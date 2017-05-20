@@ -1,63 +1,128 @@
 .btn {
-  background: transparent;
   border: 1px solid;
-  border-radius: 23px;
-  padding: 10px 30px;
-  min-width: 100px;
   display: flex;
   justify-content: center;
-  color: @btn-default-color;
-  font-size: 18px;
-  letter-spacing: 3px;
   cursor: pointer;
+  box-sizing: content-box;
+}
+
+.btn-mixin (solid, @color) {
+  background: @color;
+  border-color: @color;
+  color: @text-color-default;
+  &:not(.disabled):hover  {
+    background: darken(@color, 4%);
+  }
 
   &.disabled {
-    border-color: @btn-default-dark-color;
-    background-color: @btn-default-dark-color;
+    background: @btn-disabled-color;
+    border-color: @btn-disabled-color;
   }
 }
 
-.btn-normal {
-  background: transparent;
-  border: 1px solid;
-  border-radius: 23px;
+.btn-mixin (blank, @color) {
+  background: @text-color-default;
+  border-color: @color;
+  color: @color;
+
+  &:not(.disabled):hover {
+    background: lighten(@color, 50%);
+  }
+
+  &.disabled {
+    border-color: @btn-disabled-color;
+    color: @btn-disabled-color;
+  }
+}
+
+.btn-solid {
+  &.btn-color-theme {
+    .btn-mixin(solid, @theme-color);
+  }
+
+  &.btn-color-orange {
+    .btn-mixin(solid, @btn-danger-color);
+  }
+}
+
+.btn-blank {
+  &.btn-color-theme {
+    .btn-mixin(blank, @theme-color);
+  }
+
+  &.btn-color-orange {
+    .btn-mixin(blank, @btn-danger-color);
+  }
+
+  &.btn-color-white {
+    .btn-mixin(blank, @text-color-default);
+    background: transparent;
+  }
+}
+
+.btn-radius {
+  &-square {
+    border-radius: 5px;
+  }
+
+  &-round {
+    border-radius: 23px;
+  }
+}
+
+.btn-spacing {
+  &-0 {
+    letter-spacing: 0;
+  }
+
+  &-3 {
+    letter-spacing: 3px;
+  }
+
+  &-4 {
+    letter-spacing: 4px;
+  }
+}
+
+.btn-padding {
+  &-xlarge {
+    padding: 10px 40px;
+    font-size: 18px;
+  }
+
+  &-large {
+    padding: 10px 30px;
+  }
+
+  &-medium {
+    padding: 5px 25px;
+    font-size: 16px;
+  }
+
+  &-small {
+    padding: 0 15px;
+  }
+
+  &-xsmall {
+    padding: 0 10px;
+  }
+}
+
+.btn-length {
+  &-large {
+    min-width: 300px;
+    font-size: 18px;
+  }
+
+  &-medium {
+    min-width: 100px;
+  }
+
+  &-small {
+    min-width: 60px;
+  }
+}
+
+.btn-tiyan {
   padding: 5px 5px 5px 10px;
-  min-width: 100px;
-  display: flex;
-  justify-content: center;
-  color: #fff;
-  font-size: 18px;
-  letter-spacing: 4px;
-  text-align: center;
-}
-
-.btn-default {
-  background-color: transparent;
-  border-color: @btn-default-color;
-}
-
-.btn-default-dark {
-  background-color: transparent;
-  border-color: @btn-default-dark-color;
-  color: @text-color-dark5;
-}
-
-.btn-danger {
-  background-color: @btn-danger-color;
-  border-color: @btn-danger-color;
-}
-
-.btn-primary {
-  background-color: @btn-primary-color;
-  border-color: @btn-primary-color;
-}
-
-.btn-big {
-  color: @theme-color;
-  border-color: @theme-color;
-  font-size: 14px;
-
-  &:hover {
-    background-color: @btn-big-hover-color;
-  }
 }

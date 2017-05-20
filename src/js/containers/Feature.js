@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Landing from '../components/Landing';
+import Button from '../components/Button';
 import TryNow from '../components/TryNow';
 import { Link } from 'react-router-dom'
 import {
@@ -39,7 +40,9 @@ const SectionGroup = ({ title, desc, blocks, id, tryNow }) => (
         </section>
 
         <div className="row">
-            <Link className="btn btn-big arrow" to="/form">{tryNow}</Link>
+            <Link to="/form">
+                <Button type="blank" spacing="3" padding="large" className="arrow" text={tryNow}/>
+            </Link>
         </div>
     </div>
 );

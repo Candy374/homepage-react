@@ -40,9 +40,9 @@ const LabelInput = (props) => {
 const PhoneCode = (props) => {
     const { title, required, onChange, status, value } = props;
     return (
-        <LabelRow title={title + ':'} required={required}>
+        <LabelRow title={title} required={required}>
             <Input onChange={onChange} value={value} status={status} />
-            <Button className='code' text="获取验证码"></Button>
+            <Button radius="square" className='code' padding="small" length="small" text="获取验证码"/>
         </LabelRow>
     )
 };

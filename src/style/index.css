@@ -135,17 +135,10 @@ textarea {
   border-bottom-right-radius: 0;
 }
 .input-group .btn {
-  border: none;
-  height: 34px;
-  border-radius: 0;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  min-width: 60px;
-  padding: 0 15px;
-  color: #fff;
-  cursor: pointer;
-  align-items: center;
+  height: 32px;
   font-size: 16px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 .more {
   cursor: pointer;
@@ -355,59 +348,117 @@ textarea {
   flex-direction: row;
 }
 .btn {
-  background: transparent;
   border: 1px solid;
-  border-radius: 23px;
-  padding: 10px 30px;
-  min-width: 100px;
   display: flex;
   justify-content: center;
-  color: #fff;
-  font-size: 18px;
-  letter-spacing: 3px;
   cursor: pointer;
+  box-sizing: content-box;
 }
-.btn.disabled {
-  border-color: #ccc;
-  background-color: #ccc;
-}
-.btn-normal {
-  background: transparent;
-  border: 1px solid;
-  border-radius: 23px;
-  padding: 5px 5px 5px 10px;
-  min-width: 100px;
-  display: flex;
-  justify-content: center;
+.btn-solid.btn-color-theme {
+  background: #0acacb;
+  border-color: #0acacb;
   color: #fff;
-  font-size: 18px;
-  letter-spacing: 4px;
-  text-align: center;
 }
-.btn-default {
-  background-color: transparent;
-  border-color: #fff;
+.btn-solid.btn-color-theme:not(.disabled):hover {
+  background: #09b7b8;
 }
-.btn-default-dark {
-  background-color: transparent;
+.btn-solid.btn-color-theme.disabled {
+  background: #ccc;
   border-color: #ccc;
-  color: #4e6175;
 }
-.btn-danger {
-  background-color: #ff6900;
-  border-color: #ff6900;
+.btn-solid.btn-color-orange {
+  background: #f47935;
+  border-color: #f47935;
+  color: #fff;
 }
-.btn-primary {
-  background-color: #0acacb;
+.btn-solid.btn-color-orange:not(.disabled):hover {
+  background: #f36c22;
+}
+.btn-solid.btn-color-orange.disabled {
+  background: #ccc;
+  border-color: #ccc;
+}
+.btn-blank.btn-color-theme {
+  background: #fff;
   border-color: #0acacb;
-}
-.btn-big {
   color: #0acacb;
-  border-color: #0acacb;
-  font-size: 14px;
 }
-.btn-big:hover {
-  background-color: #e5ffff;
+.btn-blank.btn-color-theme:not(.disabled):hover {
+  background: #d7fdfd;
+}
+.btn-blank.btn-color-theme.disabled {
+  border-color: #ccc;
+  color: #ccc;
+}
+.btn-blank.btn-color-orange {
+  background: #fff;
+  border-color: #f47935;
+  color: #f47935;
+}
+.btn-blank.btn-color-orange:not(.disabled):hover {
+  background: #ffffff;
+}
+.btn-blank.btn-color-orange.disabled {
+  border-color: #ccc;
+  color: #ccc;
+}
+.btn-blank.btn-color-white {
+  background: #fff;
+  border-color: #fff;
+  color: #fff;
+  background: transparent;
+}
+.btn-blank.btn-color-white:not(.disabled):hover {
+  background: #ffffff;
+}
+.btn-blank.btn-color-white.disabled {
+  border-color: #ccc;
+  color: #ccc;
+}
+.btn-radius-square {
+  border-radius: 5px;
+}
+.btn-radius-round {
+  border-radius: 23px;
+}
+.btn-spacing-0 {
+  letter-spacing: 0;
+}
+.btn-spacing-3 {
+  letter-spacing: 3px;
+}
+.btn-spacing-4 {
+  letter-spacing: 4px;
+}
+.btn-padding-xlarge {
+  padding: 10px 40px;
+  font-size: 18px;
+}
+.btn-padding-large {
+  padding: 10px 30px;
+}
+.btn-padding-medium {
+  padding: 5px 25px;
+  font-size: 16px;
+}
+.btn-padding-small {
+  padding: 0 15px;
+}
+.btn-padding-xsmall {
+  padding: 0 10px;
+}
+.btn-length-large {
+  min-width: 300px;
+  font-size: 18px;
+}
+.btn-length-medium {
+  min-width: 100px;
+}
+.btn-length-small {
+  min-width: 60px;
+}
+.btn-tiyan {
+  padding: 5px 5px 5px 10px;
 }
 header {
   height: 60px;
@@ -462,11 +513,6 @@ nav .nav-item:hover {
   margin-bottom: 5px;
   font-weight: bold;
 }
-nav .btn {
-  padding: 5px 25px;
-  font-size: 16px;
-  letter-spacing: 0;
-}
 .landing {
   height: 350px;
   display: flex;
@@ -505,11 +551,6 @@ nav .btn {
   font-size: 20px;
   margin-top: 20px;
   margin-bottom: 40px;
-}
-.landing .btn {
-  padding: 10px 39px;
-  font-size: 18px;
-  letter-spacing: 3px;
 }
 .landing .block {
   display: flex;
@@ -706,9 +747,6 @@ nav .btn {
 }
 .try-now img {
   margin: 10px;
-}
-.try-now .btn {
-  letter-spacing: 0;
 }
 .gallery {
   flex-direction: row;
@@ -1300,25 +1338,12 @@ footer .block .link:hover {
   color: #4e6175;
 }
 .form .submit-btn {
-  margin: 10px;
-  width: 300px;
-  padding: 5px;
-  display: inline-block;
-  box-sizing: content-box;
+  box-sizing: border-box;
+  width: 330px;
 }
 .form .code {
-  background-color: #0acacb;
-  border-color: #ddd;
-  border-radius: 5px;
-  padding: 5px 20px;
-  letter-spacing: 0;
   margin-left: 10px;
-  font-size: 16px;
-  height: 34px;
-}
-.form .code.disabled {
-  color: #ddd;
-  background: #f5f5f5;
+  height: 32px;
 }
 .submmit-success {
   width: 100%;

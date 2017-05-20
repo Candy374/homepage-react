@@ -69,7 +69,7 @@ export default class JoinUs extends Component {
                     </section>
 
                     <div className="row">
-                        <a className="btn btn-big" href="mailto:info@convertlab.com">成为我们的合作伙伴</a>
+                        <Button isLink type='blank' spacing="3" padding="large" href="mailto:info@convertlab.com">成为我们的合作伙伴</Button>
                     </div>
 
                     <Description title="我们提供全方位的支持" desc="我们提供了富有竞争力的员工福利和上升空间"/>
@@ -190,7 +190,7 @@ export default class JoinUs extends Component {
                     </section>
 
                     <TryNow>
-                        <a className="btn btn-danger  btn-normal" href="mailto:info@convertlab.com">提交申请</a>
+                        <Button isLink color="orange" href="mailto:info@convertlab.com">提交申请</Button>
                     </TryNow>
                 </content>
                 <Footer/>

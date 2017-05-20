@@ -5,10 +5,10 @@ import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Description from '../components/Description';
+import Button from '../components/Button';
 import Landing from '../components/Landing';
 import TryNow from '../components/TryNow';
 import {Link} from 'react-router-dom';
-
 
 export default class Home extends Component {
     playVideo = () => {
@@ -26,7 +26,7 @@ export default class Home extends Component {
                              title="让营销变得简单" desc="企业一站式营销云"
                     >
                         <Link className="row" to="/form">
-                            <div className="btn btn-danger">申请试用</div>
+                            <Button color="orange" padding="xlarge" spacing="3">申请试用</Button>
                         </Link>
                     </Landing>
 
@@ -34,7 +34,7 @@ export default class Home extends Component {
                         desc="Convertlab Digtal Marketing Hub产品，帮助企业全面了解客户，建立基于数据洞察的营销策略，并持续与客户进行个性化的互动，提升客户体验，最终达成商业目标"
                         title="尽在DM Hub解决方案">
                         <div className="row">
-                            <div className="btn btn-normal btn-primary margin-horizontal-medium">体验</div>
+                            <Button spacing="4" className="btn-tiyan">体验</Button>
                         </div>
                     </Description>
 

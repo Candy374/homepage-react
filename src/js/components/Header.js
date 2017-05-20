@@ -64,7 +64,7 @@ export default class Header extends Component {
                                 )
                             })
                         }
-                        <a className="btn btn-default" target="_blank" href="https://app.convertlab.com/login.html">账号登录</a>
+                        <Button isLink type="blank" color='white' target="_blank" href="https://app.convertlab.com/login.html">账号登录</Button>
                     </nav>
                 </div>
             </header>

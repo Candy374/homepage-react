@@ -3,15 +3,17 @@
  */
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import Button from './Button';
 
 const SubmitEmail = (props) => {
-    const {btnText, type='danger'} = props;
+    const {btnText, color='orange', length='small'} = props;
 
     return (
         <div className="input-group">
             <input placeholder="填写邮箱"/>
-            <Link to='/form' className={"btn btn-" + type}>{btnText}</Link>
+            <Link to='/form'>
+                <Button text={btnText} color={color} radius="square" padding="small" length={length}/>
+            </Link>
         </div>
     )
 };

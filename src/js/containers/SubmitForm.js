@@ -129,7 +129,7 @@ export default class Resource extends Component {
                                       pathname: '/form',
                                       search: 'submitted',
                                   }}>
-                                <Button type='primary' disabled={disabled}
+                                <Button disabled={disabled} length="large" spacing="4"
                                         className="submit-btn" text="提交"/>
                             </Link>
                         </Row>
