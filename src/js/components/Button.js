@@ -32,11 +32,14 @@ const Button = (props) => {
         classes.push('disabled');
     }
 
+    const finalProps = {...props, className: classes.join(' ')};
+    delete finalProps.isLink;
+
     if (isLink) {
-        return <a className={classes.join(' ')} {...props}>{children}</a>;
+        return <a {...finalProps}>{children}</a>;
     } else {
         return (
-            <button className={classes.join(' ')}
+            <button className={finalProps.className}
                     onClick={onClick}>{text || children}</button>
         )
     }

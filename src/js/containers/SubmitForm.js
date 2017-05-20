@@ -51,7 +51,7 @@ const formData = [{
 
 const Row = Widgets.LabelRow;
 
-export default class Resource extends Component {
+export default class SubmitForm extends Component {
     componentWillMount() {
         this.state = {
             submitted: false
@@ -118,7 +118,7 @@ export default class Resource extends Component {
                             const Comp = Widgets[field.type];
 
                             return (
-                                <Comp {...field}
+                                <Comp {...field} key={field.name}
                                       value={this.state[field.name]}
                                       onChange={(e) => this.setState({[field.name]: e.target.value})}/>
                             );
