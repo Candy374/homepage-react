@@ -40,7 +40,7 @@ const Button = (props) => {
     } else {
         return (
             <button className={finalProps.className}
-                    onClick={onClick}>{text || children}</button>
+                    onClick={disabled ? undefined : onClick}>{text || children}</button>
         )
     }
 };
