@@ -111,6 +111,7 @@ input:-ms-input-placeholder {
   font-weight: bold;
 }
 input[type=text],
+input,
 textarea {
   background: #f5f5f5;
   border: 1px solid #ddd;
@@ -759,6 +760,13 @@ footer {
   padding: 0 40px;
   border-top: 1px solid #dde5ed;
 }
+footer.showLayer {
+  position: fixed;
+  z-index: 1;
+}
+footer.showLayer > div {
+  display: none;
+}
 footer > div {
   max-width: 1440px;
   margin: 0 auto;
@@ -786,6 +794,14 @@ footer .contact .wechat {
   display: flex;
   align-items: center;
   padding-top: 5px;
+}
+footer .contact .weibo,
+footer .contact .wechat {
+  cursor: pointer;
+}
+footer .contact .weibo:hover span,
+footer .contact .wechat:hover span {
+  color: #273647;
 }
 footer .contact img {
   width: 1.2em;
@@ -824,6 +840,9 @@ footer .block {
   min-width: 120px;
   box-sizing: border-box;
 }
+footer .block .logo {
+  width: 130px;
+}
 footer .block .link {
   color: #4e6175;
   font-size: 12px;
@@ -832,6 +851,20 @@ footer .block .link {
 }
 footer .block .link:hover {
   color: #273647;
+}
+.layer {
+  position: fixed;
+  background: rgba(239, 239, 239, 0.8);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+}
+.layer .layer-container {
+  background: #fff;
+  padding: 50px;
 }
 .margin-vertical-large {
   margin-top: 40px;

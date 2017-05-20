@@ -4,6 +4,8 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Layer from '../components/Layer';
+import QRCode from '../components/QRCode';
 
 export default class Footer extends Component {
     componentWillMount() {
@@ -57,11 +59,19 @@ export default class Footer extends Component {
                 to: '/join'
             }]
         ];
+        this.state = {
+            showQrCode: false
+        }
     }
 
+    showQrCode = (show = true) => {
+        this.setState({showQrCode: show})
+    };
+
     render() {
+        const { showQrCode } = this.state;
         return (
-            <footer>
+            <footer className={showQrCode ? 'showLayer' : ''}>
                 <div>
                     <div className="row justify-between">
                         <div className="left">
@@ -89,7 +99,7 @@ export default class Footer extends Component {
                         </div>
                         <div className="contact">
                             <div className="phone"><img src="/assets/phone.png"/>400 850 9918</div>
-                            <div className="wechat"><img src="/assets/weibo.png"/><span>微信公众号</span></div>
+                            <div className="wechat" onClick={this.showQrCode}><img src="/assets/weibo.png"/><span>微信公众号</span></div>
                             <a className="weibo" href="http://weibo.com/u/5994921100" target="_blank"><img src="/assets/wechat.png"/><span>官方微博</span></a>
                         </div>
                     </div>
@@ -99,6 +109,9 @@ export default class Footer extends Component {
                         <span>备案信息:沪ICP备15038423号-1</span>
                     </div>
                 </div>
+                <Layer hide={!showQrCode} hideLayer={() => this.showQrCode(false)}>
+                    <QRCode />
+                </Layer>
             </footer>
         );
     }

@@ -13,7 +13,7 @@ export default ({body, title}) => (`
       <div id="root">${body}</div>
     </body>
     <script src="/assets/bundle.js"></script>
-    
+    <div id="layer">
   </html>
 `);
 

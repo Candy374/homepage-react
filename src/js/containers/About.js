@@ -7,6 +7,7 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import QRCode from '../components/QRCode';
 import Description from '../components/Description';
 import Landing from '../components/Landing';
 import TryNow from '../components/TryNow';
@@ -204,13 +205,7 @@ export default class About extends Component {
                         </div>
                     </section>
                     <section>
-                        <div className="QR-code">
-                            <div className="line">
-                                <label className="desc"><span>了解最新动态</span></label>
-                            </div>
-                            <div><img src="assets/qrcode.jpg" srcSet="assets/qrcode.jpg 2x"/> </div>
-                            <div>扫码关注我们</div>
-                        </div>
+                        <QRCode />
                     </section>
                     <TryNow />
                 </content>

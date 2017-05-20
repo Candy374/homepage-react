@@ -8,15 +8,14 @@ import Home from './containers/About';
 
 ReactDOM.render(<Home/>, document.getElementById('root'));
 
-//TODO video
-//TODO QR code  utma
-// wei xin pop QR code
-// carousel
+
+// form validation
+// node start node
+
 // update page
 
 // header scroll
-// form validation
-// node start node
+// carousel
 
 // optimize less
 // optimize html
