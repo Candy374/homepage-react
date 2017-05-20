@@ -8,7 +8,6 @@ import Home from './containers/About';
 
 ReactDOM.render(<Home/>, document.getElementById('root'));
 
-// node start node
 
 // update page
 

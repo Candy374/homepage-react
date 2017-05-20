@@ -27,7 +27,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 var validRoutes = ['/', '/home', '/about', '/feature', '/join',
-    '/resource', '/edit', '/form'
+    '/resource', '/edit', '/form', '/update', '/work'
 ];
 app.get('/*', function(req, res) {
     var url = req.originalUrl.split('?')[0];
