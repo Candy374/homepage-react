@@ -10,7 +10,7 @@ import {
     Feature,
     About,
     JoinUs,
-    Resource,
+    Library,
     Edit,
     Work,
     Update,
@@ -28,7 +28,7 @@ const routes = [{
     path: '/home', component: Home },{
     path: '/feature', component: Feature },{
     path: '/about', component: About },{
-    path: '/resource', component: Resource },{
+    path: '/library', component: Library },{
     path: '/edit', component: Edit },{
     path: '/work', component: Work },{
     path: '/update', component: Update },{
@@ -60,13 +60,13 @@ const ServerApp = () => (
         {routes.map((route, index) => <Route key={index} {...route}/>)}
         <RedirectWithStatus
             status={301}
-            from="/resource/:id"
-            to="/resource"
+            from="/library/:id"
+            to="/library"
         />
         <RedirectWithStatus
             status={302}
             from="/"
-            to="/resource"
+            to="/home"
         />
     </Switch>
 );

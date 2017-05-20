@@ -2,7 +2,7 @@
  * Created by huangling on 15/05/2017.
  */
 import React, { Component } from 'react';
-import DownloadResource from '../components/DownloadResource';
+import DownloadResource from '../../components/DownloadResource';
 
 export default class ResourceDetail2 extends Component {
     componentDidMount() {

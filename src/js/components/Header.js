@@ -19,7 +19,7 @@ export default class Header extends Component {
             to: '/about'
         }, {
             label: '学堂',
-            to: '/resource'
+            to: '/library'
         }];
     }
 

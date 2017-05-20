@@ -14,7 +14,10 @@ ReactDOM.render(<Home/>, document.getElementById('root'));
 // header scroll
 // carousel
 
-// optimize less
-// optimize html
+
 
 // media query
+// node kill port
+
+// optimize less
+// optimize html

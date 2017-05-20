@@ -2,14 +2,14 @@
  * Created by huangling on 15/05/2017.
  */
 import React, { Component } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import {getDocs } from '../actions/db';
-import Landing from '../components/Landing';
-import Detail1 from './ResourceDetail1';
-import Detail2 from './ResourceDetail2';
-import TryNow from '../components/TryNow';
-import Breadcrumb from '../components/Breadcrumb';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import {getDocs } from '../../actions/db';
+import Landing from '../../components/Landing';
+import Detail1 from './Detail1';
+import Detail2 from './Detail2';
+import TryNow from '../../components/TryNow';
+import Breadcrumb from '../../components/Breadcrumb';
 import { Link } from 'react-router-dom';
 const THEMES = ['全部', '数字营销', '广告投放', '营销内容', '营销技巧', '攻略'];
 const TYPES = ['全部', '电子书', '文章', '在线视频', '营销词典'];
@@ -91,7 +91,7 @@ export default class Resource extends Component {
                     <content>
                         <Landing title="免费的营销资源"/>
                         {doc && <Breadcrumb links={
-                            [{to: '/resource', label: '资源列表'},{label: doc.title}
+                            [{to: '/library', label: '资源列表'},{label: doc.title}
                         ]}/>}
                         {doc ? <Detail {...doc}/>
                             :
@@ -121,7 +121,7 @@ export default class Resource extends Component {
                                 <div className={"books " + (filterdDoc.length > 0 ? '' : 'placeholder')}>
                                     {filterdDoc.map(doc => (
                                         <Link to={{
-                                            pathname: `/resource`,
+                                            pathname: `/library`,
                                             search: doc.id ? (doc.id + '') : ''
                                         }}
 

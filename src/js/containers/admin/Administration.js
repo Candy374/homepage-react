@@ -2,18 +2,18 @@
  * Created by huangling on 15/05/2017.
  */
 import React, {Component} from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Button from '../components/Button';
-import {addDocs} from '../actions/db';
-import Landing from '../components/Landing';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import Button from '../../components/Button';
+import {addDocs} from '../../actions/db';
+import Landing from '../../components/Landing';
 import {markdown} from 'markdown';
-import * as Widgets from '../components/Widgets';
+import * as Widgets from '../../components/Widgets';
 const Row = Widgets.LabelRow;
-import Detail1 from '../containers/ResourceDetail1'
-import Detail2 from '../containers/ResourceDetail2'
+import Detail1 from '../library/Detail1'
+import Detail2 from '../library/Detail2'
 
-import {docForm} from '../constants/docForm';
+import {docForm} from '../../constants/docForm';
 export default class Resource extends Component {
     componentWillMount() {
         this.state= {

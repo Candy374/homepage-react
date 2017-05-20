@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Layer from '../components/Layer';
 import QRCode from '../components/QRCode';
+import { blocks } from '../constants/footer';
 
 export default class Footer extends Component {
     componentWillMount() {
@@ -50,7 +51,7 @@ export default class Footer extends Component {
                 to: '/work'
             }, {
                 label: '营销学堂',
-                to: '/resource'
+                to: '/library'
             }, {
                 label: '博客',
                 to: '/blog'
@@ -81,7 +82,7 @@ export default class Footer extends Component {
                                 </div>
                             </div>
                             {
-                                this.blocks.map((block, index) => (
+                                blocks.map((block, index) => (
                                     <div className="block" key={index}>
                                         {
                                             block.map((link, key) => {
