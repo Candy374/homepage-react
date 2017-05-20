@@ -39,23 +39,13 @@ app.get('/*', function(req, res) {
     }
 });
 
-app.get('/style/fonts/*', function(req, res) {
-    var url = req.originalUrl.split('?')[0];
-    res.sendFile(path.resolve(path.join(__dirname, '/../src/' + url)));
-});
-
-app.get('/style/*', function(req, res) {
-    res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
-});
-
-app.get('/assets/*', function(req, res) {
-    res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
-});
+app.get('/style/*', express.static(path.resolve(path.join(__dirname, '/../src/'))));
+app.get('/assets/*', express.static(path.resolve(path.join(__dirname, '/../src/'))));
 
 routes(app);
 
 app.get('*', function(req, res) {
-    res.sendFile(path.resolve(path.join(__dirname, '/../src/404.html')));
+    res.sendFile(path.resolve(path.join(__dirname, './404.html')));
 });
 
 

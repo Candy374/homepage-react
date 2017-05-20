@@ -8,8 +8,6 @@ import Home from './containers/About';
 
 ReactDOM.render(<Home/>, document.getElementById('root'));
 
-
-// form validation
 // node start node
 
 // update page

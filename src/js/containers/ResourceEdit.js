@@ -31,9 +31,26 @@ export default class Resource extends Component {
         })
     };
 
+    isReadyForSubmit = () => {
+        let invalid = false;
+        // formData.find(field => {
+        //     const value = this.state[field.name];
+        //     if (field.required && !value) {
+        //         invalid = true;
+        //     }
+        //
+        //     if (field.valid && !field.valid(value)) {
+        //         invalid = true;
+        //     }
+        //     return invalid;
+        // });
+
+        return !invalid;
+    };
+
     render() {
         const {title, tag, type, img, fileName, size, content, desc, briefs, detailType} = this.state;
-
+        const disabled = !this.isReadyForSubmit();
         return (
             <div>
                 <Header/>
@@ -73,7 +90,8 @@ export default class Resource extends Component {
                             </select>
                         </LabelRow>
                         <LabelRow>
-                            <Button type='primary' className="submit-btn"
+                            <Button disabled={disabled} length="large" spacing="4"
+                                    className="submit-btn"
                                     onClick={this.onSubmit}
                                     text="提交"/>
                         </LabelRow>
