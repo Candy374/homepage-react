@@ -10,7 +10,7 @@ export default class Header extends Component {
     componentWillMount() {
         this.links = [{
             label: '首页',
-            to: '/index'
+            to: '/home'
         }, {
             label: '功能',
             to: '/feature'

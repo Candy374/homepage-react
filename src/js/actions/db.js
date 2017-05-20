@@ -36,6 +36,7 @@ export const addDocs = (doc) => {
 };
 
 export const submitCustomer = (data) => {
+    data.id = new Date().getTime() + '';
     return request.post('/db/form/submit').send(data)
         .then(res => res.body)
         .catch(err => {
