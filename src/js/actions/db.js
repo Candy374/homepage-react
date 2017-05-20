@@ -17,7 +17,7 @@ const getParams = (params, queryKey) => {
 };
 
 export const getDocs = (id) => {
-    const req = id ? request.get('/db/getDoc', {id}) : request.get('/db/getDoc');
+    const req = id ? request.get('/db/doc/get', {id}) : request.get('/db/doc/list');
     return req.then(res => res.body)
         .catch(err => {
             console.log('Can not get docs');
@@ -27,7 +27,7 @@ export const getDocs = (id) => {
 
 export const addDocs = (doc) => {
     doc.id = new Date().getTime() + '';
-    return request.post('/db/addDoc').send(doc)
+    return request.post('/db/doc/add').send(doc)
         .then(res => res.body)
         .catch(err => {
             console.log('Can not add docs');
@@ -36,7 +36,7 @@ export const addDocs = (doc) => {
 };
 
 export const submitCustomer = (data) => {
-    return request.post('/form/').send(data)
+    return request.post('/db/form/submit').send(data)
         .then(res => res.body)
         .catch(err => {
             console.log('submit form failed!');

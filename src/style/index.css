@@ -212,6 +212,20 @@ textarea {
   padding: 0 10px;
   background: #fff;
 }
+.breadcrumb {
+  display: flex;
+  width: 84%;
+  margin: auto;
+}
+.breadcrumb .breadcrumb-link {
+  border-bottom: 1px solid transparent;
+}
+.breadcrumb a.breadcrumb-link:hover {
+  border-bottom-color: #4e6175;
+}
+.breadcrumb .split {
+  margin: 0 10px;
+}
 .time-line {
   display: flex;
   width: 100%;
@@ -1203,7 +1217,6 @@ footer .block .link:hover {
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: row;
-  margin-top: 110px;
 }
 .resource-detail .img {
   margin-right: 50px;

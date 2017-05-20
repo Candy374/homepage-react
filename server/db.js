@@ -8,13 +8,6 @@ var assert = require('assert');
 var url = 'mongodb://localhost:27017/homepage';
 
 var MONGO_DB;
-// Use connect method to connect to the server
-// MongoClient.connect(url, function(err, db) {
-//     assert.equal(null, err);
-//     console.log("Connected successfully to server");
-//
-//     MONGO_DB = db;
-// });
 
 var getDB = function(callback) {
     if (MONGO_DB) {
@@ -29,30 +22,25 @@ var getDB = function(callback) {
     }
 };
 
-
-var insertDocuments = function(data, callback) {
+var insert = function(coll, data, callback) {
     getDB(function(db) {
         // Get the documents collection
-        var collection = db.collection('documents');
+        var collection = db.collection(coll);
         // Insert some documents
-        collection.insertMany(data, function(err, result) {
+        collection.insertOne(data, function(err, result) {
             assert.equal(err, null);
-            assert.equal(data.length, result.result.n);
-            assert.equal(data.length, result.ops.length);
-            console.log("Inserted " + data.length + " documents into the collection");
-            console.log(data)
+            console.log(data);
             if (callback) {
                 callback(result);
             }
         });
-    })
-
+    });
 };
 
-var findDocuments = function(filter, callback) {
+var find = function(coll, filter, callback) {
     getDB(function(db) {
         // Get the documents collection
-        var collection = db.collection('documents');
+        var collection = db.collection(coll);
         // Find some documents
         collection.find(filter).toArray(function(err, docs) {
             assert.equal(err, null);
@@ -61,7 +49,39 @@ var findDocuments = function(filter, callback) {
     });
 };
 
+var insertDocuments = function(data, callback) {
+    insert('documents', data, callback);
+
+    var doc = {
+        title: data.title,
+        img: data.img,
+        id: data.id,
+        tag: data.tag
+    };
+
+    insert('docs', doc, callback);
+};
+
+var insertForms = function(data, callback) {
+    insert('form', data, callback);
+};
+
+var findDocuments = function(filter, callback) {
+    find('documents', filter, callback);
+};
+
+var findForm = function(filter, callback) {
+    find('form', filter, callback);
+};
+
+var findDocs = function(callback) {
+    find('docs', {}, callback);
+};
+
 module.exports = {
     insertDocuments,
-    findDocuments
+    findDocuments,
+    insertForms,
+    findForm,
+    findDocs
 };

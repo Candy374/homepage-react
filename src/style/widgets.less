@@ -118,3 +118,21 @@ textarea {
     background: #fff;
   }
 }
+
+.breadcrumb {
+  display: flex;
+  width: 84%;
+  margin: auto;
+  .breadcrumb-link {
+    border-bottom: 1px solid transparent;
+  }
+
+  a.breadcrumb-link {
+    &:hover {
+      border-bottom-color: @text-color-dark5;
+    }
+  }
+  .split {
+    margin: 0 10px;
+  }
+}

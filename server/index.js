@@ -8,7 +8,8 @@ var webpack = require('webpack');
 var webpackConfig = require('../webpack/webpack.config.dev-client');
 var path = require('path');
 var fs = require('fs');
-var db = require('./db');
+
+var routes = require('./routes');
 
 var bodyParser = require('body-parser');
 
@@ -51,23 +52,7 @@ app.get('/assets/*', function(req, res) {
     res.sendFile(path.resolve(path.join(__dirname, '/../src/' + req.originalUrl)));
 });
 
-app.post('/db/addDoc', function(req, res) {
-    db.insertDocuments([req.body], function() {
-        res.end();
-    })
-});
-
-app.get('/db/getDoc', function(req, res) {
-    db.findDocuments(req.query, function(docs) {
-        res.send(docs || []);
-    })
-});
-
-app.post('/db/form', function(req, res) {
-    db.insertDocuments([req.body], function() {
-        res.end();
-    })
-});
+routes(app);
 
 app.get('*', function(req, res) {
     res.sendFile(path.resolve(path.join(__dirname, '/../src/404.html')));

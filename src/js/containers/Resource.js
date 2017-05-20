@@ -9,6 +9,7 @@ import Landing from '../components/Landing';
 import Detail1 from './ResourceDetail1';
 import Detail2 from './ResourceDetail2';
 import TryNow from '../components/TryNow';
+import Breadcrumb from '../components/Breadcrumb';
 import { Link } from 'react-router-dom';
 const THEMES = ['全部', '数字营销', '广告投放', '营销内容', '营销技巧', '攻略'];
 const TYPES = ['全部', '电子书', '文章', '在线视频', '营销词典'];
@@ -41,7 +42,8 @@ export default class Resource extends Component {
             filter: {
                 by: '',
                 key: ''
-            }
+            },
+            doc: null
         };
 
         this.getDoc(this.props);
@@ -57,34 +59,41 @@ export default class Resource extends Component {
         let id = props.location.search;
         if (id) {
             id = id.substr(1);
-        }
-        getDocs(id).then(docs => {
-            this.setState({
-                docs, id
+            getDocs(id).then(docs => {
+                this.setState({doc: docs});
             })
-        })
+        } else {
+            if (this.state.docs.length > 0) {
+                this.setState({doc: null});
+            } else {
+                getDocs(id).then(docs => {
+                    this.setState({docs, doc: null});
+                })
+            }
+        }
     };
 
     filter = (by, key) => this.setState({by, key});
 
     render() {
-        const { docs, by, key, id } = this.state;
+        const { docs, by, key, doc } = this.state;
 
         const filterdDoc = docs.filter(doc => key === '全部' || key === doc[by]);
 
-        let Detail, detailProps;
-        if (id) {
-            detailProps = docs[0];
-            detailProps.tags = [detailProps.tag];
-            Detail = detailProps.detailType === 'detail' ? Detail1 : Detail2;
+        let Detail;
+        if (doc) {
+            doc.tags = [doc.tag];
+            Detail = doc.detailType === 'detail' ? Detail1 : Detail2;
         }
         return (
             <div>
                 <Header/>
-
                     <content>
                         <Landing title="免费的营销资源"/>
-                        {id ? <Detail {...detailProps}/>
+                        {doc && <Breadcrumb links={
+                            [{to: '/resource', label: '资源列表'},{label: doc.title}
+                        ]}/>}
+                        {doc ? <Detail {...doc}/>
                             :
                             <section className="resource">
                                 <div className="resource-category">
