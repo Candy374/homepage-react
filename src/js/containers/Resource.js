@@ -87,7 +87,7 @@ export default class Resource extends Component {
         }
         return (
             <div>
-                <Header/>
+                <Header type={doc ? 'primary' : ''}/>
                     <content>
                         <Landing title="免费的营销资源"/>
                         {doc && <Breadcrumb links={

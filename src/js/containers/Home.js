@@ -7,8 +7,7 @@ import Footer from '../components/Footer';
 import Description from '../components/Description';
 import Landing from '../components/Landing';
 import TryNow from '../components/TryNow';
-import Category from '../components/Category';
-import Button from '../components/Button';
+import {Link} from 'react-router-dom';
 
 
 export default class Home extends Component {
@@ -20,9 +19,9 @@ export default class Home extends Component {
                     <Landing className="home" backgroudImg="banner_bg"
                              title="让营销变得简单" desc="企业一站式营销云"
                     >
-                        <div className="row">
+                        <Link className="row" to="/form">
                             <div className="btn btn-danger">申请试用</div>
-                        </div>
+                        </Link>
                     </Landing>
 
                     <Description

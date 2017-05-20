@@ -54,7 +54,7 @@ const Row = Widgets.LabelRow;
 export default class Resource extends Component {
     componentWillMount() {
         this.state = {
-            submitted: false
+            submitted: true
         };
         formData.map(field => this.state[field.name] = '');
     }
@@ -72,9 +72,11 @@ export default class Resource extends Component {
     render() {
         const { submitted } = this.state;
         let content;
+
         if (submitted) {
             content = (
                 <content>
+                    <Landing/>
                     <section className="submmit-success">
                         <img src="/assets/success.png" srcSet="/assets/success.png 2x"/>
                         <div className="title">感谢您的提交，我们的客户成功团队将会在2天内和您取得联系。
@@ -119,7 +121,7 @@ export default class Resource extends Component {
 
         return (
             <div>
-                <Header type={submitted ? 'scrolled' : ''}/>
+                <Header type={submitted ? 'primary scrolled' : ''}/>
                 {content}
                 <Footer/>
             </div>

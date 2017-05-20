@@ -11,14 +11,12 @@ ReactDOM.render(<Home/>, document.getElementById('root'));
 //TODO video
 //TODO QR code  utma
 // wei xin pop QR code
-// submit success
 // carousel
 // update page
-// resource detail
 
-// state management
+// header scroll
+// form validation
 // node start node
-// database
 
 // optimize less
 // optimize html

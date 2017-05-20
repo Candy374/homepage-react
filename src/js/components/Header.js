@@ -24,7 +24,7 @@ export default class Header extends Component {
     }
 
     componentDidMount() {
-        this.img2.style.display = 'none';
+        this.img2.style.display = this.props.type == 'primary' ? 'block' : 'none';
         window.addEventListener('scroll', () => {
             this.head = document.getElementsByTagName('header')[0];
             this.img1 = document.getElementsByTagName('img')[0];

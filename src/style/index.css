@@ -413,6 +413,9 @@ header {
 header.primary {
   background: #0acacb;
 }
+header.primary + content .landing {
+  height: 60px;
+}
 header.scrolled {
   background: #fff;
   box-shadow: 1px 1px 8px 0px #e5edf6;
