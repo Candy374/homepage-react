@@ -22,7 +22,8 @@ const formData = [{
     required: true,
     hint: '手机号为13位数字',
     name: 'phone',
-    type: 'LabelInput'
+    type: 'LabelInput',
+    valid: (phone) => /^1[34578]\d{9}$/.test(phone)
 }, {
     title: '验证码',
     required: false,
@@ -32,9 +33,10 @@ const formData = [{
 }, {
     title: '邮箱',
     required: true,
-    hint: '',
+    hint: '邮箱格式为: info@convertlab.com',
     name: 'email',
-    type: 'LabelInput'
+    type: 'LabelInput',
+    valid: (email) => /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/.test(email)
 }, {
     title: '公司',
     required: false,
@@ -77,7 +79,7 @@ export default class SubmitForm extends Component {
     };
 
     onSubmit = () => {
-        const { company, jobTitle, email, phone, name } = this.state;
+        const {company, jobTitle, email, phone, name} = this.state;
         submitCustomer({
             company, jobTitle, email, phone, name
         }, () => {
@@ -86,8 +88,13 @@ export default class SubmitForm extends Component {
         this.setState({submitted: true})
     };
 
+    updateValue = (e, field, error) => {
+        field.error = error;
+        this.setState({[e.target.name]: e.target.value});
+    };
+
     render() {
-        const { submitted } = this.state;
+        const {submitted} = this.state;
         let content;
 
         if (submitted) {
@@ -116,11 +123,15 @@ export default class SubmitForm extends Component {
                     <section className="form">
                         {formData.map(field => {
                             const Comp = Widgets[field.type];
-
+                            const value = this.state[field.name];
                             return (
                                 <Comp {...field} key={field.name}
-                                      value={this.state[field.name]}
-                                      onChange={(e) => this.setState({[field.name]: e.target.value})}/>
+                                      error={field.error}
+                                      value={value}
+                                      onBlur={(e) => {
+                                          this.updateValue(e, field, value && field.valid && !field.valid(value) && field.hint)
+                                      }}
+                                      onChange={(e) => this.updateValue(e, field)}/>
                             );
                         })}
                         <Row>

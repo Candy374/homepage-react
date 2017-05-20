@@ -11,9 +11,9 @@ const Label = (props) => {
 };
 
 const Input = (props) => {
-    const { onChange, status = 'normal', value, type = 'text', name} = props;
+    const { onChange, status = 'normal', value, type = 'text', name, onBlur} = props;
     const className = 'input ' + status;
-    return <input className={className} onChange={onChange} value={value} name={name} type={type}/>
+    return <input className={className} onBlur={onBlur} onChange={onChange} value={value} name={name} type={type}/>
 };
 
 
@@ -28,20 +28,21 @@ const LabelRow = (props) => {
 };
 
 const LabelInput = (props) => {
-    const { title, required, error, onChange, status, value, name } = props;
+    const { title, required, error, onChange, onBlur, status, value, name } = props;
     return (
         <LabelRow title={title} required={required}>
-            <Input onChange={onChange} value={value} status={status} name={name}/>
+            <Input onChange={onChange} onBlur={onBlur}
+                   value={value} status={status} name={name}/>
             {error && <span className="error">{error}</span> }
         </LabelRow>
     )
 };
 
 const PhoneCode = (props) => {
-    const { title, required, onChange, status, value } = props;
+    const { title, required, onChange, status, value, name } = props;
     return (
         <LabelRow title={title} required={required}>
-            <Input onChange={onChange} value={value} status={status} />
+            <Input onChange={onChange} value={value} status={status} name={name}/>
             <Button radius="square" className='code' padding="small" length="small" text="获取验证码"/>
         </LabelRow>
     )

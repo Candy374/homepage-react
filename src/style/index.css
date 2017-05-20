@@ -178,6 +178,7 @@ textarea {
 .label-input {
   width: 450px;
   display: flex;
+  position: relative;
 }
 .label-input input {
   width: inherit;
@@ -186,6 +187,13 @@ textarea {
 .label-input .label {
   width: 100px;
   text-align: right;
+}
+.label-input .error {
+  position: absolute;
+  right: 4px;
+  top: 2px;
+  font-size: 12px;
+  color: #ff6c62;
 }
 .line {
   margin-bottom: 20px;
