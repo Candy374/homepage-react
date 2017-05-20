@@ -1,7 +1,7 @@
 /**
  * Created by huangling on 20/05/2017.
  */
-const docForm = [{
+const library = [{
     title: '标题',
     required: true,
     hint: '',
@@ -82,5 +82,5 @@ const docForm = [{
 }];
 
 export {
-    docForm
+    library
 };

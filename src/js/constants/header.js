@@ -17,28 +17,30 @@ const links = [{
 
 const editLinks = [{
     label: '首页',
-    to: '/home'
+    editor: ''
 }, {
     label: '功能',
-    to: '/feature'
+    editor: ''
 }, {
     label: '我们',
-    to: '/about'
+    editor: ''
 }, {
     label: '学堂',
-    to: '/library'
+    editor: ''
 }, {
     label: '产品更新',
-    to: '/update'
+    editor: 'PreviewEditor',
+    data: 'update'
 }, {
     label: '合作伙伴',
-    to: '/work'
+    editor: ''
 }, {
     label: '营销学堂',
-    to: '/library'
+    editor: 'PreviewEditor',
+    data: 'library'
 }, {
     label: '加入我们',
-    to: '/join'
+    editor: ''
 }];
 
 export {

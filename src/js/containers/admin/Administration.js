@@ -2,39 +2,48 @@
  * Created by huangling on 15/05/2017.
  */
 import React, {Component} from 'react';
-import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Landing from '../../components/Landing';
 import PreviewEditor from './PreviewEditor'
-import { editLinks } from '../../constants/header';
+import {editLinks} from '../../constants/header';
+import * as FORMS from '../../constants/editorForms';
 
 export default class Resource extends Component {
     componentWillMount() {
-        this.state= {
-            submiting: false
+        this.state = {
+            editor: 'PreviewEditor',
+            data: 'library',
+            formIndex: 6
         };
     }
 
     render() {
-        const { tag, content = '', detailType, submiting} = this.state;
-
+        const {editor, data, formIndex } = this.state;
+        const fields = FORMS[data];
         return (
             <div>
-
                 <Landing>
                     <div className="row">
-                        <nav id="nav">
-                            {
-                                editLinks.map((link, index) =>{
-                                    return (
-                                        <div className={'nav-item'} key={index} to={link.to}>{link.label}</div>
-                                    )
-                                })
-                            }
-                        </nav>
+                        <nav id="nav">{
+                            editLinks.map((link, index) => (
+                                <div className={formIndex == index ? 'active nav-item' : 'nav-item'}
+                                     onClick={() => {
+                                         this.setState({
+                                             editor: link.editor,
+                                             data: link.data,
+                                             formIndex: index
+                                         })
+                                     }}
+                                     key={index}>
+                                    {link.label}
+                                </div>
+                            ))
+                        }</nav>
                     </div>
                 </Landing>
-                <PreviewEditor/>
+                {fields && (
+                    editor === 'PreviewEditor' ? <PreviewEditor fields={fields}/> : ''
+                )}
                 <Footer/>
             </div>
         );
