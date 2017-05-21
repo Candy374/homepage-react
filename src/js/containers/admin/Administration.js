@@ -23,25 +23,22 @@ export default class Resource extends Component {
         const fields = FORMS[data];
         return (
             <div>
-                <Landing>
-                    <div className="row">
-                        <nav id="nav">{
-                            editLinks.map((link, index) => (
-                                <div className={formIndex == index ? 'active nav-item' : 'nav-item'}
-                                     onClick={() => {
-                                         this.setState({
-                                             editor: link.editor,
-                                             data: link.data,
-                                             formIndex: index
-                                         })
-                                     }}
-                                     key={index}>
-                                    {link.label}
-                                </div>
-                            ))
-                        }</nav>
-                    </div>
-                </Landing>
+                <nav id="nav">{
+                    editLinks.map((link, index) => (
+                        <div className={formIndex == index ? 'active nav-item' : 'nav-item'}
+                             style={{color: '#0acacb'}}
+                             onClick={() => {
+                                 this.setState({
+                                     editor: link.editor,
+                                     data: link.data,
+                                     formIndex: index
+                                 })
+                             }}
+                             key={index}>
+                            {link.label}
+                        </div>
+                    ))
+                }</nav>
                 {fields && editor === 'PreviewEditor' && <PreviewEditor fields={fields}/>}
                 {fields && editor === 'UpdateEditor' && <UpdateEditor fields={fields}/>}
                 <Footer/>

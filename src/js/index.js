@@ -9,11 +9,9 @@ import Home from './containers/About';
 ReactDOM.render(<Home/>, document.getElementById('root'));
 
 //form phone code
-// update page
 
 // header scroll
 // carousel
-
 
 
 // media query
