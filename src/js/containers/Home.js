@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import Description from '../components/Description';
 import Button from '../components/Button';
 import Landing from '../components/Landing';
+import Carousel from '../components/Carousel';
 import TryNow from '../components/TryNow';
 import {Link} from 'react-router-dom';
 
@@ -111,6 +112,38 @@ export default class Home extends Component {
                                 <figcaption>互联网</figcaption>
                             </figure>
                         </div>
+                    </section>
+
+                    <section className="gallery">
+                        <Carousel>
+                            <div className="container">
+                                <div className="block">
+                                    <div className="title">内容&交互1</div>
+                                    <div className="desc">通过低使用门栏的内容制作工具，快速生产营销内容和物料，覆盖微信、短信、邮件、微页面等多种形式。用户与内容交互后，数据自动被收集。
+                                    </div>
+                                    <div className="img">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="container">
+                                <div className="block">
+                                    <div className="title">内容&交互2</div>
+                                    <div className="desc">通过低使用门栏的内容制作工具，快速生产营销内容和物料，覆盖微信、短信、邮件、微页面等多种形式。用户与内容交互后，数据自动被收集。
+                                    </div>
+                                    <div className="img">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="container">
+                                <div className="block">
+                                    <div className="title">内容&交互3</div>
+                                    <div className="desc">通过低使用门栏的内容制作工具，快速生产营销内容和物料，覆盖微信、短信、邮件、微页面等多种形式。用户与内容交互后，数据自动被收集。
+                                    </div>
+                                </div>
+                            </div>
+                        </Carousel>
                     </section>
 
                     <section className="logos">

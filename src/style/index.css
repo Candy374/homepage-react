@@ -748,16 +748,17 @@ nav .nav-item:hover {
   padding: 0 40px;
   position: relative;
 }
-.gallery.carousel-container {
+.gallery .carousel-container {
   display: flex;
-}
-.gallery.carousel-container .carousel {
   width: 100%;
 }
-.gallery.carousel-container .carousel__control {
+.gallery .carousel-container .carousel {
+  width: 100%;
+}
+.gallery .carousel-container .carousel__control {
   border-color: #0acacb;
 }
-.gallery.carousel-container .carousel__slide {
+.gallery .carousel-container .carousel__slide {
   background: none !important;
 }
 .gallery .container {
