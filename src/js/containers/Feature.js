@@ -48,14 +48,26 @@ const SectionGroup = ({ title, desc, blocks, id, tryNow }) => (
 );
 
 export default class Feature extends Component {
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.location.hash != this.props.location.hash) {
-            this.scrollTo();
+    componentDidMount() {
+        this.scrollTo();
+    }
+
+    componentDidUpdate(preProps) {
+        if (preProps.location.hash != this.props.location.hash) {
+            this.scrollTo(this.props.location.hash);
         }
     }
 
     scrollTo = (id) => {
-        console.log('scorll to ' + id)
+        let top = 0;
+        id = id || window.location.hash;
+         switch (id){
+             case '#people': top = 330; break;
+             case '#engage': top = 1110; break;
+             case '#automation': top = 1910; break;
+             case '#insight': top = 3074; break;
+         }
+        window.scrollTo(0, top);
     };
 
     render() {
