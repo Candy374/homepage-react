@@ -1,17 +1,8 @@
-/**
- * Created by huangling on 21/05/2017.
- */
-/**
- * Created by huangling on 15/05/2017.
- */
 import React, {Component} from 'react';
 import Button from '../../components/Button';
 import {submitForm} from '../../actions/db';
-import {markdown} from 'markdown';
 import * as Widgets from '../../components/Widgets';
 const Row = Widgets.LabelRow;
-import Detail1 from '../library/Detail1'
-import Detail2 from '../library/Detail2'
 
 export default class PreviewEditor extends Component {
     componentWillMount() {
@@ -19,7 +10,6 @@ export default class PreviewEditor extends Component {
             submmiting: false
         };
         this.props.fields.map(field => this.state[field.name] = '');
-        this.state.detailType = 'detail'
     }
 
     isReadyForSubmit = () => {
@@ -51,7 +41,7 @@ export default class PreviewEditor extends Component {
         this.props.fields.forEach(field => {
             data[field.name] = this.state[field.name];
         });
-        submitForm('library', data).then(() => {
+        submitForm(this.props.type, data).then(() => {
             alert('保存成功！');
             this.setState({submmiting: false});
         });
@@ -84,13 +74,6 @@ export default class PreviewEditor extends Component {
                                     onClick={this.onSubmit}
                                     text="提交"/>
                         </Row>
-                    </div>
-
-                    <div className="preview markdown">
-                        {detailType == 'detail' ?
-                            <Detail1 {...this.state} content={markdown.toHTML(content)} tags={[tag]} preview/>
-                            : <Detail2 {...this.state} content={markdown.toHTML(content)} tags={[tag]} preview/>
-                        }
                     </div>
                 </section>
             </content>

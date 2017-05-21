@@ -104,7 +104,16 @@ const LabelRadio = (props) => {
         <LabelRow title={title} required={required}>
             <Select {...props} />
         </LabelRow>
-    )
+    );
+};
+
+const LabelButton = (props) => {
+    const { title } = props;
+    return (
+        <LabelRow>
+            <Button text={'+ ' + title} {...props} />
+        </LabelRow>
+    );
 };
 
 export {
@@ -115,5 +124,6 @@ export {
     LabelRow,
     LabelDropDown,
     LabelRadio,
-    LabelLongInput
+    LabelLongInput,
+    LabelButton
 }

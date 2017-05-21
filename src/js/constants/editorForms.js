@@ -8,17 +8,17 @@ const library = [{
     name: 'title',
     type: 'LabelInput'
 }, {
-    title: '描述',
-    required: false,
-    hint: '',
-    name: 'desc',
-    type: 'LabelInput',
-}, {
     title: '摘要',
     required: false,
     hint: '',
     name: 'briefs',
     type: 'LabelInput'
+}, {
+    title: '描述',
+    required: false,
+    hint: '',
+    name: 'desc',
+    type: 'LabelInput',
 }, {
     title: '内容',
     required: true,
@@ -81,6 +81,83 @@ const library = [{
     type: 'LabelRadio'
 }];
 
+const update = [{
+    title: '标题',
+    required: true,
+    hint: '',
+    name: 'title',
+    type: 'LabelInput'
+}, {
+    title: '摘要',
+    required: false,
+    hint: '',
+    name: 'briefs',
+    type: 'LabelInput'
+}, {
+    title: '发布时间',
+    required: true,
+    hint: 'yyyy.mm',
+    name: 'publishDate',
+    type: 'LabelInput',
+    valid: (date) => /20\d{2}\.(0|1)\d/.test(date)
+},{
+    title: '描述',
+    required: false,
+    hint: '',
+    name: 'desc',
+    type: 'LabelInput',
+}, {
+    title: '内容',
+    required: false,
+    hint: '',
+    name: 'content',
+    type: 'LabelLongInput',
+}, {
+    title: '添加详细描述',
+    required: false,
+    hint: '',
+    name: 'details',
+    form: [{
+        title: '标题',
+        required: true,
+        hint: '',
+        name: 'title',
+        type: 'LabelInput'
+    }, {
+        title: '描述',
+        required: true,
+        hint: '',
+        name: 'desc',
+        type: 'LabelLongInput'
+    }, {
+        title: '详情链接',
+        required: false,
+        hint: 'CDN路径',
+        name: 'link',
+        type: 'LabelInput'
+    }, {
+        title: '头像',
+        required: true,
+        hint: 'CDN路径',
+        name: 'img',
+        type: 'LabelInput'
+    }, {
+        title: '姓名',
+        required: true,
+        hint: '',
+        name: 'name',
+        type: 'LabelInput'
+    }, {
+        title: '职位',
+        required: true,
+        hint: '',
+        name: 'jobTitle',
+        type: 'LabelInput'
+    }],
+    type: 'LabelAddForm',
+}];
+
 export {
-    library
+    library,
+    update
 };

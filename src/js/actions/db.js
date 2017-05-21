@@ -25,14 +25,19 @@ export const getDocs = (id) => {
         });
 };
 
-export const addDocs = (doc) => {
+export const addDocs = (url, doc) => {
     doc.id = new Date().getTime() + '';
-    return request.post('/db/doc/add').send(doc)
+    return request.post(url).send(doc)
         .then(res => res.body)
         .catch(err => {
             console.log('Can not add docs');
             console.log(err.message);
         });
+};
+
+export const submitForm = (type, doc) => {
+    const url = `/db/${type}/add`;
+    return addDocs(url, doc);
 };
 
 export const submitCustomer = (data) => {

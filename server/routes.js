@@ -4,8 +4,14 @@
 var db = require('./db');
 
 module.exports = function(app) {
-    app.post('/db/doc/add', function(req, res) {
+    app.post('/db/library/add', function(req, res) {
         db.insertDocuments(req.body, function() {
+            res.end();
+        })
+    });
+
+    app.post('/db/update/add', function(req, res) {
+        db.insertUpdateInfo(req.body, function() {
             res.end();
         })
     });

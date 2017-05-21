@@ -29,7 +29,7 @@ const editLinks = [{
     editor: ''
 }, {
     label: '产品更新',
-    editor: 'PreviewEditor',
+    editor: 'UpdateEditor',
     data: 'update'
 }, {
     label: '合作伙伴',

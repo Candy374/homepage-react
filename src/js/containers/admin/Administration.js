@@ -5,6 +5,7 @@ import React, {Component} from 'react';
 import Footer from '../../components/Footer';
 import Landing from '../../components/Landing';
 import PreviewEditor from './PreviewEditor'
+import UpdateEditor from './SubOptionEditor'
 import {editLinks} from '../../constants/header';
 import * as FORMS from '../../constants/editorForms';
 
@@ -41,9 +42,8 @@ export default class Resource extends Component {
                         }</nav>
                     </div>
                 </Landing>
-                {fields && (
-                    editor === 'PreviewEditor' ? <PreviewEditor fields={fields}/> : ''
-                )}
+                {fields && editor === 'PreviewEditor' && <PreviewEditor fields={fields}/>}
+                {fields && editor === 'UpdateEditor' && <UpdateEditor fields={fields}/>}
                 <Footer/>
             </div>
         );

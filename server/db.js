@@ -62,6 +62,10 @@ var insertDocuments = function(data, callback) {
     insert('docs', doc, callback);
 };
 
+var insertUpdateInfo = function (data, callback) {
+    insert('updateInfo', data, callback);
+};
+
 var insertForms = function(data, callback) {
     insert('form', data, callback);
 };
@@ -83,5 +87,6 @@ module.exports = {
     findDocuments,
     insertForms,
     findForm,
-    findDocs
+    findDocs,
+    insertUpdateInfo
 };
