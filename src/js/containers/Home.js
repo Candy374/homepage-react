@@ -129,7 +129,8 @@ export default class Home extends Component {
                             <div className="container">
                                 <div className="block">
                                     <div className="title">内容&交互2</div>
-                                    <div className="desc">通过低使用门栏的内容制作工具，快速生产营销内容和物料，覆盖微信、短信、邮件、微页面等多种形式。用户与内容交互后，数据自动被收集。
+                                    <div className="desc">通过低使用门栏的内容制作工具，快速生产营销内容和物料，覆盖微信、短信、邮件、微页面等多种通过低使用门栏的内容制作工具，快速生产营销内容和物料，覆盖微信、短信、邮件、微页面等多种形式。用户与内容交互后，数据自动被收集。
+                                    形式。用户与内容交互后，数据自动形式。用户与内容交互后，数据自动被收集。形式。用户与内容交互后，数据自动被收集。形式。用户与内容交互后，数据自动被收集。形式。用户与内容交互后，数据自动被收集。被收集。
                                     </div>
                                     <div className="img">
 
