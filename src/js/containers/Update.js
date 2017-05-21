@@ -1,15 +1,83 @@
 /**
  * Created by huangling on 15/05/2017.
  */
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Description from '../components/Description';
+import {getData} from '../actions/db';
 import Landing from '../components/Landing';
 import TryNow from '../components/TryNow';
 
+const TimeStamp = (props) => {
+    const {publishDate, title, briefs, desc, active, onMore, details = []} = props;
+    const classes = ['stamp', 'left'];
+    if (!active) {
+        classes.push('disabled');
+    }
+    return (
+        <div className={classes.join(' ')}>
+            <span className="time">{publishDate}</span>
+            <div className="text-block">
+                <div className="title">{title}</div>
+                {active ?
+                    <div>
+                        <p>{briefs}</p>
+                        <br/>
+                        <p>{desc}</p>
+
+                        {details.map((detail, key) => {
+                            const {title, desc, link, img = 'btn_icon_01.png', name, jobTitle, like = 0} = detail;
+                            return (
+                                <div className="row direction-row align-start" key={key}>
+                                    <div className="badge">
+                                        <div className="avatar">
+                                            <img src={img.indexOf('//') > -1 ? img : `assets/${img}`}/>
+                                        </div>
+                                        <div className="name">{name}</div>
+                                        <div className="job-title">{jobTitle}</div>
+                                    </div>
+                                    <div className="detail-desc">
+                                        <div className="sub-title">{title}</div>
+                                        <p>{desc}</p>
+                                        {link && <a className="more arrow2" href={link} target="_blank">更多详情</a>}
+                                        <div className="like">
+                                            <i className="cl-icons icon-zan"></i>
+                                            <span className="num">{like}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div> :
+                    <div className="detail-desc">
+                        <div className="desc">{briefs}</div>
+                        <a className="more arrow" onClick={onMore}>了解更多</a>
+                    </div>
+                }
+            </div>
+        </div>
+    )
+};
+
 export default class Update extends Component {
+    componentWillMount() {
+
+        this.state = {
+            data: [],
+            activeItem: ''
+        };
+
+        this.getData();
+    }
+
+    getData = () => {
+        getData('update').then(data => {
+            this.setState({data, activeItem: data.length > 0 ? data[0].id : ''});
+        })
+    };
+
     render() {
+        const {data, activeItem} = this.state;
         return (
             <div>
                 <Header/>
@@ -18,53 +86,13 @@ export default class Update extends Component {
 
                     <section className="update-info margin-vertical-large">
                         <div className="time-line-2">
-                            <div className="stamp left">
-                                <span className="time">2017.04</span>
-                                <div className="text-block">
-                                    <div className="title">DM Hub V0.41更新</div>
-                                    <p>公司网站与微页面流量统计新增饼图展示与数据导出，流量与来源统计更直观，界面更人性，方便用户统计各渠道流量
-                                        来源并进行转化统计分析
-                                    </p>
-                                    <br/>
-                                    <p>
-                                        每天晚上，系统都会自动刷新一遍重算智能群组内的客户统计结果。但是如果你需要查看当前客户的统计结果，你现在
-                                        可以选择群组进行手动刷新。!!请务必注意，现在智能群组不再是实时的。在「分析」与「自动流程」功能都涉及智能
-                                        群组，因此在操作相关功能前，请先对智能群组进行手动刷新。
-                                    </p>
-
-                                    <div className="row direction-row align-start">
-                                        <div className="avatar">
-                                            <img src="./assets/btn_icon_01.png"/>
-                                            <div className="name">Eric</div>
-                                            <div className="job-title">开发工程师</div>
-                                        </div>
-                                        <div>
-                                            <div className="sub-title">智能群组-支持离线查询</div>
-                                            <p>每天晚上，系统都会自动刷新一遍重算智能群组内的客户统计结果。但是如果你需要查看当前客户的统计结果，你现在
-                                                可以选择群组进行手动刷新。!!请务必注意，现在智能群组不再是实时的。在「分析」与「自动流程」功能都涉及智能
-                                                群组，因此在操作相关功能前，请先对智能群组进行手动刷新。
-                                                每天晚上，系统都会自动刷新一遍重算智能群组内的客户统计结果。但是如果你需要查看当前客户的统计结果，你现在
-                                                可以选择群组进行手动刷新。!!请务必注意，现在智能群组不再是实时的。在「分析」与「自动流程」功能都涉及智能
-                                                群组，因此在操作相关功能前，请先对智能群组进行手动刷新。</p>
-                                            <a className="more arrow2">点击查看微页面功能说明</a>
-                                            <div className="like">
-                                                <i className="cl-icons icon-zan"></i>
-                                                <span className="num">201</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="stamp left disabled">
-                                <span className="time">2017.04</span>
-                                <div className="text-block">
-                                    <div className="title">DM Hub V0.41更新</div>
-                                    <div className="desc">获得年度最佳数字营销平台奖</div>
-                                    <a className="more arrow">了解更多</a>
-                                </div>
-                            </div>
-
+                            {
+                                data.map((d, key) => (
+                                    <TimeStamp {...d} key={key}
+                                               onMore={() => this.setState({activeItem: d.id})}
+                                               active={activeItem == d.id}/>
+                                ))
+                            }
                         </div>
                     </section>
                     <TryNow />

@@ -82,11 +82,16 @@ var findDocs = function(callback) {
     find('docs', {}, callback);
 };
 
+var findUpdateInfo = function(callback) {
+    find('updateInfo', {}, callback);
+};
+
 module.exports = {
     insertDocuments,
     findDocuments,
     insertForms,
     findForm,
     findDocs,
-    insertUpdateInfo
+    insertUpdateInfo,
+    findUpdateInfo
 };

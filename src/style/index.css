@@ -143,9 +143,28 @@ input:-ms-input-placeholder {
   flex-direction: column;
   align-items: center;
   margin-right: 10px;
+  width: 150px;
 }
-.avatar .name,
-.avatar .job-title {
+.badge {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.badge .avatar {
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+  box-shadow: inset 0px 0px 6px 3px #eee;
+}
+.badge .avatar img {
+  max-width: 100%;
+}
+.badge .name,
+.badge .job-title {
   font-size: 12px;
 }
 .label {
@@ -252,6 +271,9 @@ input:-ms-input-placeholder {
   width: 100%;
   flex-direction: column;
 }
+.time-line-2 .detail-desc {
+  flex: 1;
+}
 .time-line-2 .stamp {
   display: flex;
   margin: 10px 0;
@@ -276,7 +298,8 @@ input:-ms-input-placeholder {
   content: "";
   position: absolute;
   border-left: 3px solid;
-  height: 120%;
+  height: 100%;
+  padding-bottom: 30px;
   width: 6px;
   color: #eee;
   left: 0px;
@@ -1180,9 +1203,6 @@ textarea {
 }
 .block.align-center {
   align-items: center;
-}
-.avatar {
-  width: 150px;
 }
 .name-tag {
   margin-top: 10px;

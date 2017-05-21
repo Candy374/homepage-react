@@ -16,8 +16,8 @@ const getParams = (params, queryKey) => {
     return paramMap[queryKey];
 };
 
-export const getDocs = (id) => {
-    const req = id ? request.get('/db/doc/get', {id}) : request.get('/db/doc/list');
+export const getData = (type, id) => {
+    const req = id ? request.get(`/db/${type}/get`, {id}) : request.get(`/db/${type}/list`);
     return req.then(res => res.body)
         .catch(err => {
             console.log('Can not get docs');

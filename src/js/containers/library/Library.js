@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import {getDocs } from '../../actions/db';
+import {getData } from '../../actions/db';
 import Landing from '../../components/Landing';
 import Detail1 from './Detail1';
 import Detail2 from './Detail2';
@@ -59,14 +59,14 @@ export default class Resource extends Component {
         let id = props.location.search;
         if (id) {
             id = id.substr(1);
-            getDocs(id).then(docs => {
-                this.setState({doc: docs});
+            getData('library', id).then(doc => {
+                this.setState({doc});
             })
         } else {
             if (this.state.docs.length > 0) {
                 this.setState({doc: null});
             } else {
-                getDocs(id).then(docs => {
+                getData('library', id).then(docs => {
                     this.setState({docs, doc: null});
                 })
             }

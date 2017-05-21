@@ -10,20 +10,26 @@ module.exports = function(app) {
         })
     });
 
+    app.get('/db/library/get', function(req, res) {
+        db.findDocuments(req.query, function(docs) {
+            res.send(docs[0]);
+        })
+    });
+
+    app.get('/db/library/list', function(req, res) {
+        db.findDocs(function(docs) {
+            res.send(docs || []);
+        })
+    });
+
     app.post('/db/update/add', function(req, res) {
         db.insertUpdateInfo(req.body, function() {
             res.end();
         })
     });
 
-    app.get('/db/doc/get', function(req, res) {
-        db.findDocuments(req.query, function(docs) {
-            res.send(docs[0]);
-        })
-    });
-
-    app.get('/db/doc/list', function(req, res) {
-        db.findDocs(function(docs) {
+    app.get('/db/update/list', function(req, res) {
+        db.findUpdateInfo(function(docs) {
             res.send(docs || []);
         })
     });

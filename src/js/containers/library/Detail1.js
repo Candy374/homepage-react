@@ -15,7 +15,7 @@ export default class Detail1 extends Component {
 
 
     render() {
-        const { preview, tags, fileName, size, img = 'assets/resource_cover.png', title, content} = this.props;
+        const { preview, tags, fileName, size, img = 'resource_cover.png', title, content} = this.props;
         return (
             <section className="resource-detail">
                 {!preview && <div className="img">
